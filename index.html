@@ -6,19 +6,35 @@
     <title>BlcAjans - Profesyonel Fotoğrafçılık & Medya Prodüksiyon</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Özel Kaydırma Çubuğu */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #030712; }
         ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+
+        /* Arka planda daha büyük ve net görünen logo filigranı */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vh;
+            background-image: url('blcajans.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+        }
     </style>
 </head>
-<body class="bg-gray-950 text-white font-sans min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-gray-950">
+<body class="bg-gray-950 text-white font-sans min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-gray-950 relative">
 
     <!-- Üst Menü -->
-    <header class="sticky top-0 z-50 backdrop-blur-xl bg-gray-950/80 border-b border-gray-800/80 shadow-2xl shadow-black/50">
-        <div class="flex justify-between items-center p-4 sm:p-5 max-w-6xl mx-auto w-full">
-            <!-- Logo ve Başlık -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-gray-950/85 border-b border-gray-800/80 shadow-2xl shadow-black/60">
+        <div class="flex justify-between items-center p-4 sm:p-5 max-w-7xl mx-auto w-full">
             <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black border-2 border-amber-500/50 flex items-center justify-center overflow-hidden shadow-lg shadow-amber-500/20 group-hover:scale-105 transition duration-300 shrink-0">
                     <img src="blcajans.png" alt="BlcAjans Logo" class="w-full h-full object-cover">
@@ -28,17 +44,17 @@
                 </div>
             </div>
 
-            <!-- Menü Linkleri -->
             <nav class="hidden md:flex items-center gap-6 text-sm">
                 <a href="#hizmetler" class="hover:text-amber-400 transition text-gray-300 font-medium">Hizmetler</a>
                 <a href="#paketler" class="hover:text-amber-400 transition text-gray-300 font-medium">Paketler</a>
+                <a href="#teklif-al" class="hover:text-amber-400 transition text-amber-400 font-bold">Özel Teklif Al</a>
                 <a href="#ekipman" class="hover:text-amber-400 transition text-gray-300 font-medium">Ekipman Parkı</a>
                 <a href="#sss" class="hover:text-amber-400 transition text-gray-300 font-medium">S.S.S.</a>
                 <a href="#takvim" class="hover:text-amber-400 transition text-gray-300 font-medium">Takvim</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/905393437499?text=Merhaba,%20BlcAjans%20çekimler%20için%20bilgi%20almak%20istiyorum." 
+                <a href="https://wa.me/905393437499?text=Merhaba, BlcAjans çekimler için bilgi almak istiyorum." 
                    target="_blank" 
                    class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 active:scale-95 transition-all duration-150 text-white px-4 py-2 rounded-xl font-bold inline-flex items-center gap-2 text-xs sm:text-sm shadow-lg shadow-green-900/20">
                     <span>WhatsApp</span>
@@ -49,34 +65,34 @@
     </header>
 
     <!-- Hero / Karşılama Alanı -->
-    <section class="relative py-20 sm:py-32 px-4 text-center overflow-hidden bg-gradient-to-b from-gray-900/60 via-gray-950 to-gray-950">
+    <section class="relative py-20 sm:py-32 px-4 text-center overflow-hidden bg-gradient-to-b from-gray-900/60 via-gray-950 to-gray-950 z-10">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(245,158,11,0.15),rgba(255,255,255,0))]"></div>
-        <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+        <div class="max-w-4xl mx-auto space-y-6 relative z-10">
             <span class="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 text-xs font-bold px-4 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
-                ✨ Profesyonel Edit, Photoshop e Video Düzenleme Hizmetleri
+                ✨ Profesyonel İş İstasyonları ve Sınırsız Prodüksiyon Gücü
             </span>
             <h2 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-none">
                 Göz Alıcı Kareler, <span class="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Unutulmaz Hikayeler</span>
             </h2>
-            <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-                Son teknoloji profesyonel kameralarımız, dronelarımız ve uzman kadromuzla; Photoshop rötuşları, profesyonel video kurgu ve edit işlemlerinde sınırları zorluyoruz.
+            <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                Son teknoloji kameralarımız ve yüksek performanslı kurgu altyapımızla; Photoshop rötuşlarından profesyonel video kurguya, sinematik drone çekimlerinden kurumsal projelere kadar her detayı kusursuz işliyoruz.
             </p>
             <div class="flex flex-wrap justify-center gap-3 pt-4">
-                <a href="#takvim" class="bg-amber-500 hover:bg-amber-400 active:scale-95 text-gray-950 font-black px-7 py-3.5 rounded-xl text-sm transition-all shadow-xl shadow-amber-500/20 flex items-center gap-2">
-                    📅 Müsaitlik Takvimi & Randevu
+                <a href="#teklif-al" class="bg-amber-500 hover:bg-amber-400 active:scale-95 text-gray-950 font-black px-7 py-3.5 rounded-xl text-sm transition-all shadow-xl shadow-amber-500/20 flex items-center gap-2">
+                    ⚡ Hemen Özel Teklif Al
                 </a>
-                <a href="#hizmetler" class="bg-gray-900 hover:bg-gray-800 active:scale-95 text-gray-300 font-bold px-7 py-3.5 rounded-xl text-sm border border-gray-800 hover:border-gray-700 transition-all">
-                    Hizmetlerimizi İncele
+                <a href="#takvim" class="bg-gray-900 hover:bg-gray-800 active:scale-95 text-gray-300 font-bold px-7 py-3.5 rounded-xl text-sm border border-gray-800 hover:border-gray-700 transition-all">
+                    📅 Müsaitlik Takvimi
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Hizmetlerimiz Bölümü -->
-    <section id="hizmetler" class="max-w-6xl mx-auto py-20 px-4 w-full">
+    <section id="hizmetler" class="max-w-7xl mx-auto py-20 px-4 w-full relative z-10">
         <div class="text-center mb-16">
             <h3 class="text-xs uppercase tracking-widest text-amber-500 font-extrabold mb-2">Uzmanlık Alanlarımız</h3>
-            <h2 class="text-2xl sm:text-4xl font-black text-white">Profesyonel Edit, Photoshop ve Prodüksiyon Hizmetleri</h2>
+            <h2 class="text-2xl sm:text-4xl font-black text-white">Profesyonel Medya ve Prodüksiyon Çözümleri</h2>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -113,8 +129,85 @@
         </div>
     </section>
 
+    <!-- İnteraktif Proje / Teklif Alma Sistemi -->
+    <section id="teklif-al" class="max-w-5xl mx-auto py-20 px-4 w-full relative z-10">
+        <div class="bg-gradient-to-b from-gray-900 to-gray-950 p-6 sm:p-12 rounded-3xl border-2 border-amber-500/40 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center mb-10 relative z-10">
+                <span class="text-xs uppercase tracking-widest text-amber-500 font-extrabold mb-2 block">Akıllı Hesaplama Modülü</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white">Anında Proje Teklifi Oluşturun</h2>
+                <p class="text-xs sm:text-sm text-gray-400 mt-2">İhtiyacınız olan hizmetleri seçin, detayları belirleyip doğrudan WhatsApp üzerinden özel fiyat teklifi isteyin.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                <!-- Sol Taraf: Seçimler -->
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold text-amber-400 mb-2 uppercase tracking-wide">1. Ana Hizmet Türü</label>
+                        <select id="teklifHizmetTuru" onchange="hesaplaTeklif()" class="w-full bg-gray-950 border border-gray-800 rounded-2xl p-3.5 text-xs text-white focus:outline-none focus:border-amber-500 font-medium">
+                            <option value="Video Edit & Kurgu">Video Edit & Kurgu</option>
+                            <option value="Photoshop & Fotoğraf Rötuş">Photoshop & Fotoğraf Rötuş</option>
+                            <option value="Dış Mekan & Düğün Çekimi">Dış Mekan & Düğün Çekimi</option>
+                            <option value="Kurumsal Tanıtım / Ürün Çekimi">Kurumsal Tanıtım / Ürün Çekimi</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-amber-400 mb-2 uppercase tracking-wide">2. Ekstra Özellikler & Modüller</label>
+                        <div class="space-y-2.5 text-xs">
+                            <label class="flex items-center gap-3 bg-gray-950/80 p-3 rounded-xl border border-gray-800/80 cursor-pointer hover:border-amber-500/50 transition">
+                                <input type="checkbox" value="4K Sinematik Drone / Havadan Çekim" onchange="hesaplaTeklif()" class="w-4 h-4 accent-amber-500 rounded">
+                                <span class="text-gray-300">4K Sinematik Drone / Havadan Çekim</span>
+                            </label>
+                            <label class="flex items-center gap-3 bg-gray-950/80 p-3 rounded-xl border border-gray-800/80 cursor-pointer hover:border-amber-500/50 transition">
+                                <input type="checkbox" value="Ekstra 20 Adet Profesyonel Photoshop Rötuş" onchange="hesaplaTeklif()" class="w-4 h-4 accent-amber-500 rounded">
+                                <span class="text-gray-300">Ekstra 20 Adet Profesyonel Photoshop Rötuş</span>
+                            </label>
+                            <label class="flex items-center gap-3 bg-gray-950/80 p-3 rounded-xl border border-gray-800/80 cursor-pointer hover:border-amber-500/50 transition">
+                                <input type="checkbox" value="Öncelikli Acil Teslimat (48 Saat İçinde)" onchange="hesaplaTeklif()" class="w-4 h-4 accent-amber-500 rounded">
+                                <span class="text-gray-300">Öncelikli Acil Teslimat (48 Saat İçinde)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-amber-400 mb-2 uppercase tracking-wide">3. Proje Süresi / Kapsamı</label>
+                        <select id="teklifKapsam" onchange="hesaplaTeklif()" class="w-full bg-gray-950 border border-gray-800 rounded-2xl p-3.5 text-xs text-white focus:outline-none focus:border-amber-500 font-medium">
+                            <option value="Standart Kapsam (1 Günlük / Tek Oturum)">Standart Kapsam (1 Günlük / Tek Oturum)</option>
+                            <option value="Genişletilmiş Kapsam (Yoğun Prodüksiyon)">Genişletilmiş Kapsam (Yoğun Prodüksiyon)</option>
+                            <option value="VIP Kapsam / Çoklu Gün Prodüksiyon">VIP Kapsam / Çoklu Gün Prodüksiyon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Sağ Taraf: Sonuç ve Gönderim -->
+                <div class="bg-gray-950/90 p-6 sm:p-8 rounded-3xl border border-gray-800 flex flex-col justify-between shadow-inner">
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-amber-400 uppercase tracking-widest border-b border-gray-800 pb-3">Tahmini Proje Özeti</h4>
+                        <div class="space-y-2 text-xs text-gray-300">
+                            <p class="flex justify-between"><span>Seçilen Hizmet:</span> <strong id="ozetHizmet" class="text-white">Video Edit & Kurgu</strong></p>
+                            <p class="flex justify-between"><span>Ekstralar & Kapsam:</span> <strong id="ozetEkstralar" class="text-white">Standart</strong></p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800">
+                            <p class="text-[11px] text-amber-400 uppercase font-bold tracking-wider">Fiyat Bilgilendirmesi:</p>
+                            <div class="text-2xl sm:text-3xl font-black text-white mt-1">Özel Fiyat</div>
+                            <p class="text-[10px] text-gray-400 mt-1">*Net fiyat bilgisi WhatsApp üzerinden proje detaylarına göre belirlenir.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4">
+                        <button onclick="whatsappTeklifGonder()" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 active:scale-95 transition-all text-white font-black py-4 px-6 rounded-2xl text-xs sm:text-sm shadow-xl shadow-green-900/30 flex items-center justify-center gap-2">
+                            <span>🚀 WhatsApp'tan Fiyat Sor / Teklif Al</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Fiyat / Paket Seçenekleri -->
-    <section id="paketler" class="max-w-6xl mx-auto py-20 px-4 w-full">
+    <section id="paketler" class="max-w-7xl mx-auto py-20 px-4 w-full relative z-10">
         <div class="text-center mb-16">
             <h3 class="text-xs uppercase tracking-widest text-amber-500 font-extrabold mb-2">Bütçenize Uygun Seçenekler</h3>
             <h2 class="text-2xl sm:text-4xl font-black text-white">Popüler Çekim ve Edit Paketlerimiz</h2>
@@ -124,7 +217,7 @@
             <div class="bg-gray-900/80 p-8 rounded-3xl border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition shadow-xl">
                 <div>
                     <h4 class="text-base font-bold text-gray-300">Standart Paket</h4>
-                    <div class="text-3xl font-black text-amber-500 my-4">₺3.500 <span class="text-xs text-gray-400 font-normal">'den başlayan</span></div>
+                    <div class="text-3xl font-black text-amber-500 my-4">Özel Fiyat</div>
                     <p class="text-xs text-gray-400 mb-6 leading-relaxed">Hızlı çekimler ve temel photoshop düzenlemeleri için ideal başlangıç seçeneği.</p>
                     <ul class="space-y-3 text-xs text-gray-300 mb-8">
                         <li class="flex items-center gap-2">✔️ 1 Saat Kamera Çekimi</li>
@@ -133,14 +226,14 @@
                         <li class="flex items-center gap-2 text-gray-600">❌ Drone Çekimi Dahil Değil</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/905393437499?text=Merhaba,%2520Standart%2520paket%2520hakkında%2520bilgi%2520almak%2520istiyorum." target="_blank" class="w-full text-center bg-gray-800 hover:bg-gray-700 active:scale-95 transition text-amber-400 py-3 rounded-xl text-xs font-bold border border-gray-700 shadow-md">Paketi Seç</a>
+                <a href="https://wa.me/905393437499?text=Merhaba, Standart paket hakkında özel fiyat bilgisi almak istiyorum." target="_blank" class="w-full text-center bg-gray-800 hover:bg-gray-700 active:scale-95 transition text-amber-400 py-3 rounded-xl text-xs font-bold border border-gray-700 shadow-md">WhatsApp'tan Fiyat Sor</a>
             </div>
 
             <div class="bg-gradient-to-b from-gray-900 to-gray-950 p-8 rounded-3xl border-2 border-amber-500 flex flex-col justify-between relative shadow-2xl shadow-amber-500/10 scale-105 z-10">
                 <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 text-gray-950 font-black text-[10px] tracking-wider uppercase px-4 py-1.5 rounded-full shadow-lg">En Çok Tercih Edilen</div>
                 <div>
                     <h4 class="text-base font-bold text-amber-400">Ajans Profesyonel</h4>
-                    <div class="text-3xl font-black text-white my-4">₺7.500 <span class="text-xs text-gray-400 font-normal">/ ortalama</span></div>
+                    <div class="text-3xl font-black text-white my-4">Özel Fiyat</div>
                     <p class="text-xs text-gray-400 mb-6 leading-relaxed">Kapsamlı kamera çekimleri, ileri düzey photoshop ve sinematik video edit.</p>
                     <ul class="space-y-3 text-xs text-gray-300 mb-8">
                         <li class="flex items-center gap-2">✔️ 3 Saat Sınırsız Kamera Çekimi</li>
@@ -149,13 +242,13 @@
                         <li class="flex items-center gap-2">✔️ 4K Havadan Drone Çekimi Dahil</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/905393437499?text=Merhaba,%2520Ajans%2520Profesyonel%2520paket%2520hakkında%2520bilgi%2520almak%2520istiyorum." target="_blank" class="w-full text-center bg-amber-500 hover:bg-amber-400 active:scale-95 transition text-gray-950 py-3 rounded-xl text-xs font-black shadow-lg shadow-amber-500/20">Hemen Randevu Al</a>
+                <a href="https://wa.me/905393437499?text=Merhaba, Ajans Profesyonel paket hakkında özel fiyat bilgisi almak istiyorum." target="_blank" class="w-full text-center bg-amber-500 hover:bg-amber-400 active:scale-95 transition text-gray-950 py-3 rounded-xl text-xs font-black shadow-lg shadow-amber-500/20">WhatsApp'tan Fiyat Sor</a>
             </div>
 
             <div class="bg-gray-900/80 p-8 rounded-3xl border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition shadow-xl">
                 <div>
                     <h4 class="text-base font-bold text-gray-300">VIP Kurumsal / Özel</h4>
-                    <div class="text-3xl font-black text-amber-500 my-4">Özel Fiyat <span class="text-xs text-gray-400 font-normal">/ projeye özel</span></div>
+                    <div class="text-3xl font-black text-amber-500 my-4">Özel Fiyat</div>
                     <p class="text-xs text-gray-400 mb-6 leading-relaxed">Markalar, özel projeler ve büyük lansmanlar için tam kapsamlı prodüksiyon.</p>
                     <ul class="space-y-3 text-xs text-gray-300 mb-8">
                         <li class="flex items-center gap-2">✔️ Tam Gün Çoklu Kamera & Drone Kadrosu</li>
@@ -164,38 +257,38 @@
                         <li class="flex items-center gap-2">✔️ Öncelikli Teslimat Desteği</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/905393437499?text=Merhaba,%2520VIP%2520Kurumsal%2520paket%2520için%2520teklif%2520istemek%2520istiyorum." target="_blank" class="w-full text-center bg-gray-800 hover:bg-gray-700 active:scale-95 transition text-amber-400 py-3 rounded-xl text-xs font-bold border border-gray-700 shadow-md">Teklif İste</a>
+                <a href="https://wa.me/905393437499?text=Merhaba, VIP Kurumsal paket için özel fiyat istemek istiyorum." target="_blank" class="w-full text-center bg-gray-800 hover:bg-gray-700 active:scale-95 transition text-amber-400 py-3 rounded-xl text-xs font-bold border border-gray-700 shadow-md">WhatsApp'tan Fiyat Sor</a>
             </div>
         </div>
     </section>
 
     <!-- Ekipman Parkı -->
-    <section id="ekipman" class="max-w-6xl mx-auto py-20 px-4 w-full border-t border-gray-900/80">
+    <section id="ekipman" class="max-w-7xl mx-auto py-20 px-4 w-full border-t border-gray-900/80 relative z-10">
         <div class="text-center mb-16">
-            <h3 class="text-xs uppercase tracking-widest text-amber-500 font-extrabold mb-2">Son Teknoloji Donanım</h3>
-            <h2 class="text-2xl sm:text-4xl font-black text-white">Kullandığımız Profesyonel Kamera ve Drone Parkı</h2>
+            <h3 class="text-xs uppercase tracking-widest text-amber-500 font-extrabold mb-2">Profesyonel Ekipman Parkı</h3>
+            <h2 class="text-2xl sm:text-4xl font-black text-white">Çekimlerimizde Kullandığımız Üst Düzey Cihazlar</h2>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center max-w-5xl mx-auto">
             <div class="bg-gray-900/40 backdrop-blur-sm p-8 rounded-3xl border border-gray-800/80 flex flex-col items-center hover:border-amber-500/40 transition">
                 <div class="text-5xl mb-4 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/10">📷</div>
-                <h4 class="text-sm font-bold text-white mb-2">Profesyonel Kameralar</h4>
-                <p class="text-[11px] text-gray-400 leading-relaxed">Yüksek megapikselli, düşük ışıkta kusursuz detay yakalayan son teknoloji gövdeler.</p>
+                <h4 class="text-sm font-bold text-white mb-2">Canon R6 Gövde & Lensler</h4>
+                <p class="text-[11px] text-gray-400 leading-relaxed">Yüksek düşük ışık performansına sahip tam kare sensörlü Canon R6 kameralarımız ve profesyonel L serisi lenslerimizle kusursuz netlik.</p>
             </div>
             <div class="bg-gray-900/40 backdrop-blur-sm p-8 rounded-3xl border border-gray-800/80 flex flex-col items-center hover:border-amber-500/40 transition">
-                <div class="text-5xl mb-4 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/10">🎥</div>
-                <h4 class="text-sm font-bold text-white mb-2">Sinema Serisi Kameralar</h4>
-                <p class="text-[11px] text-gray-400 leading-relaxed">4K ve 8K ham kayıt yeteneğiyle profesyonel video edit ve kurgu süreçleri için özel donanım.</p>
+                <div class="text-5xl mb-4 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/10">🛸</div>
+                <h4 class="text-sm font-bold text-white mb-2">Profesyonel Drone Çekimleri</h4>
+                <p class="text-[11px] text-gray-400 leading-relaxed">4K 60FPS sinematik kayıt yeteneğine sahip profesyonel dronelarımızla projelerinize nefis kuş bakışı hava açıları katıyoruz.</p>
             </div>
             <div class="bg-gray-900/40 backdrop-blur-sm p-8 rounded-3xl border border-gray-800/80 flex flex-col items-center sm:col-span-2 md:col-span-1 hover:border-amber-500/40 transition">
-                <div class="text-5xl mb-4 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/10">🛸</div>
-                <h4 class="text-sm font-bold text-white mb-2">4K Sinematik Dronelar</h4>
-                <p class="text-[11px] text-gray-400 leading-relaxed">Nefis kuş bakışı hava çekimleri ve dinamik mekan geçişleri sağlayan profesyonel İHA'lar.</p>
+                <div class="text-5xl mb-4 p-4 rounded-2xl bg-amber-500/5 border border-amber-500/10">💡</div>
+                <h4 class="text-sm font-bold text-white mb-2">Stüdyo Işık & Gimbal Sistemleri</h4>
+                <p class="text-[11px] text-gray-400 leading-relaxed">Titremesiz hareketli çekimler için profesyonel 3 eksenli gimbal rigleri ve dengeli stüdyo aydınlatma ekipmanları.</p>
             </div>
         </div>
     </section>
 
     <!-- Dinamik Takvim Bölümü -->
-    <section id="takvim" class="max-w-3xl mx-auto py-20 px-4 w-full border-t border-gray-900/80">
+    <section id="takvim" class="max-w-4xl mx-auto py-20 px-4 w-full border-t border-gray-900/80 relative z-10">
         <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
             <div>
                 <h3 class="text-xs uppercase tracking-widest text-amber-500 font-extrabold mb-1">Canlı Planlama</h3>
@@ -204,20 +297,17 @@
             <span id="admin-durum-gosterge" class="text-xs text-amber-400 font-bold hidden bg-amber-500/10 px-4 py-2 rounded-full border border-amber-500/20 shadow-inner">🔒 Admin Modu Aktif</span>
         </div>
 
-        <!-- Gün Seçim Menüsü -->
         <div class="mb-6 bg-gray-900/80 p-4 rounded-2xl border border-gray-800 flex flex-col sm:flex-row items-center gap-3 shadow-lg">
             <label for="gunSecimSelect" class="text-xs font-bold text-amber-400 whitespace-nowrap">📅 Görüntülenecek Günü Seç:</label>
             <select id="gunSecimSelect" onchange="secilenGunuGoster()" class="w-full bg-gray-950 border border-gray-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-500 font-medium cursor-pointer">
-                <!-- Javascript ile doldurulacak -->
             </select>
         </div>
         
-        <!-- Sadece Seçilen Günün Kartı Burada Görünecek -->
         <div id="takvim-listesi" class="flex justify-center"></div>
     </section>
 
     <!-- Sıkça Sorulan Sorular (S.S.S.) -->
-    <section id="sss" class="max-w-4xl mx-auto py-20 px-4 w-full border-t border-gray-900/80">
+    <section id="sss" class="max-w-4xl mx-auto py-20 px-4 w-full border-t border-gray-900/80 relative z-10">
         <div class="text-center mb-16">
             <h3 class="text-xs uppercase tracking-widest text-amber-500 font-extrabold mb-2">Merak Edilenler</h3>
             <h2 class="text-2xl sm:text-4xl font-black text-white">Sıkça Sorulan Sorular</h2>
@@ -263,7 +353,6 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-1">
-                    <!-- Sohbeti Sonlandır / Sıfırla Düğmesi -->
                     <button onclick="sohbetiSonlandir()" title="Sohbeti Sonlandır ve Geçmişi Temizle" class="text-gray-400 hover:text-red-400 text-xs font-bold px-2 py-1 rounded-lg bg-gray-900 hover:bg-gray-800 transition active:scale-95 flex items-center gap-1">
                         <span>🔴 Sonlandır</span>
                     </button>
@@ -272,7 +361,6 @@
             </div>
 
             <div id="chatMesajlar" class="p-4 h-72 overflow-y-auto space-y-3 text-xs bg-gray-900/50 flex flex-col">
-                <!-- Mesajlar dinamik yüklenecek -->
             </div>
 
             <form onsubmit="mesajGonder(event)" id="chatForm" class="p-3 bg-gray-950 border-t border-gray-800 flex gap-2">
@@ -283,8 +371,8 @@
     </div>
 
     <!-- Alt Bilgi (Footer) -->
-    <footer class="bg-gray-950 border-t border-gray-900 pt-16 pb-8 px-4 text-xs text-gray-400">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 mb-12">
+    <footer class="bg-gray-950 border-t border-gray-900 pt-16 pb-8 px-4 text-xs text-gray-400 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 mb-12">
             <div>
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-9 h-9 rounded-full bg-black border border-amber-500/50 flex items-center justify-center overflow-hidden shrink-0 shadow">
@@ -298,6 +386,7 @@
                 <h4 class="text-xs font-black text-white uppercase tracking-wider mb-4">Hızlı Bağlantılar</h4>
                 <ul class="space-y-2.5 text-[11px]">
                     <li><a href="#hizmetler" class="hover:text-amber-400 transition">Hizmetlerimiz</a></li>
+                    <li><a href="#teklif-al" class="hover:text-amber-400 transition">Özel Teklif Al</a></li>
                     <li><a href="#paketler" class="hover:text-amber-400 transition">Fiyat Paketleri</a></li>
                     <li><a href="#ekipman" class="hover:text-amber-400 transition">Ekipman Parkı</a></li>
                     <li><a href="#takvim" class="hover:text-amber-400 transition">Müsaitlik Takvimi</a></li>
@@ -365,8 +454,8 @@
                     </select>
                 </div>
                 <div class="flex justify-end gap-2 pt-3">
-                    <button type="button" onclick="duzenleModalKapat()" class="bg-gray-800 hover:bg-gray-700 active:scale-95 transition px-4 py-2 rounded-xl text-xs font-medium">İptal</option>
-                    <button type="button" onclick="bilgileriKaydet()" class="bg-amber-500 hover:bg-amber-400 active:scale-95 transition text-gray-950 font-bold px-4 py-2 rounded-xl text-xs shadow-md">Kaydet</option>
+                    <button type="button" onclick="duzenleModalKapat()" class="bg-gray-800 hover:bg-gray-700 active:scale-95 transition px-4 py-2 rounded-xl text-xs font-medium">İptal</button>
+                    <button type="button" onclick="bilgileriKaydet()" class="bg-amber-500 hover:bg-amber-400 active:scale-95 transition text-gray-950 font-bold px-4 py-2 rounded-xl text-xs shadow-md">Kaydet</button>
                 </div>
             </div>
         </div>
@@ -379,6 +468,32 @@
         const DOGRU_SIFRE = "00110011ty";
         let isAdmin = localStorage.getItem("blc_admin") === "true";
 
+        function hesaplaTeklif() {
+            const hizmetSelect = document.getElementById('teklifHizmetTuru');
+            const kapsamSelect = document.getElementById('teklifKapsam');
+            const ozetHizmet = document.getElementById('ozetHizmet');
+            const ozetEkstralar = document.getElementById('ozetEkstralar');
+
+            let hizmetAdi = hizmetSelect.value;
+            let secilenEkstralarMetin = [];
+            const checkboxlar = document.querySelectorAll('#teklif-al input[type="checkbox"]:checked');
+            checkboxlar.forEach(cb => {
+                secilenEkstralarMetin.push(cb.value);
+            });
+            let kapsamAdi = kapsamSelect.value;
+
+            ozetHizmet.innerText = hizmetAdi;
+            ozetEkstralar.innerText = secilenEkstralarMetin.length > 0 ? secilenEkstralarMetin.join(', ') + ` (${kapsamAdi})` : `Standart (${kapsamAdi})`;
+        }
+
+        function whatsappTeklifGonder() {
+            const ozetHizmet = document.getElementById('ozetHizmet').innerText;
+            const ozetEkstralar = document.getElementById('ozetEkstralar').innerText;
+            let mesaj = `Merhaba! BlcAjans web siteniz üzerinden özel teklif oluşturdum:\n\nHizmet: ${ozetHizmet}\nDetaylar: ${ozetEkstralar}\n\nÖzel fiyat bilgisi almak ve projemi görüşmek istiyorum.`;
+            let url = `https://wa.me/905393437499?text=${encodeURIComponent(mesaj)}`;
+            window.open(url, '_blank');
+        }
+
         function canliDestekAc() {
             document.getElementById('canliDestekButon').classList.add('hidden');
             document.getElementById('canliDestekKutusu').classList.remove('hidden');
@@ -390,7 +505,6 @@
             document.getElementById('canliDestekButon').classList.remove('hidden');
         }
 
-        // Sohbet geçmişini LocalStorage'da saklama ve yükleme
         function sohbetGecmisiYukleVeyaBaslat() {
             let chatAlan = document.getElementById('chatMesajlar');
             let kayitliMesajlar = localStorage.getItem('blc_chat_gecmisi');
@@ -404,7 +518,7 @@
                         <button onclick="kategoriSec('💻 Video Edit ve Kurgu')" class="text-left bg-gray-800/80 hover:bg-amber-500 hover:text-gray-950 text-amber-400 border border-gray-700/80 p-2.5 rounded-xl font-medium transition text-[11px] active:scale-95 shadow-sm">💻 Video Edit & Sinematik Kurgu</button>
                         <button onclick="kategoriSec('🎨 Photoshop & Profesyonel Rötuş')" class="text-left bg-gray-800/80 hover:bg-amber-500 hover:text-gray-950 text-amber-400 border border-gray-700/80 p-2.5 rounded-xl font-medium transition text-[11px] active:scale-95 shadow-sm">🎨 Photoshop & Cilt Rötuş</button>
                         <button onclick="kategoriSec('🛸 Drone ve Dış Mekan Çekimi')" class="text-left bg-gray-800/80 hover:bg-amber-500 hover:text-gray-950 text-amber-400 border border-gray-700/80 p-2.5 rounded-xl font-medium transition text-[11px] active:scale-95 shadow-sm">🛸 4K Drone & Dış Mekan Çekimi</button>
-                        <button onclick="kategoriSec('📦 Fiyatlar, Paketler ve Teslimat Süresi')" class="text-left bg-gray-800/80 hover:bg-amber-500 hover:text-gray-950 text-amber-400 border border-gray-700/80 p-2.5 rounded-xl font-medium transition text-[11px] active:scale-95 shadow-sm">📦 Fiyat, Paketler ve Teslimat</button>
+                        <button onclick="kategoriSec('📦 Özel Fiyat ve Paket Bilgisi')" class="text-left bg-gray-800/80 hover:bg-amber-500 hover:text-gray-950 text-amber-400 border border-gray-700/80 p-2.5 rounded-xl font-medium transition text-[11px] active:scale-95 shadow-sm">📦 Özel Fiyat ve Paket Bilgisi</button>
                     </div>
                 `;
                 chatAlan.innerHTML = varsayilanHTML;
@@ -420,17 +534,13 @@
             localStorage.setItem('blc_chat_gecmisi', chatAlan.innerHTML);
         }
 
-        // Sohbeti sonlandırma ve sıfırlama fonksiyonu
         function sohbetiSonlandir() {
             if(confirm("Bu canlı destek görüşmesini sonlandırmak istediğinize emin misiniz? Sohbet geçmişi temizlenecektir.")) {
                 localStorage.removeItem('blc_chat_gecmisi');
-                let chatFormInput = document.getElementById('chatForm');
-                if(chatFormInput) chatFormInput.style.display = 'flex';
                 sohbetGecmisiYukleVeyaBaslat();
             }
         }
 
-        // Akıllı fotoğrafçılık asistanı yanıt sistemi
         function kategoriSec(kategoriAdi) {
             let chatAlan = document.getElementById('chatMesajlar');
             chatAlan.innerHTML += `<div class="self-end bg-amber-500 text-gray-950 font-medium p-2.5 rounded-2xl rounded-tr-none max-w-[85%] shadow-md" style="overflow-wrap: anywhere;">${kategoriAdi} hakkında bilgi almak istiyorum.</div>`;
@@ -443,19 +553,19 @@
 
             let botCevabi = "";
             if (kategoriAdi.includes("Video")) {
-                botCevabi = "Harika! Ham video görüntülerinizi sinematik renk grading, ses tasarımı ve akıcı geçişlerle kurguluyoruz. Reels, YouTube veya reklam filmi projenizin süresini ve detaylarını belirterek hemen WhatsApp üzerinden net fiyat teklifi alabilirsiniz.";
+                botCevabi = "Harika! Ham video görüntülerinizi Canon R6 ve güçlü iş istasyonlarımızla sinematik renk grading ve ses tasarımıyla kurguluyoruz. WhatsApp üzerinden özel fiyat teklifi alabilirsiniz.";
             } else if (kategoriAdi.includes("Photoshop")) {
-                botCevabi = "Üst düzey Adobe Photoshop uzmanlığımızla portre rötuşları, cilt pürüzsüzleştirme, ürün dekupe etme ve yaratıcı görsel manipülasyonlar yapıyoruz. Kaç adet fotoğraf için rötuş düşündüğünüzü bizimle paylaşabilirsiniz.";
+                botCevabi = "Üst düzey Adobe Photoshop uzmanlığımızla portre rötuşları, dekupe ve manipülasyonlar yapıyoruz.";
             } else if (kategoriAdi.includes("Drone")) {
-                botCevabi = "4K sinematik İHA/drone çekimlerimizle mekanınıza, düğününüze veya projenize havadan muazzam bir perspektif katıyoruz. Hava şartlarına uygun olarak rezervasyon takvimimizden gün seçebilirsiniz.";
+                botCevabi = "4K sinematik İHA/drone çekimlerimizle projelerinize havadan muazzam bir perspektif katıyoruz.";
             } else {
-                botCevabi = "Standart paketlerimiz 3.500 TL'den, en çok tercih edilen Ajans Profesyonel paketimiz ise 7.500 TL'den başlamaktadır. Teslimat süremiz düzenleme türüne göre 3 ila 7 iş günü sürmektedir.";
+                botCevabi = "Projelerimiz için özel fiyat tekliflerimizi WhatsApp üzerinden öğrenebilirsiniz.";
             }
 
             setTimeout(() => {
                 chatAlan.innerHTML += `<div class="self-start bg-gray-800 text-gray-200 p-2.5 rounded-2xl rounded-tl-none max-w-[85%] border border-gray-700 shadow-md space-y-2" style="overflow-wrap: anywhere;">
                     <p>${botCevabi}</p>
-                    <a href="https://wa.me/905393437499?text=Merhaba,%20${encodeURIComponent(kategoriAdi)}%20için%20asistan%20üzerinden%20bilgi%20aldım,%20detayları%20görüşmek%20istiyorum." target="_blank" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold px-3 py-1.5 rounded-xl text-[10px] transition shadow">💬 WhatsApp ile Görüşmeyi Devam Ettir</a>
+                    <a href="https://wa.me/905393437499?text=Merhaba, ${encodeURIComponent(kategoriAdi)} için özel fiyat bilgisi almak istiyorum." target="_blank" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold px-3 py-1.5 rounded-xl text-[10px] transition shadow">💬 WhatsApp ile Fiyat Sor</a>
                 </div>`;
                 chatAlan.scrollTop = chatAlan.scrollHeight;
                 sohbetGecmisiKaydet();
@@ -479,8 +589,8 @@
 
             setTimeout(() => {
                 chatAlan.innerHTML += `<div class="self-start bg-gray-800 text-gray-200 p-2.5 rounded-2xl rounded-tl-none max-w-[85%] border border-gray-700 shadow-md space-y-2" style="overflow-wrap: anywhere;">
-                    <p>Mesajınız alındı! Fotoğrafçılık ve edit talebiniz için ekibimiz en kısa sürede sizinle ilgilenecektir. Dilerseniz hemen hızlı yanıt için WhatsApp hattımıza bağlanabilirsiniz.</p>
-                    <a href="https://wa.me/905393437499?text=Merhaba,%20canlı%20destekten%20yazdığım%20soru%20için%20ulaşıyorum:%20${encodeURIComponent(mesaj)}" target="_blank" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold px-3 py-1.5 rounded-xl text-[10px] transition shadow">💬 WhatsApp'a Bağlan</a>
+                    <p>Mesajınız alındı! Özel fiyat ve detaylar için WhatsApp hattımızdan doğrudan bilgi verebiliriz.</p>
+                    <a href="https://wa.me/905393437499?text=Merhaba, canlı destekden yazdığım soru için ulaşıyorum: ${encodeURIComponent(mesaj)}" target="_blank" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold px-3 py-1.5 rounded-xl text-[10px] transition shadow">💬 WhatsApp'a Bağlan</a>
                 </div>`;
                 chatAlan.scrollTop = chatAlan.scrollHeight;
                 sohbetGecmisiKaydet();
@@ -512,7 +622,6 @@
             }
         }
 
-        // Tüm tarihleri döngüyle oluşturup Select menüsünü doldurur
         function takvimiOlustur() {
             arayuzGuncelle();
             const selectMenu = document.getElementById('gunSecimSelect');
@@ -555,7 +664,6 @@
             secilenGunuGoster();
         }
 
-        // Menüden seçilen günün kartını ekrana getirir
         function secilenGunuGoster() {
             const selectMenu = document.getElementById('gunSecimSelect');
             const takimContainer = document.getElementById('takvim-listesi');
@@ -596,10 +704,10 @@
                     ⚙️ Günü Düzenle
                 </button>`;
             } else {
-                butonHTML = `<a href="https://wa.me/905393437499?text=Merhaba,%20${gun}%20${aylar[ay]}%20${yil}%20tarihi%20(${kayitliVeri.durum === 'musait' ? 'Müsait' : 'Dolu'})%20için%20randevu%20almak%20istiyorum." 
+                butonHTML = `<a href="https://wa.me/905393437499?text=Merhaba, ${gun} ${aylar[ay]} ${yil} tarihi (${kayitliVeri.durum === 'musait' ? 'Müsait' : 'Dolu'}) için özel fiyat ve randevu bilgisi almak istiyorum." 
                    target="_blank"
                    class="mt-5 block text-center bg-gray-800 hover:bg-gray-700 active:scale-95 transition text-amber-400 text-xs py-3 rounded-xl font-bold border border-gray-700 shadow-sm">
-                    Bu Gün İçin Bilgi Al / Randevu Oluştur
+                    Bu Gün İçin WhatsApp'tan Fiyat Sor
                 </a>`;
             }
 
@@ -666,7 +774,10 @@
             takvimiOlustur();
         }
 
-        window.onload = function() { takvimiOlustur(); };
+        window.onload = function() { 
+            takvimiOlustur(); 
+            hesaplaTeklif(); 
+        };
     </script>
 </body>
 </html>
