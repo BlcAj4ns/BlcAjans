@@ -11,7 +11,7 @@
 
     <!-- Üst İletişim & Sosyal Bar -->
     <div class="bg-zinc-900 border-b border-zinc-800 text-xs py-2 px-6 flex justify-between items-center text-zinc-400">
-        <div>📞 +90 (372) 312 45 00 &nbsp;|&nbsp; ✉️ blcajans@blcajans.com</div>
+        <div>📞 +90 (539) 543 74 99 &nbsp;|&nbsp; ✉️ blcajans@blcajans.com</div>
         <div class="hidden md:flex gap-4">
             <a href="#" class="hover:text-white transition">Instagram</a>
             <a href="#" class="hover:text-white transition">YouTube</a>
@@ -19,11 +19,15 @@
         </div>
     </div>
 
-    <!-- Navigasyon / Header -->
+    <!-- Navigasyon / Header (Metin yerine Büyük Logo Alanı) -->
     <header class="bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
-        <div class="text-xl font-bold tracking-wider text-white">
-            BLC<span class="text-blue-500">FOTO</span>
+        <!-- Logo Alanı -->
+        <div class="flex items-center space-x-2">
+            <div class="bg-blue-600 text-white font-black px-3 py-1.5 rounded-lg text-lg tracking-wider shadow-lg shadow-blue-600/30">
+                BLC <span class="text-zinc-200 font-light text-sm">FOTO</span>
+            </div>
         </div>
+        
         <!-- Menü Linkleri (Tıklandığında ilgili bölüme/sayfaya gider) -->
         <nav class="hidden md:flex space-x-8 text-sm font-medium text-zinc-300">
             <a href="#anasayfa" class="hover:text-blue-400 transition">Ana Sayfa</a>
@@ -32,6 +36,7 @@
             <a href="#hakkimizda" class="hover:text-blue-400 transition">Hakkımda</a>
             <a href="#iletisim" class="hover:text-blue-400 transition">İletişim</a>
         </nav>
+        
         <!-- Mobil Menü Butonu -->
         <button id="menuBtn" class="md:hidden bg-zinc-800 p-2 rounded text-zinc-200">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -47,9 +52,14 @@
         <a href="#iletisim" class="hover:text-blue-400">İletişim</a>
     </div>
 
-    <!-- Ana İçerik / Hero Bölümü -->
-    <section id="anasayfa" class="relative flex-1 flex items-center justify-center text-center px-6 py-24 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-black">
-        <div class="max-w-3xl space-y-6">
+    <!-- Ana İçerik / Büyük Arka Plan Logolu Hero Bölümü -->
+    <section id="anasayfa" class="relative flex-1 flex items-center justify-center text-center px-6 py-28 overflow-hidden bg-zinc-950">
+        <!-- Büyük Arka Plan Logosu (Filigran Efekti) -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-5">
+            <span class="text-[18vw] font-black tracking-tighter text-white">BLC</span>
+        </div>
+
+        <div class="relative z-10 max-w-3xl space-y-6">
             <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs px-3 py-1 rounded-full font-medium">Profesyonel Fotoğrafçılık & Prodüksiyon</span>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">Anılarınızı Sanata Dönüştürüyoruz</h1>
             <p class="text-zinc-400 text-base md:text-lg max-w-xl mx-auto">Düğün, moda, ürün çekimleri ve kurumsal projeleriniz için profesyonel kareler.</p>
@@ -113,6 +123,14 @@
         </div>
     </section>
 
+    <!-- Hakkımda Bölümü -->
+    <section id="hakkimizda" class="py-20 px-6 max-w-4xl mx-auto text-center space-y-4">
+        <h2 class="text-3xl font-bold text-white">Hakkımda</h2>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl mx-auto">
+            Yılların verdiği deneyimle ışığı ve kompozisyonu en estetik şekilde buluşturuyoruz. Her karenin bir hikayesi olduğuna inanıyor, en özel anlarınızı kalıcı anılara dönüştürüyoruz.
+        </p>
+    </section>
+
     <!-- İletişim Bölümü -->
     <section id="iletisim" class="py-20 px-6 max-w-4xl mx-auto w-full">
         <div class="bg-zinc-900 border border-zinc-800 p-8 md:p-12 rounded-2xl space-y-6">
@@ -120,14 +138,18 @@
                 <h2 class="text-3xl font-bold text-white mb-2">İletişime Geçin</h2>
                 <p class="text-zinc-400 text-sm">Rezervasyon veya fiyat teklifi almak için doğrudan bize yazın.</p>
             </div>
-            <div class="flex flex-col md:flex-row gap-6 justify-between items-center text-center md:text-left pt-4">
-                <div class="space-y-2">
-                    <p class="text-sm text-zinc-300">📍 Merkez Ofis / Stüdyo</p>
-                    <p class="text-xs text-zinc-500">Zonguldak / Kdz. Ereğli</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center pt-4">
+                <div class="space-y-1">
+                    <p class="text-xs text-zinc-500">Telefon</p>
+                    <p class="text-sm text-blue-400 font-medium">+90 (539) 543 74 99</p>
                 </div>
-                <div class="space-y-2">
-                    <p class="text-sm text-zinc-300">✉️ E-Posta Adresi</p>
-                    <p class="text-xs text-blue-400 font-medium">blcajans@blcajans.com</p>
+                <div class="space-y-1">
+                    <p class="text-xs text-zinc-500">E-Posta</p>
+                    <p class="text-sm text-blue-400 font-medium">blcajans@blcajans.com</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-xs text-zinc-500">Konum</p>
+                    <p class="text-sm text-zinc-300">Zonguldak / Kdz. Ereğli</p>
                 </div>
             </div>
         </div>
@@ -135,7 +157,7 @@
 
     <!-- Footer -->
     <footer class="bg-zinc-950 border-t border-zinc-800 py-8 px-6 text-center text-xs text-zinc-500">
-        <p>&copy; 2026 BLC Ajans. Tüm hakları saklıdır. İletişim: <span class="text-zinc-400">blcajans@blcajans.com</span></p>
+        <p>&copy; 2026 BLC Ajans. Tüm hakları saklıdır. Telefon: <span class="text-zinc-400">+90 (539) 543 74 99</span> | E-Posta: <span class="text-zinc-400">blcajans@blcajans.com</span></p>
     </footer>
 
     <!-- Mobil Menü Kontrol Scripti -->
