@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çekim İpuçları | BLC Ajans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0b0f19; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.035; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <div class="bg-watermark"></div>
+
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md py-4 px-8 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="blcajans.png" alt="Logo" class="h-10 w-auto object-contain">
+            <span class="font-bold text-sm tracking-widest text-amber-400">BLC AJANS</span>
+        </a>
+        <a href="index.html" class="text-xs bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl text-slate-300 hover:text-amber-400 transition-all font-bold">← Ana Sayfaya Dön</a>
+    </header>
+
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl font-black mb-2">Çekim İpuçları</h1>
+            <p class="text-slate-400 text-sm">Kameranızı en verimli şekilde kullanmanız için pratik rehberler.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl">
+                <div class="text-amber-400 font-black text-xl mb-2">01</div>
+                <h3 class="text-lg font-bold mb-2 text-white">Üçte Bir Kuralı</h3>
+                <p class="text-slate-400 text-sm">Kadrajı üçe bölerek ana konuyu kesişim noktalarına yerleştirin, dengeli kompozisyonlar elde edin.</p>
+            </div>
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl">
+                <div class="text-amber-400 font-black text-xl mb-2">02</div>
+                <h3 class="text-lg font-bold mb-2 text-white">Beyaz Dengesi (Kelvin)</h3>
+                <p class="text-slate-400 text-sm">Renklerin doğal görünmesi için ortam ışığına uygun Kelvin değerini manuel olarak ayarlayın.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-6 text-center text-slate-600 text-xs border-t border-slate-800/80">
+        &copy; 2026 BLC Ajans. Tüm hakları saklıdır.
+    </footer>
+</body>
+</html>

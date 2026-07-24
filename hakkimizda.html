@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | BLC Ajans Zonguldak Ereğli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0b0f19; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.035; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <div class="bg-watermark"></div>
+
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html">
+                <img src="blcajans.png" alt="Logo" class="h-14 w-auto object-contain">
+            </a>
+            <div class="flex items-center gap-6">
+                <span class="hidden lg:inline-block text-xs text-slate-400">📍 Zonguldak Ereğli / Türkiye</span>
+                <nav class="hidden md:flex items-center gap-6 text-xs font-semibold">
+                    <a href="index.html" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="hakkimizda.html" class="text-amber-400 hover:text-amber-300 transition-all">Hakkımızda</a>
+                    <a href="hizmetler.html" class="text-slate-300 hover:text-amber-400 transition-all">Hizmetler</a>
+                    <a href="blog.html" class="text-slate-300 hover:text-amber-400 transition-all">Blog</a>
+                    <a href="yorumlar.html" class="text-slate-300 hover:text-amber-400 transition-all">Yorumlar</a>
+                    <a href="iletisim.html" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2 rounded-xl transition-all font-bold">İletişim</a>
+                </nav>
+            </div>
+            <a href="index.html" class="md:hidden text-xs text-amber-400 font-bold">← Ana Sayfa</a>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl space-y-6">
+            <h1 class="text-3xl sm:text-4xl font-black text-white">Kurumsal Vizyonumuz & Ekibimiz</h1>
+            <p class="text-slate-300 text-base leading-relaxed">
+                Zonguldak Ereğli merkezli BLC Ajans; profesyonel fotoğrafçılık, sinematik düğün belgeselleri, dış mekan çekimleri ve kurumsal medya prodüksiyon alanlarında yüksek standartlarda hizmet sunan öncü bir ajanstır. Kurulduğumuz günden bu yana her projeye ayrı bir sanat eseri gözüyle yaklaşıyoruz.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Zonguldak Ereğli ve çevresindeki estetik mekanlarda, en son nesil kamera ve aydınlatma ekipmanlarıyla kusursuz sonuçlar üreterek markanızı ve hatıralarınızı geleceğe taşıyoruz.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                <div class="text-center p-4 bg-slate-950/50 rounded-2xl border border-slate-800/60">
+                    <div class="text-2xl font-black text-amber-400 mb-1">100%</div>
+                    <div class="text-xs text-slate-400">Müşteri Memnuniyeti</div>
+                </div>
+                <div class="text-center p-4 bg-slate-950/50 rounded-2xl border border-slate-800/60">
+                    <div class="text-2xl font-black text-amber-400 mb-1">4K/8K</div>
+                    <div class="text-xs text-slate-400">Sinematik Çözünürlük</div>
+                </div>
+                <div class="text-center p-4 bg-slate-950/50 rounded-2xl border border-slate-800/60">
+                    <div class="text-2xl font-black text-amber-400 mb-1">Ereğli / Merkez</div>
+                    <div class="text-xs text-slate-400">Stüdyo Konumu</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-6 text-center text-slate-600 text-xs border-t border-slate-800/80">
+        &copy; 2026 BLC Ajans • Zonguldak Ereğli, Tüm hakları saklıdır.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | BLC Ajans Zonguldak Ereğli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0b0f19; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.035; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <div class="bg-watermark"></div>
+
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html">
+                <img src="blcajans.png" alt="Logo" class="h-14 w-auto object-contain">
+            </a>
+            <div class="flex items-center gap-6">
+                <span class="hidden lg:inline-block text-xs text-slate-400">📍 Zonguldak Ereğli / Türkiye</span>
+                <nav class="hidden md:flex items-center gap-6 text-xs font-semibold">
+                    <a href="index.html" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="hakkimizda.html" class="text-slate-300 hover:text-amber-400 transition-all">Hakkımızda</a>
+                    <a href="hizmetler.html" class="text-slate-300 hover:text-amber-400 transition-all">Hizmetler</a>
+                    <a href="blog.html" class="text-slate-300 hover:text-amber-400 transition-all">Blog</a>
+                    <a href="yorumlar.html" class="text-slate-300 hover:text-amber-400 transition-all">Yorumlar</a>
+                    <a href="iletisim.html" class="bg-amber-500 text-slate-950 px-4 py-2 rounded-xl transition-all font-bold">İletişim</a>
+                </nav>
+            </div>
+            <a href="index.html" class="md:hidden text-xs text-amber-400 font-bold">← Ana Sayfa</a>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-black mb-4 text-white">İletişime Geçin</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Zonguldak Ereğli ve çevresindeki düğün çekimleri, dış mekan randevuları ve kurumsal teklifleriniz için formu doldurabilirsiniz. Formu gönderdiğinizde doğrudan WhatsApp hattımıza bağlanacaksınız.
+                    </p>
+                    <div class="space-y-3 text-sm text-slate-300">
+                        <div>📍 Zonguldak Ereğli / Türkiye</div>
+                        <div>📞 +90 (539) 343 74 99</div>
+                        <div>✉️ iletişim@blcajans.com</div>
+                    </div>
+                </div>
+                <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-6">
+                    <form id="whatsappForm" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1">Adınız Soyadınız</label>
+                            <input type="text" id="adSoyad" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1">Telefon Numaranız</label>
+                            <input type="text" id="telefon" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1">Hizmet Türü (Düğün, Dış Çekim, Kurumsal vb.)</label>
+                            <input type="text" id="hizmetTuru" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1">Çekim Nerede Olacak? (Yer / Mekan)</label>
+                            <input type="text" id="cekimYeri" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-amber-500" placeholder="Örn: Ereğli Sahil / Stüdyo / Belirtilen Salon">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 mb-1">Mesajınız / Detaylar</label>
+                            <textarea id="mesajDetay" rows="2" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition-all shadow-lg shadow-amber-500/20">
+                            WhatsApp ile Gönder 🚀
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-6 text-center text-slate-600 text-xs border-t border-slate-800/80">
+        &copy; 2026 BLC Ajans • Zonguldak Ereğli, Tüm hakları saklıdır.
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const adSoyad = document.getElementById('adSoyad').value;
+            const telefon = document.getElementById('telefon').value;
+            const hizmetTuru = document.getElementById('hizmetTuru').value;
+            const cekimYeri = document.getElementById('cekimYeri').value;
+            const mesajDetay = document.getElementById('mesajDetay').value;
+
+            const phoneNumber = "905393437499";
+            const text = `Merhaba, BLC Ajans (Zonguldak Ereğli) üzerinden yeni bir randevu/teklif talebi alındı:\n\n*Ad Soyad:* ${adSoyad}\n*Telefon:* ${telefon}\n*Hizmet Türü:* ${hizmetTuru}\n*Çekim Yeri:* ${cekimYeri}\n*Mesaj:* ${mesajDetay}`;
+            const encodedText = encodeURIComponent(text);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+            
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
