@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLC Ajans | Zonguldak Ereğli Profesyonel Kurumsal Medya & Prodüksiyon</title>
-    <!-- Sekmede logo görünmesi için favicon tanımı eklendi -->
-    <link rel="icon" type="image/png" href="blcajans.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="blcajans.png">
     <style>
         body { background-color: #0b0f19; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; position: relative; }
         .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.035; z-index: -1; pointer-events: none; }
@@ -15,12 +14,30 @@
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
     <div class="bg-watermark"></div>
 
+    <!-- ÜST MENÜ / NAVBAR -->
+    <header class="w-full max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="blcajans.png" alt="BLC Ajans Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+            <span class="font-bold text-lg tracking-wider text-white">BLC AJANS</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+            <a href="index.html" class="text-amber-400 transition-colors">Ana Sayfa</a>
+            <a href="hizmetler.html" class="hover:text-amber-400 transition-colors">Hizmetler</a>
+            <a href="blog.html" class="hover:text-amber-400 transition-colors">Blog</a>
+            <a href="yorumlar.html" class="hover:text-amber-400 transition-colors">Yorumlar</a>
+            <a href="iletisim.html" class="hover:text-amber-400 transition-colors">İletişim</a>
+        </nav>
+        <a href="iletisim.html" class="bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-slate-950 border border-amber-500/30 px-4 py-2 rounded-full text-xs font-semibold transition-all">
+            Teklif Al
+        </a>
+    </header>
+
     <!-- ANA ORTA KARŞILAMA ALANI -->
-    <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 text-center max-w-6xl mx-auto w-full">
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-8 text-center max-w-6xl mx-auto w-full">
         
         <!-- Logo -->
-        <div class="mb-10 flex flex-col items-center group">
-            <img src="blcajans.png" alt="BLC Ajans Logo" class="h-40 sm:h-52 md:h-60 w-auto object-contain drop-shadow-[0_15px_40px_rgba(245,158,11,0.35)] transition-transform duration-500 hover:scale-105">
+        <div class="mb-8 flex flex-col items-center group">
+            <img src="blcajans.png" alt="BLC Ajans Logo" class="h-36 sm:h-48 md:h-56 w-auto object-contain drop-shadow-[0_15px_40px_rgba(245,158,11,0.35)] transition-transform duration-500 hover:scale-105">
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-black mb-4 text-white tracking-tight">Sinematik Vizyon, Profesyonel Dokunuş</h1>
@@ -83,7 +100,7 @@
 
     <!-- Alt Bilgi -->
     <footer class="py-6 text-center text-slate-600 text-xs border-t border-slate-800/80">
-        &copy; 2026 BLC Ajans •  Tüm hakları saklıdır.
+        &copy; 2026 BLC Ajans • Zonguldak Ereğli, Tüm hakları saklıdır.
     </footer>
 
 </body>
