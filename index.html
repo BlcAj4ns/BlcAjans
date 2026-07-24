@@ -1,172 +1,325 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLC Ajans - Fotoğrafçılık & Portfolyo</title>
-    <!-- Tailwind CSS CDN -->
+    <title>BlcAjans | Profesyonel Fotoğrafçılık & Medya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #f8fafc;
+            font-family: system-ui, -apple-system, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Arka planda tek, büyük ve ortalanmış logo filigranı (Hem PC hem Mobilde şık durur) */
+        .bg-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(80vw, 700px);
+            height: min(80vw, 700px);
+            background-image: url('blcajans.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.035;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col font-sans">
+<body class="min-h-screen flex flex-col justify-between">
 
-    <!-- Üst İletişim & Sosyal Bar -->
-    <div class="bg-zinc-900 border-b border-zinc-800 text-xs py-2 px-6 flex justify-between items-center text-zinc-400">
-        <div>📞 +90 (539) 543 74 99 &nbsp;|&nbsp; ✉️ blcajans@blcajans.com</div>
-        <div class="hidden md:flex gap-4">
-            <a href="#" class="hover:text-white transition">Instagram</a>
-            <a href="#" class="hover:text-white transition">YouTube</a>
-            <a href="#" class="hover:text-white transition">Behance</a>
+    <!-- Tek ve Büyük Arka Plan Filigranı -->
+    <div class="bg-watermark"></div>
+
+    <!-- Üst Bilgi Çubuğu -->
+    <div class="bg-slate-900 border-b border-slate-800 text-slate-400 text-xs py-2 px-4 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <span>📞 +90 (539) 543 74 99</span>
+                <span>✉️ blcajans@blcajans.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-amber-400 font-medium">Profesyonel Fotoğrafçılık & Kurumsal Çözümler</span>
+            </div>
         </div>
     </div>
 
-    <!-- Navigasyon / Header (Metin yerine Büyük Logo Alanı) -->
-    <header class="bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
-        <!-- Logo Alanı -->
-        <div class="flex items-center space-x-2">
-            <div class="bg-blue-600 text-white font-black px-3 py-1.5 rounded-lg text-lg tracking-wider shadow-lg shadow-blue-600/30">
-                BLC <span class="text-zinc-200 font-light text-sm">FOTO</span>
+    <!-- Üst Menü (Header) -->
+    <header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Sol Üst Logo (Büyük Başlık Hali) -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="blcajans.png" alt="BlcAjans Logo" class="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_4px_12px_rgba(245,158,11,0.25)]">
+            </a>
+
+            <!-- Navigasyon (Masaüstü) -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#" class="hover:text-amber-400 transition-colors">ANA SAYFA</a>
+                <a href="#" class="hover:text-amber-400 transition-colors">KURUMSAL</a>
+                <a href="#hizmetler" class="hover:text-amber-400 transition-colors">HİZMETLERİMİZ</a>
+                <a href="#galeri" class="hover:text-amber-400 transition-colors">PORTFÖY / GALERİ</a>
+                <a href="#iletisim" class="hover:text-amber-400 transition-colors">İLETİŞİM</a>
+            </nav>
+
+            <!-- Aksiyon Butonu -->
+            <div>
+                <a href="#iletisim" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20">
+                    Teklif Alın
+                </a>
             </div>
         </div>
-        
-        <!-- Menü Linkleri (Tıklandığında ilgili bölüme/sayfaya gider) -->
-        <nav class="hidden md:flex space-x-8 text-sm font-medium text-zinc-300">
-            <a href="#anasayfa" class="hover:text-blue-400 transition">Ana Sayfa</a>
-            <a href="#portfolyo" class="hover:text-blue-400 transition">Portfolyo (Galeri)</a>
-            <a href="#hizmetler" class="hover:text-blue-400 transition">Hizmetler & Paketler</a>
-            <a href="#hakkimizda" class="hover:text-blue-400 transition">Hakkımda</a>
-            <a href="#iletisim" class="hover:text-blue-400 transition">İletişim</a>
-        </nav>
-        
-        <!-- Mobil Menü Butonu -->
-        <button id="menuBtn" class="md:hidden bg-zinc-800 p-2 rounded text-zinc-200">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
     </header>
 
-    <!-- Mobil Açılır Menü (Gizli Başlar) -->
-    <div id="mobileMenu" class="hidden bg-zinc-900 border-b border-zinc-800 px-6 py-4 flex flex-col space-y-3 md:hidden text-sm">
-        <a href="#anasayfa" class="hover:text-blue-400">Ana Sayfa</a>
-        <a href="#portfolyo" class="hover:text-blue-400">Portfolyo (Galeri)</a>
-        <a href="#hizmetler" class="hover:text-blue-400">Hizmetler & Paketler</a>
-        <a href="#hakkimizda" class="hover:text-blue-400">Hakkımda</a>
-        <a href="#iletisim" class="hover:text-blue-400">İletişim</a>
-    </div>
-
-    <!-- Ana İçerik / Büyük Arka Plan Logolu Hero Bölümü -->
-    <section id="anasayfa" class="relative flex-1 flex items-center justify-center text-center px-6 py-28 overflow-hidden bg-zinc-950">
-        <!-- Büyük Arka Plan Logosu (Filigran Efekti) -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-5">
-            <span class="text-[18vw] font-black tracking-tighter text-white">BLC</span>
-        </div>
-
-        <div class="relative z-10 max-w-3xl space-y-6">
-            <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs px-3 py-1 rounded-full font-medium">Profesyonel Fotoğrafçılık & Prodüksiyon</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">Anılarınızı Sanata Dönüştürüyoruz</h1>
-            <p class="text-zinc-400 text-base md:text-lg max-w-xl mx-auto">Düğün, moda, ürün çekimleri ve kurumsal projeleriniz için profesyonel kareler.</p>
-            <div class="flex justify-center gap-4 pt-4">
-                <a href="#portfolyo" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg text-sm font-medium transition shadow-lg shadow-blue-600/20">Çalışmalarımı İncele</a>
-                <a href="#iletisim" class="bg-zinc-800 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg text-sm font-medium transition">Teklif Al</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolyo / Galeri Bölümü -->
-    <section id="portfolyo" class="py-20 px-6 max-w-7xl mx-auto w-full">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-white mb-2">Fotoğraf Galerisi</h2>
-            <p class="text-zinc-400 text-sm">En son gerçekleştirdiğimiz çekimlerden seçmeler.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div class="bg-zinc-900 border border-zinc-800 h-64 rounded-xl flex items-center justify-center text-zinc-500 overflow-hidden relative group">
-                <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-                    <span class="text-white text-sm font-medium">Kurumsal & Ürün Çekimi</span>
+    <!-- Ana İçerik Alanı -->
+    <main class="flex-grow w-full">
+        
+        <!-- Hero / Karşılama Bölümü -->
+        <section class="relative py-16 md:py-32 border-b border-slate-800/80 overflow-hidden bg-gradient-to-b from-slate-900/50 to-transparent">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="flex flex-col items-start z-10 text-center lg:text-left">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                        Anılarınızı ve Ürünlerinizi <span class="bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Sanata Dönüştürüyoruz</span>
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
+                        Düğün, ürün, moda ve kurumsal çekimlerde profesyonel bakış açımızla en özel kareleri ölümsüzleştiriyor, markanızı zirveye taşıyoruz.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start w-full">
+                        <a href="#galeri" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-amber-500/20 text-sm sm:text-base">
+                            Galeriyi İncele
+                        </a>
+                        <a href="#hizmetler" class="border border-slate-700 hover:border-amber-500 text-slate-300 hover:text-amber-400 font-semibold px-6 py-3 rounded-xl transition-all text-sm sm:text-base">
+                            Hizmetlerimiz
+                        </a>
+                    </div>
                 </div>
-                <span>[Görsel 1: Ürün Çekimi]</span>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 h-64 rounded-xl flex items-center justify-center text-zinc-500 overflow-hidden relative group">
-                <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-                    <span class="text-white text-sm font-medium">Düğün & Dış Çekim</span>
-                </div>
-                <span>[Görsel 2: Dış Çekim]</span>
-            </div>
-            <div class="bg-zinc-900 border border-zinc-800 h-64 rounded-xl flex items-center justify-center text-zinc-500 overflow-hidden relative group">
-                <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-                    <span class="text-white text-sm font-medium">Moda & Portre</span>
-                </div>
-                <span>[Görsel 3: Portre]</span>
-            </div>
-        </div>
-    </section>
 
-    <!-- Hizmetler / Paketler -->
-    <section id="hizmetler" class="py-20 px-6 bg-zinc-900/50 border-t border-b border-zinc-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-2">Hizmet Alanlarımız</h2>
-                <p class="text-zinc-400 text-sm">İhtiyacınıza uygun profesyonel çekim paketleri.</p>
+                <!-- Sağ Taraf: Vitrin Görsel Alanı -->
+                <div class="relative flex justify-center items-center">
+                    <div class="absolute w-64 h-64 sm:w-72 sm:h-72 bg-amber-500/10 rounded-full blur-3xl -z-10"></div>
+                    <div class="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent pointer-events-none"></div>
+                        <img src="blcajans.png" alt="BlcAjans Büyük Logo" class="w-full h-48 sm:h-64 object-contain filter drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 p-4">
+                        <div class="mt-6 text-center border-t border-slate-800/80 pt-4">
+                            <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold">Profesyonel Fotoğrafçılık Stüdyosu</span>
+                            <p class="text-slate-400 text-sm mt-1">Stüdyo, Dış Çekim & Ürün Çekimi</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </section>
+
+        <!-- Özellikler / Güvence Kutuları -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 relative z-20 mb-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-6 shadow-xl backdrop-blur-md hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                        📸
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-200">Yüksek Çözünürlük</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">En son teknoloji kamera ve lens ekipmanlarıyla kusursuz netlik.</p>
+                </div>
+
+                <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-6 shadow-xl backdrop-blur-md hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                        ⚡
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-200">Hızlı Teslimat</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Özenle düzenlenen seçki fotoğraflarınız taahhüt edilen sürede teslim edilir.</p>
+                </div>
+
+                <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-6 shadow-xl backdrop-blur-md hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                        ✨
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-200">Özel Konseptler</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Markanıza veya özel gününüze hitap eden özgün sahne ve ışık tasarımları.</p>
+                </div>
+
+                <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-6 shadow-xl backdrop-blur-md hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                        🎯
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-200">Müşteri Memnuniyeti</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Çekim esnasında ve sonrasında beklentilerinizi tam karşılayan profesyonel destek.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Hizmetlerimiz Bölümü -->
+        <section id="hizmetler" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-amber-400 text-sm font-bold uppercase tracking-wider">Uzmanlık Alanlarımız</span>
+                <h2 class="text-3xl font-extrabold mt-2">Fotoğrafçılık ve Medya Hizmetleri</h2>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl space-y-4">
-                    <h3 class="text-xl font-semibold text-white">Stüdyo & Ürün</h3>
-                    <p class="text-zinc-400 text-sm">E-ticaret ve katalog çekimleriniz için profesyonel aydınlatma ve 4K detay çözünürlüğü.</p>
+                
+                <!-- Hizmet 1 -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden group hover:border-amber-500/60 transition-all flex flex-col justify-between">
+                    <div class="h-56 bg-slate-950 relative overflow-hidden flex items-center justify-center p-8">
+                        <img src="blcajans.png" alt="BlcAjans" class="w-full h-full object-contain opacity-30 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-4 left-4 bg-amber-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">Stüdyo & Düğün</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-200 group-hover:text-amber-400 transition-colors">Düğün & Özel Gün Çekimleri</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            En mutlu günlerinizin hikayesini sinematik ve zamansız karelerle ölümsüzleştiriyoruz.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl space-y-4 border-blue-500/50 shadow-xl">
-                    <span class="bg-blue-500/20 text-blue-400 text-[10px] px-2.5 py-1 rounded-full uppercase font-bold tracking-wider">Popüler</span>
-                    <h3 class="text-xl font-semibold text-white">Dış Çekim & Düğün</h3>
-                    <p class="text-zinc-400 text-sm">En özel gününüzü sinematik açılar ve profesyonel renk düzenlemeleriyle ölümsüzleştirin.</p>
+
+                <!-- Hizmet 2 -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden group hover:border-amber-500/60 transition-all flex flex-col justify-between">
+                    <div class="h-56 bg-slate-950 relative overflow-hidden flex items-center justify-center p-8">
+                        <img src="blcajans.png" alt="BlcAjans" class="w-full h-full object-contain opacity-30 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-4 left-4 bg-amber-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">E-Ticaret</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-200 group-hover:text-amber-400 transition-colors">Ürün & Reklam Çekimleri</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Ürünlerinizin detaylarını en çekici şekilde sergileyerek satışlarınızı ve marka değerinizi artırın.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl space-y-4">
-                    <h3 class="text-xl font-semibold text-white">Kurumsal Tanıtım</h3>
-                    <p class="text-zinc-400 text-sm">Fabrika, ofis ve çalışan portreleriyle kurumsal kimliğinizi en iyi şekilde yansıtın.</p>
+
+                <!-- Hizmet 3 -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden group hover:border-amber-500/60 transition-all flex flex-col justify-between">
+                    <div class="h-56 bg-slate-950 relative overflow-hidden flex items-center justify-center p-8">
+                        <img src="blcajans.png" alt="BlcAjans" class="w-full h-full object-contain opacity-30 group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-4 left-4 bg-amber-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">Kurumsal</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-200 group-hover:text-amber-400 transition-colors">Kurumsal Kimlik & Mekan</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Ofisiniz, tesisleriniz ve ekibiniz için profesyonel kurumsal tanıtım fotoğrafları ve katalog çekimleri.
+                        </p>
+                    </div>
                 </div>
+
+            </div>
+        </section>
+
+        <!-- Portföy / Galeri Bölümü -->
+        <section id="galeri" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/80 mt-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                <div>
+                    <span class="text-amber-400 text-sm font-bold uppercase tracking-wider">Seçkin Çalışmalarımız</span>
+                    <h2 class="text-3xl font-extrabold mt-1">Portföy / Fotoğraf Galerisi</h2>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold">Tümü</span>
+                    <span class="text-xs px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:border-amber-500 transition-colors cursor-pointer">Düğün</span>
+                    <span class="text-xs px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:border-amber-500 transition-colors cursor-pointer">Ürün</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Galeri Öğesi 1 -->
+                <div class="h-72 bg-slate-900/90 border border-slate-800 rounded-2xl relative overflow-hidden group flex items-center justify-center p-6">
+                    <img src="blcajans.png" alt="BlcAjans" class="w-full h-full object-contain opacity-25 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-amber-400 text-xs font-bold uppercase">Düğün Hikayesi</span>
+                        <h4 class="text-lg font-bold text-white">Doğa Konseptli Dış Çekim</h4>
+                    </div>
+                </div>
+                <!-- Galeri Öğesi 2 -->
+                <div class="h-72 bg-slate-900/90 border border-slate-800 rounded-2xl relative overflow-hidden group flex items-center justify-center p-6">
+                    <img src="blcajans.png" alt="BlcAjans" class="w-full h-full object-contain opacity-25 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-amber-400 text-xs font-bold uppercase">Ürün Fotoğrafçılığı</span>
+                        <h4 class="text-lg font-bold text-white">Özel Tasarım Takı Çekimi</h4>
+                    </div>
+                </div>
+                <!-- Galeri Öğesi 3 -->
+                <div class="h-72 bg-slate-900/90 border border-slate-800 rounded-2xl relative overflow-hidden group flex items-center justify-center p-6">
+                    <img src="blcajans.png" alt="BlcAjans" class="w-full h-full object-contain opacity-25 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-amber-400 text-xs font-bold uppercase">Kurumsal Mekan</span>
+                        <h4 class="text-lg font-bold text-white">Mimari & Ofis Çekimleri</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- İletişim / Teklif Alanı -->
+        <section id="iletisim" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-amber-400 text-sm font-bold uppercase tracking-wider">İletişime Geçin</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 mb-4">Bir Sonraki Projenizi Konuşalım</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Çekim paketleri, stüdyo randevuları ve fiyat teklifleri hakkında bilgi almak için formu doldurun veya doğrudan bizimle iletişime geçin.
+                        </p>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <div class="flex items-center gap-3">
+                                <span class="text-amber-400">📍</span> Stüdyo Merkez / Türkiye
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-amber-400">📞</span> +90 (539) 543 74 99
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-amber-400">✉️</span> blcajans@blcajans.com
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/90 border border-slate-800 rounded-2xl p-6 backdrop-blur-md">
+                        <form class="space-y-4" onsubmit="event.preventDefault();">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 mb-1">Adınız Soyadınız</label>
+                                <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Adınız">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 mb-1">Telefon Numaranız</label>
+                                <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="0539...">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 mb-1">Hizmet Türü</label>
+                                <select class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors">
+                                    <option>Düğün / Özel Gün Fotoğrafçılığı</option>
+                                    <option>Ürün & E-Ticaret Çekimi</option>
+                                    <option>Kurumsal / Mekan Çekimi</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition-all shadow-lg shadow-amber-500/20 mt-2">
+                                Randevu / Teklif İste
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Alt Alan (Footer) -->
+    <footer class="border-t border-slate-800 bg-slate-950 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="flex items-center gap-3 justify-center">
+                <img src="blcajans.png" alt="BlcAjans Logo" class="h-8 w-auto object-contain">
+                <span class="text-slate-500 text-sm">&copy; 2026 BlcAjans. Tüm hakları saklıdır.</span>
+            </div>
+            <div class="flex gap-6 text-sm text-slate-400">
+                <a href="#" class="hover:text-amber-400 transition-colors">Gizlilik Politikası</a>
+                <a href="#" class="hover:text-amber-400 transition-colors">Çerez Politikası</a>
+                <a href="#" class="hover:text-amber-400 transition-colors">İletişim</a>
             </div>
         </div>
-    </section>
-
-    <!-- Hakkımda Bölümü -->
-    <section id="hakkimizda" class="py-20 px-6 max-w-4xl mx-auto text-center space-y-4">
-        <h2 class="text-3xl font-bold text-white">Hakkımda</h2>
-        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl mx-auto">
-            Yılların verdiği deneyimle ışığı ve kompozisyonu en estetik şekilde buluşturuyoruz. Her karenin bir hikayesi olduğuna inanıyor, en özel anlarınızı kalıcı anılara dönüştürüyoruz.
-        </p>
-    </section>
-
-    <!-- İletişim Bölümü -->
-    <section id="iletisim" class="py-20 px-6 max-w-4xl mx-auto w-full">
-        <div class="bg-zinc-900 border border-zinc-800 p-8 md:p-12 rounded-2xl space-y-6">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold text-white mb-2">İletişime Geçin</h2>
-                <p class="text-zinc-400 text-sm">Rezervasyon veya fiyat teklifi almak için doğrudan bize yazın.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center pt-4">
-                <div class="space-y-1">
-                    <p class="text-xs text-zinc-500">Telefon</p>
-                    <p class="text-sm text-blue-400 font-medium">+90 (539) 543 74 99</p>
-                </div>
-                <div class="space-y-1">
-                    <p class="text-xs text-zinc-500">E-Posta</p>
-                    <p class="text-sm text-blue-400 font-medium">blcajans@blcajans.com</p>
-                </div>
-                <div class="space-y-1">
-                    <p class="text-xs text-zinc-500">Konum</p>
-                    <p class="text-sm text-zinc-300">Zonguldak / Kdz. Ereğli</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-zinc-950 border-t border-zinc-800 py-8 px-6 text-center text-xs text-zinc-500">
-        <p>&copy; 2026 BLC Ajans. Tüm hakları saklıdır. Telefon: <span class="text-zinc-400">+90 (539) 543 74 99</span> | E-Posta: <span class="text-zinc-400">blcajans@blcajans.com</span></p>
     </footer>
 
-    <!-- Mobil Menü Kontrol Scripti -->
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
