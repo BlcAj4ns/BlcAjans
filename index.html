@@ -67,16 +67,14 @@
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
     <div class="bg-watermark"></div>
 
-    <!-- HEADER / NET VE BÜYÜTÜLMÜŞ LOGO -->
+    <!-- HEADER -->
     <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
             
-            <!-- LOGO ALANI -->
             <a href="/" class="group flex items-center py-1">
                 <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
             </a>
 
-            <!-- Masaüstü Navigasyon -->
             <div class="hidden lg:flex items-center gap-6">
                 <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
                     <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
@@ -91,13 +89,11 @@
                 </nav>
             </div>
 
-            <!-- Mobil Menü Butonu -->
             <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
                 <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <!-- Mobil Menü -->
         <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
             <a href="/" class="block text-amber-400 font-bold text-xs">Ana Sayfa</a>
             <a href="/hakkimizda" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Hakkımızda</a>
@@ -107,16 +103,13 @@
         </div>
     </header>
 
-    <!-- BANNER (HERO SECTION - MAKSİMUM BOYUT & OKUNABİLİRLİK) -->
+    <!-- BANNER -->
     <section class="relative py-8 sm:py-12 px-2 sm:px-6 text-center border-b border-slate-800/60 bg-gradient-to-b from-slate-900/50 via-transparent to-transparent">
         <div class="max-w-7xl mx-auto space-y-8">
-            
-            <!-- MAKSİMUM BÜYÜKLÜKTE BANNER GÖRSELİ -->
             <div class="w-full flex justify-center">
                 <img src="/banner.png" alt="BLC Ajans Banner" class="w-full max-w-7xl h-auto object-contain drop-shadow-[0_0_45px_rgba(245,158,11,0.3)] rounded-3xl border border-slate-800/50">
             </div>
             
-            <!-- HERO AÇIKLAMA KUTUSU -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-5 bg-slate-900/90 p-5 sm:p-7 rounded-2xl border border-slate-800 max-w-4xl mx-auto backdrop-blur-md shadow-2xl">
                 <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-14 sm:h-20 w-auto object-contain flex-shrink-0 drop-shadow-[0_0_20px_rgba(245,158,11,0.35)]">
                 <p class="text-slate-100 text-sm sm:text-base md:text-lg font-medium text-center sm:text-left leading-relaxed tracking-wide">
@@ -126,7 +119,7 @@
         </div>
     </section>
 
-    <!-- CANLI İSTATİSTİK BANTI -->
+    <!-- İSTATİSTİK BANTI -->
     <section class="border-y border-slate-800 bg-slate-900/40 py-6 backdrop-blur-md">
         <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div class="p-2 md:border-r border-slate-800">
@@ -150,7 +143,6 @@
             <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Hizmetlerimiz</h2>
         </div>
 
-        <!-- Kutucuk Butonları -->
         <div class="flex sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-8 sm:mb-10 overflow-x-auto no-scrollbar pb-2 sm:pb-0">
             <button onclick="switchTab('dugun')" id="btn-dugun" class="tab-btn active flex-shrink-0 min-w-[140px] sm:min-w-0 border border-slate-800 bg-slate-900/80 hover:border-amber-400/50 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all cursor-pointer backdrop-blur-md">
                 <span class="text-3xl">💍</span>
@@ -178,7 +170,6 @@
             </button>
         </div>
 
-        <!-- SEKMELERİN İÇERİK ALANLARI -->
         <div id="tab-contents" class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl relative overflow-hidden">
             
             <img src="/blcajans.png" alt="BLC Logo" class="absolute -bottom-10 -right-10 w-48 h-48 opacity-[0.04] pointer-events-none">
@@ -199,30 +190,46 @@
 
                 <div id="subcontent-discekim" class="sub-tab-content fade-in">
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                        <div id="home-slot-1" class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
-                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">📷</span>
-                            <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 1</span>
+                        <!-- Buraya kendi görsel yollarınızı (örn: images/foto1.jpg) yazabilirsiniz -->
+                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <img src="images/discekim1.jpg" alt="Dış Çekim 1" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4" style="display:none;">
+                                <span class="text-4xl mb-2">📷</span>
+                                <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 1</span>
+                            </div>
                         </div>
-                        <div id="home-slot-2" class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
-                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">📸</span>
-                            <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 2</span>
+                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <img src="images/discekim2.jpg" alt="Dış Çekim 2" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4" style="display:none;">
+                                <span class="text-4xl mb-2">📸</span>
+                                <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 2</span>
+                            </div>
                         </div>
-                        <div id="home-slot-3" class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
-                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">✨</span>
-                            <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 3</span>
+                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <img src="images/discekim3.jpg" alt="Dış Çekim 3" class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4" style="display:none;">
+                                <span class="text-4xl mb-2">✨</span>
+                                <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 3</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div id="subcontent-hikaye" class="sub-tab-content hidden fade-in">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div id="home-slot-4" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
-                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎥</span>
-                            <span class="text-xs text-amber-400 font-bold">Sinematik Düğün Hikayesi</span>
+                        <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <video src="images/dugun_hikayesi.mp4" controls autoplay loop muted class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4" style="display:none;">
+                                <span class="text-4xl mb-2">🎥</span>
+                                <span class="text-xs text-amber-400 font-bold">Sinematik Düğün Hikayesi</span>
+                            </div>
                         </div>
-                        <div id="home-slot-5" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
-                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🛸</span>
-                            <span class="text-xs text-amber-400 font-bold">Drone Çekimleri</span>
+                        <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <video src="images/drone_cekim.mp4" controls autoplay loop muted class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4" style="display:none;">
+                                <span class="text-4xl mb-2">🛸</span>
+                                <span class="text-xs text-amber-400 font-bold">Drone Çekimleri</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -237,14 +244,20 @@
                     </div>
                 </div>
 
-                <div id="tanitimGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div id="home-slot-6" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
-                        <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🏢</span>
-                        <span class="text-xs text-amber-400 font-bold">Fabrika & Mekan Tanıtımı</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <video src="images/fabrika_tanitim.mp4" controls autoplay loop muted class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center p-4" style="display:none;">
+                            <span class="text-4xl mb-2">🏢</span>
+                            <span class="text-xs text-amber-400 font-bold">Fabrika & Mekan Tanıtımı</span>
+                        </div>
                     </div>
-                    <div id="home-slot-7" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
-                        <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎬</span>
-                        <span class="text-xs text-amber-400 font-bold">Reklam Filmi Prodüksiyonu</span>
+                    <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <video src="images/reklam_filmi.mp4" controls autoplay loop muted class="w-full h-full object-cover rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center p-4" style="display:none;">
+                            <span class="text-4xl mb-2">🎬</span>
+                            <span class="text-xs text-amber-400 font-bold">Reklam Filmi Prodüksiyonu</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -273,7 +286,6 @@
                     <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">Web Site Kurulum & Yazılım Çözümleri</h3>
                 </div>
 
-                <!-- Öne Çıkan Özellik Kartları -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/40 transition-all">
                         <span class="text-2xl mb-2">🚀</span>
@@ -305,7 +317,6 @@
                     </div>
                 </div>
 
-                <!-- Detaylı Metin Bloğu -->
                 <div class="bg-slate-950/50 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-5 text-slate-300 leading-relaxed shadow-inner">
                     <p class="text-sm sm:text-base font-normal">
                         Günümüz dijital dünyasında güçlü bir web sitesi, markanızın güvenilirliğini artıran ve müşterilerinizle etkili iletişim kurmanızı sağlayan en önemli araçlardan biridir. İhtiyaçlarınıza ve hedef kitlenize uygun, modern tasarım anlayışıyla hazırlanan web siteleri; hızlı, güvenli ve mobil uyumlu yapılarıyla kullanıcı deneyimini en üst seviyeye taşır.
@@ -313,12 +324,6 @@
                     <p class="text-sm sm:text-base font-normal text-slate-400">
                         Web site kurulumu sürecinde alan adı (domain) tescili, hosting hizmeti, kullanıcı dostu arayüz tasarımı, içerik yönetim sistemi entegrasyonu, SEO altyapısı ve güvenlik optimizasyonları eksiksiz şekilde planlanır. Böylece işletmeniz dijital ortamda profesyonel bir kimlik kazanırken, arama motorlarında daha görünür hale gelir.
                     </p>
-                    <p class="text-sm sm:text-base font-normal text-slate-400">
-                        İhtiyaç duyulan tüm web çözümleri kapsamında kurumsal web siteleri, e-ticaret platformları, kişisel web projeleri ve özel yazılım tabanlı uygulamalar geliştirilir. Ayrıca bakım, güncelleme, performans optimizasyonu, yedekleme ve teknik destek hizmetleriyle web sitenizin kesintisiz ve güvenli bir şekilde çalışması sağlanır.
-                    </p>
-                    <div class="p-4 bg-amber-400/10 border border-amber-400/20 rounded-xl text-amber-300 font-medium text-xs sm:text-sm">
-                        ✨ Her projede hedefimiz; estetik tasarımı, güçlü altyapıyı ve yüksek performansı bir araya getirerek işletmenizin dijital dönüşümüne değer katmak ve sürdürülebilir bir çevrimiçi başarı elde etmenize yardımcı olmaktır.
-                    </div>
                 </div>
             </div>
 
@@ -333,12 +338,8 @@
                     <p class="text-sm sm:text-base font-normal">
                         Markanızın dijital dünyada daha güçlü bir görünürlük kazanması için profesyonel sosyal medya yönetimi hizmeti sunuyoruz. Hedef kitlenize uygun içerikler üreterek etkileşiminizi artırıyor, düzenli paylaşımlar ve stratejik planlamalarla sosyal medya hesaplarınızı aktif ve etkili bir şekilde yönetiyoruz.
                     </p>
-                    <p class="text-sm sm:text-base font-normal text-slate-400">
-                        İhtiyaçlarınıza uygun olarak hazırladığımız <strong class="text-amber-400">4 Reels</strong>, <strong class="text-amber-400">8 Reels</strong> and <strong class="text-amber-400">12 Reels</strong> paketlerimizle farklı bütçe ve içerik ihtiyaçlarına yönelik esnek çözümler sunuyoruz. Tüm paketlerimiz, markanızın dijital varlığını güçlendirmeye ve sürdürülebilir bir sosyal medya stratejisi oluşturmaya yönelik profesyonel hizmet anlayışıyla hazırlanmaktadır.
-                    </p>
                 </div>
 
-                <!-- Reels Paket Kartları -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
                     <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/50 transition-all text-center shadow-lg">
                         <div>
@@ -375,9 +376,6 @@
                 <div class="bg-slate-950/50 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-5 text-slate-300 leading-relaxed shadow-inner">
                     <p class="text-sm sm:text-base font-normal">
                         Tabela, bir işletmenin müşterileriyle kurduğu ilk görsel iletişim aracıdır. Profesyonel bir tabela tasarımı, markanızın kurumsal kimliğini yansıtırken güvenilirlik ve prestij kazandırır. Doğru renk, yazı tipi, malzeme ve aydınlatma kullanımı sayesinde işletmeniz daha dikkat çekici hale gelir ve potansiyel müşteriler tarafından kolayca fark edilir.
-                    </p>
-                    <p class="text-sm sm:text-base font-normal text-slate-400">
-                        İyi tasarlanmış bir tabela yalnızca yönlendirme amacı taşımaz; aynı zamanda marka bilinirliğini artıran, akılda kalıcılığı destekleyen ve işletmenizin profesyonel imajını güçlendiren önemli bir reklam unsurudur. İşletmenizin konumu ve hedef kitlesine uygun olarak hazırlanan özgün tabela tasarımlarıyla markanızı en etkili şekilde yansıtıyor, estetik ve işlevselliği bir araya getiriyoruz.
                     </p>
                 </div>
             </div>
@@ -419,24 +417,6 @@
             document.getElementById('subcontent-' + subTabName).classList.remove('hidden');
             document.getElementById('subbtn-' + subTabName).classList.add('active');
         }
-
-        // Admin panelinden yüklenen medyaları ana sayfaya otomatik yansıtma
-        window.addEventListener('DOMContentLoaded', () => {
-            for (let i = 1; i <= 7; i++) {
-                const saved = localStorage.getItem(`blc_media_${i}`);
-                const targetElement = document.getElementById(`home-slot-${i}`);
-                if (saved && targetElement) {
-                    try {
-                        const parsed = JSON.parse(saved);
-                        if (parsed.type === 'video') {
-                            targetElement.innerHTML = `<video src="${parsed.data}" controls autoplay loop muted class="w-full h-full object-cover rounded-xl"></video>`;
-                        } else {
-                            targetElement.innerHTML = `<img src="${parsed.data}" alt="Medya ${i}" class="w-full h-full object-cover rounded-xl">`;
-                        }
-                    } catch(e) { console.error(e); }
-                }
-            }
-        });
     </script>
 </body>
 </html>
