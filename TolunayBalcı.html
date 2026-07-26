@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
+    <!-- ARAMA MOTORLARINDA ÇIKMAMASI İÇİN ENGELLEYİCİ ETİKET -->
+    <meta name="robots" content="noindex, nofollow">
+    
     <title>Özel Kurucu Alanı | BLC Ajans - Tolunay Balcı</title>
     <meta name="description" content="BLC Ajans kurucu özel alanı.">
     
@@ -106,12 +109,13 @@
             </div>
         </div>
 
-        <!-- 2. ADMIN MEDYA YÖNETİM PANELİ -->
-        <div id="adminView" class="hidden max-w-5xl w-full space-y-8 fade-in">
+        <!-- 2. ADMIN MEDYA YÖNETİM PANELİ (7 KUTU) -->
+        <div id="adminView" class="hidden max-w-6xl w-full space-y-12 fade-in">
+            <!-- Üst Bilgi Barı -->
             <div class="flex flex-col sm:flex-row justify-between items-center bg-slate-900/90 border border-amber-500/30 p-6 rounded-2xl backdrop-blur-xl shadow-2xl gap-4">
                 <div>
                     <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Kurucu Paneli</span>
-                    <h2 class="text-xl font-black text-white">Özel Medya Yönetimi</h2>
+                    <h2 class="text-xl font-black text-white">Özel Medya Yönetimi (Tüm Alanlar)</h2>
                 </div>
                 <div class="flex items-center gap-3">
                     <button onclick="logoutAdmin()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold px-4 py-2.5 rounded-xl transition-all">
@@ -123,29 +127,82 @@
                 </div>
             </div>
 
-            <!-- Medya Kutuları Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="mediaGrid">
-                <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
-                    <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-1">
-                        <span class="text-slate-600 text-xs font-medium">Boş Alan 1</span>
+            <!-- KATEGORİ 1: Düğün Prodüksiyonu (Fotoğraflar) -->
+            <div class="space-y-4 bg-slate-950/40 p-6 rounded-3xl border border-slate-800/80">
+                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2">
+                    <span>📸</span> Düğün Prodüksiyonu (Fotoğraflar)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Slot 1 -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
+                        <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-1">
+                            <span class="text-slate-500 text-xs font-medium text-center px-2">Dış Çekim Fotoğrafı 1</span>
+                        </div>
+                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 1)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
                     </div>
-                    <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 1)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
-                </div>
-
-                <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
-                    <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-2">
-                        <span class="text-slate-600 text-xs font-medium">Boş Alan 2</span>
+                    <!-- Slot 2 -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
+                        <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-2">
+                            <span class="text-slate-500 text-xs font-medium text-center px-2">Dış Çekim Fotoğrafı 2</span>
+                        </div>
+                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 2)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
                     </div>
-                    <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 2)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
-                </div>
-
-                <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
-                    <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-3">
-                        <span class="text-slate-600 text-xs font-medium">Boş Alan 3</span>
+                    <!-- Slot 3 -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
+                        <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-3">
+                            <span class="text-slate-500 text-xs font-medium text-center px-2">Dış Çekim Fotoğrafı 3</span>
+                        </div>
+                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 3)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
                     </div>
-                    <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 3)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
                 </div>
             </div>
+
+            <!-- KATEGORİ 2: Özel Anlar & Anılar (Videolar) -->
+            <div class="space-y-4 bg-slate-950/40 p-6 rounded-3xl border border-slate-800/80">
+                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2">
+                    <span>🎬</span> Özel Anlar & Anılar (Videolar / Klip)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Slot 4 -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
+                        <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-4">
+                            <span class="text-slate-500 text-xs font-medium text-center px-2">Sinematik Düğün Hikayesi</span>
+                        </div>
+                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 4)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                    </div>
+                    <!-- Slot 5 -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
+                        <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-5">
+                            <span class="text-slate-500 text-xs font-medium text-center px-2">Drone Çekimleri</span>
+                        </div>
+                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 5)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- KATEGORİ 3: Profesyonel Prodüksiyon (Kurumsal Filmler) -->
+            <div class="space-y-4 bg-slate-950/40 p-6 rounded-3xl border border-slate-800/80">
+                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2">
+                    <span>🏢</span> Kurumsal Tanıtım Filmleri
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Slot 6 -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
+                        <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-6">
+                            <span class="text-slate-500 text-xs font-medium text-center px-2">Fabrika & Mekan Tanıtımı</span>
+                        </div>
+                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 6)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                    </div>
+                    <!-- Slot 7 -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
+                        <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-7">
+                            <span class="text-slate-500 text-xs font-medium text-center px-2">Reklam Filmi Prodüksiyonu</span>
+                        </div>
+                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 7)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -183,7 +240,7 @@
         </p>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JAVASCRIPT LOGIC (7 Slot Desteği) -->
     <script>
         const correctPassword = "00110011ty";
 
@@ -257,7 +314,7 @@
         }
 
         function loadSavedMedia() {
-            for (let i = 1; i <= 3; i++) {
+            for (let i = 1; i <= 7; i++) {
                 const saved = localStorage.getItem(`blc_media_${i}`);
                 if (saved) {
                     try {
