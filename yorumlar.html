@@ -2,36 +2,90 @@
 <html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SİTE BAŞLIĞI VE GOOGLE ARAMA AÇIKLAMASI -->
     <title>Müşteri Yorumları | BLC Ajans Zonguldak Ereğli</title>
+    <meta name="description" content="Zonguldak Ereğli ve çevresindeki projelerimiz için Google'da yapılan gerçek müşteri deneyimleri ve yorumlar.">
+    
+    <!-- TARAYICI SEKME LOGOSU & FAVICON -->
+    <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/sitelogo.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/blcajans.png">
+    <link rel="apple-touch-icon" href="/blcajans.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0b0f19; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; position: relative; }
-        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.035; z-index: -1; pointer-events: none; }
+        body { 
+            background: #090d16;
+            color: #f1f5f9; 
+            font-family: system-ui, -apple-system, sans-serif; 
+            position: relative; 
+            overflow-x: hidden; 
+        }
+        
+        .bg-watermark { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: min(90vw, 850px); 
+            height: min(90vw, 850px); 
+            background-image: url('/blcajans.png'); 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: contain; 
+            opacity: 0.03; 
+            z-index: -1; 
+            pointer-events: none; 
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
     <div class="bg-watermark"></div>
 
-    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html">
-                <img src="blcajans.png" alt="Logo" class="h-14 w-auto object-contain">
+    <!-- HEADER / MENÜ -->
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
+            
+            <!-- LOGO ALANI -->
+            <a href="/" class="group flex items-center py-1">
+                <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
             </a>
-            <div class="flex items-center gap-6">
-                <span class="hidden lg:inline-block text-xs text-slate-400">📍 Zonguldak Ereğli / Türkiye</span>
-                <nav class="hidden md:flex items-center gap-6 text-xs font-semibold">
-                    <a href="index.html" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
-                    <a href="hakkimizda.html" class="text-slate-300 hover:text-amber-400 transition-all">Hakkımızda</a>
-                    <a href="blog.html" class="text-slate-300 hover:text-amber-400 transition-all">Blog</a>
-                    <a href="yorumlar.html" class="text-amber-400 hover:text-amber-300 transition-all">Yorumlar</a>
-                    <a href="iletisim.html" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2 rounded-xl transition-all font-bold">İletişim</a>
+
+            <!-- Masaüstü Navigasyon -->
+            <div class="hidden lg:flex items-center gap-6">
+                <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    📍 Zonguldak Ereğli / Türkiye
+                </span>
+                <nav class="flex items-center gap-6 text-xs font-bold tracking-wider uppercase">
+                    <a href="/" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="/blog" class="text-slate-300 hover:text-amber-400 transition-all">Blog</a>
+                    <a href="/yorumlar" class="text-amber-400 border-b-2 border-amber-400 pb-0.5">Yorumlar</a>
+                    <a href="/iletisim" class="bg-amber-500 hover:bg-amber-400 text-black px-5 py-2.5 rounded-lg transition-all font-black shadow-lg shadow-amber-500/20 active:scale-95">İletişim</a>
                 </nav>
             </div>
-            <a href="index.html" class="md:hidden text-xs text-amber-400 font-bold">← Ana Sayfa</a>
+
+            <!-- Mobil Menü Butonu / Geri Dönüş -->
+            <div class="flex items-center gap-3 lg:hidden">
+                <a href="/" class="text-xs text-amber-400 font-bold bg-amber-500/10 px-3 py-2 rounded-xl border border-amber-500/20">← Ana Sayfa</a>
+                <button onclick="toggleMobileMenu()" class="p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
+                    <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobil Menü -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
+            <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-bold">Ana Sayfa</a>
+            <a href="/blog" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Blog</a>
+            <a href="/yorumlar" class="block text-amber-400 font-bold text-xs">Yorumlar</a>
+            <a href="/iletisim" class="block text-center bg-amber-400 text-black font-bold py-2.5 rounded-xl text-xs shadow-md">İletişim</a>
         </div>
     </header>
 
+    <!-- İÇERİK ALANI -->
     <main class="flex-grow w-full max-w-6xl mx-auto px-4 py-16">
         <div class="text-center mb-12">
             <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Mutlu Müşteriler & Google Yorumları</h1>
@@ -231,8 +285,24 @@
         </div>
     </main>
 
-    <footer class="py-6 text-center text-slate-600 text-xs border-t border-slate-800/80">
-        &copy; 2026 BLC Ajans • Zonguldak Ereğli, Tüm hakları saklıdır.
+    <!-- FOOTER -->
+    <footer class="py-10 text-center text-slate-400 text-xs border-t border-slate-800/80 bg-slate-950 space-y-3">
+        <div class="flex justify-center items-center gap-2">
+            <img src="/blcajans.png" alt="BLC Logo Footer" class="h-10 w-auto filter drop-shadow">
+        </div>
+        <p class="font-semibold text-slate-300">
+            &copy; 2026 <span class="text-amber-400 font-bold">BLC Ajans</span> • Zonguldak Ereğli Medya & Fotoğrafçılık Stüdyosu
+        </p>
+        <p class="text-slate-400 text-[11px]">
+            Kurucu: <strong class="text-slate-200">Tolunay Balcı</strong> | Tüm hakları saklıdır.
+        </p>
     </footer>
+
+    <!-- JAVASCRIPT KONTROLLERİ -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
