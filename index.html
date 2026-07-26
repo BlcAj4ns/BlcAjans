@@ -199,15 +199,15 @@
 
                 <div id="subcontent-discekim" class="sub-tab-content fade-in">
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <div id="home-slot-1" class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
                             <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">📷</span>
                             <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 1</span>
                         </div>
-                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <div id="home-slot-2" class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
                             <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">📸</span>
                             <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 2</span>
                         </div>
-                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <div id="home-slot-3" class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
                             <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">✨</span>
                             <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 3</span>
                         </div>
@@ -216,11 +216,11 @@
 
                 <div id="subcontent-hikaye" class="sub-tab-content hidden fade-in">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <div id="home-slot-4" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
                             <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎥</span>
                             <span class="text-xs text-amber-400 font-bold">Sinematik Düğün Hikayesi</span>
                         </div>
-                        <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <div id="home-slot-5" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
                             <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🛸</span>
                             <span class="text-xs text-amber-400 font-bold">Drone Çekimleri</span>
                         </div>
@@ -238,11 +238,11 @@
                 </div>
 
                 <div id="tanitimGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                    <div id="home-slot-6" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
                         <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🏢</span>
                         <span class="text-xs text-amber-400 font-bold">Fabrika & Mekan Tanıtımı</span>
                     </div>
-                    <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                    <div id="home-slot-7" class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
                         <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎬</span>
                         <span class="text-xs text-amber-400 font-bold">Reklam Filmi Prodüksiyonu</span>
                     </div>
@@ -419,6 +419,24 @@
             document.getElementById('subcontent-' + subTabName).classList.remove('hidden');
             document.getElementById('subbtn-' + subTabName).classList.add('active');
         }
+
+        // Admin panelinden yüklenen medyaları ana sayfaya otomatik yansıtma
+        window.addEventListener('DOMContentLoaded', () => {
+            for (let i = 1; i <= 7; i++) {
+                const saved = localStorage.getItem(`blc_media_${i}`);
+                const targetElement = document.getElementById(`home-slot-${i}`);
+                if (saved && targetElement) {
+                    try {
+                        const parsed = JSON.parse(saved);
+                        if (parsed.type === 'video') {
+                            targetElement.innerHTML = `<video src="${parsed.data}" controls autoplay loop muted class="w-full h-full object-cover rounded-xl"></video>`;
+                        } else {
+                            targetElement.innerHTML = `<img src="${parsed.data}" alt="Medya ${i}" class="w-full h-full object-cover rounded-xl">`;
+                        }
+                    } catch(e) { console.error(e); }
+                }
+            }
+        });
     </script>
 </body>
 </html>
