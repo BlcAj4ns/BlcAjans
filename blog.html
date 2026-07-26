@@ -5,61 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog & Prodüksiyon | BLC Ajans Zonguldak Ereğli</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tarayıcı Sekme Logosu (Favicon) -->
+    <link rel="icon" type="image/x-icon" href="sitelogo.ico">
+    <link rel="shortcut icon" href="sitelogo.ico" type="image/x-icon">
     <style>
-        body { background-color: #0b0f19; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; position: relative; }
-        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.035; z-index: -1; pointer-events: none; }
+        body { background-color: #000000; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.05; z-index: -1; pointer-events: none; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
     <div class="bg-watermark"></div>
 
-    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+    <!-- HEADER / MENÜ -->
+    <header class="border-b border-amber-400/30 bg-black/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html">
-                <img src="blcajans.png" alt="Logo" class="h-14 w-auto object-contain">
+                <img src="blcajans.png" alt="BLC Ajans Logo" class="h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]">
             </a>
             <div class="flex items-center gap-6">
-                <span class="hidden lg:inline-block text-xs text-slate-400">📍 Zonguldak Ereğli / Türkiye</span>
+                <span class="hidden lg:inline-block text-xs text-white/80 font-medium">📍 Zonguldak Ereğli / Türkiye</span>
                 <nav class="hidden md:flex items-center gap-6 text-xs font-semibold">
-                    <a href="index.html" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
-                    <a href="hakkimizda.html" class="text-slate-300 hover:text-amber-400 transition-all">Hakkımızda</a>
-                    <a href="hizmetler.html" class="text-slate-300 hover:text-amber-400 transition-all">Hizmetler</a>
-                    <a href="blog.html" class="text-amber-400 hover:text-amber-300 transition-all">Blog</a>
-                    <a href="yorumlar.html" class="text-slate-300 hover:text-amber-400 transition-all">Yorumlar</a>
-                    <a href="iletisim.html" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2 rounded-xl transition-all font-bold">İletişim</a>
+                    <a href="index.html" class="text-white hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="hakkimizda.html" class="text-white hover:text-amber-400 transition-all">Hakkımızda</a>
+                    <a href="hizmetler.html" class="text-white hover:text-amber-400 transition-all">Hizmetler</a>
+                    <a href="blog.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Blog</a>
+                    <a href="yorumlar.html" class="text-white hover:text-amber-400 transition-all">Yorumlar</a>
+                    <a href="iletisim.html" class="bg-amber-400 hover:bg-amber-300 text-black px-4 py-2 rounded-xl transition-all font-bold shadow-md shadow-amber-400/20">İletişim</a>
                 </nav>
             </div>
             <a href="index.html" class="md:hidden text-xs text-amber-400 font-bold">← Ana Sayfa</a>
         </div>
     </header>
 
+    <!-- İÇERİK ALANI -->
     <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-12">
         <div class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Prodüksiyon Günlükleri & Makaleler</h1>
-            <p class="text-slate-400 text-sm">Zonguldak Ereğli'de düğün çekimleri, dış mekan ipuçları ve sektörel yenilikler.</p>
+            <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Prodüksiyon Günlükleri & <span class="text-amber-400">Makaleler</span></h1>
+            <p class="text-white/80 text-sm font-light">Zonguldak Ereğli'de düğün çekimleri, dış mekan ipuçları ve sektörel yenilikler.</p>
         </div>
 
-        <div class="space-y-10">
-            <article class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-xl">
+        <div class="space-y-8">
+            <article class="bg-black/80 border border-amber-400/40 hover:border-amber-400 rounded-3xl p-8 sm:p-10 shadow-xl backdrop-blur-md transition-all duration-300">
                 <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Düğün Prodüksiyonu • 24 Haziran 2026</span>
                 <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-4 text-white">Sinematik Düğün ve Dış Mekan Çekimlerinde Profesyonel Yaklaşım</h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                <p class="text-white/90 text-sm sm:text-base leading-relaxed font-light">
                     Zonguldak Ereğli'nin benzersiz doğasında, hayatınızın en özel gününü standart karelerin çok ötesinde sanat eserine dönüştürüyoruz. BLC Ajans olarak doğal ışığı en verimli şekilde kullanıyor, çiftlerin anlarını sinematik kameralarla ölümsüzleştiriyoruz.
                 </p>
             </article>
 
-            <article class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-xl">
+            <article class="bg-black/80 border border-amber-400/40 hover:border-amber-400 rounded-3xl p-8 sm:p-10 shadow-xl backdrop-blur-md transition-all duration-300">
                 <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Kurumsal Medya • 18 Haziran 2026</span>
                 <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-4 text-white">Marka Değerini Artıran E-Ticaret ve Ürün Çekimi Detayları</h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                <p class="text-white/90 text-sm sm:text-base leading-relaxed font-light">
                     Dijital dünyada var olmanın ilk kuralı güçlü görsel kimliktir. E-ticaret platformlarında sergilenen ürünlerin renk doğruluğu ve aydınlatması doğrudan satış oranlarını etkilemektedir.
                 </p>
             </article>
         </div>
     </main>
 
-    <footer class="py-6 text-center text-slate-600 text-xs border-t border-slate-800/80">
-        &copy; 2026 BLC Ajans • Zonguldak Ereğli, Tüm hakları saklıdır.
+    <!-- FOOTER -->
+    <footer class="py-6 text-center text-white/70 text-xs border-t border-amber-400/30">
+        &copy; 2026 <span class="text-amber-400 font-semibold">BLC Ajans</span> • Zonguldak Ereğli, Tüm hakları saklıdır.
     </footer>
 </body>
 </html>
