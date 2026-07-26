@@ -33,26 +33,94 @@
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-16">
+    <main class="flex-grow w-full max-w-6xl mx-auto px-4 py-16">
         <div class="text-center mb-12">
             <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Müşteri Yorumları</h1>
-            <p class="text-slate-400 text-sm">Zonguldak Ereğli ve çevresinde gerçekleştirdiğimiz projelere ait değerlendirmeler.</p>
+            <p class="text-slate-400 text-sm">Google İşletme Profilimizde, Zonguldak Ereğli'deki hizmetlerimiz için yapılan değerlendirmeler.</p>
         </div>
 
-        <!-- Yorumlar kaldırıldığı için boş durum veya Google Yorumları yönlendirme alanı eklendi -->
-        <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-12 text-center max-w-2xl mx-auto shadow-2xl space-y-6">
-            <span class="text-5xl">💬</span>
-            <div class="space-y-2">
-                <h3 class="text-xl font-bold text-white">Henüz Eklenmiş Yorum Bulunmuyor</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Ajansımıza ait gerçek müşteri deneyimlerini ve Google değerlendirmelerini yakında bu alanda paylaşacağız. Siz de hizmetlerimiz hakkındaki görüşlerinizi bizimle paylaşabilirsiniz.
-                </p>
+        <!-- YORUMLAR GRID YAPISI -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Yorum 1 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Düğün dış çekimimiz için Tolunay beyin kesinlikle kararlılığından sonradan çok memnun kaldık. Elbise boyunca ailemizle çok ilgilendi, kendilerini rahat hissettirdiler..."</p>
+                </div>
+                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
+                    <span class="font-bold text-white">Büşra Çömez</span>
+                    <span class="text-amber-400/80">Google Yorumu</span>
+                </div>
             </div>
-            <div class="pt-2">
-                <a href="iletisim.html" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-3 rounded-xl transition-all font-bold text-xs">
-                    İletişime Geçin
-                </a>
+
+            <!-- Yorum 2 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"O kadar ilgili alakalı ki çekimden gelen yaşayışımın kalmayan nişanlımla galiba günler verdi. Bize para vermeyi istemiyorum diyenin bile hiç arahiyet olmadın sokkalınaklı bir marka teklif..."</p>
+                </div>
+                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
+                    <span class="font-bold text-white">Fatma Altun</span>
+                    <span class="text-amber-400/80">Google Yorumu</span>
+                </div>
             </div>
+
+            <!-- Yorum 3 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"En güzel günlerimizi nasıl daha da güzel bir gün haline getirebiliriz diye düşünyorsanız ve doğru adrestesiniz. Elimizden gelenleri ardına kadar fotoğrafçılık anlamında konunun uzmanı, düğün çekimlerinizde tereddüt etmeden tercih edebilirsiniz."</p>
+                </div>
+                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
+                    <span class="font-bold text-white">Beyza Nur KÖSEOĞLU</span>
+                    <span class="text-amber-400/80">Google Yorumu</span>
+                </div>
+            </div>
+
+            <!-- Yorum 4 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Tolunay bey ile düğün çekimimiz iyi sonuçlandı. Çekim için profesyonelliği gereken güler yüzlü saymakla bitmez bir çekim gerçekleştirdik. Çektiğimiz kareler güzeldi ortaya. İyi ki..."</p>
+                </div>
+                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
+                    <span class="font-bold text-white">Hassancan Cilener</span>
+                    <span class="text-amber-400/80">Google Yorumu</span>
+                </div>
+            </div>
+
+            <!-- Yorum 5 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Dış çekim için bulmuş kadar medyayı tercih ediyoruz iyi ki ediyorum. O kadar ince işlilikte hassasiyet ve işleten alan bir çekim yaptık ki Tolunay bey..."</p>
+                </div>
+                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
+                    <span class="font-bold text-white">İrem Atkay</span>
+                    <span class="text-amber-400/80">Google Yorumu</span>
+                </div>
+            </div>
+
+            <!-- Yorum 6 -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Eşsiz Karadeniz'in en iyi ve profesyonel fotoğrafçısı kesinlikle tavsiye ederim mükemmel ötesi enerji ve güler yüzlü ekibiyle yaptığılar işler gerçekten çok memnun kaldım harika bazen çekimlerim..."</p>
+                </div>
+                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
+                    <span class="font-bold text-white">İncilay Yaylaoğlu</span>
+                    <span class="text-amber-400/80">Google Yorumu</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Google Yönlendirme Butonu -->
+        <div class="mt-12 text-center">
+            <a href="https://maps.app.goo.gl/wSgqK1..." target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-3 rounded-xl transition-all font-bold text-xs shadow-lg">
+                ⭐ Google'da Tüm Yorumları Gör ve Değerlendir
+            </a>
         </div>
     </main>
 
