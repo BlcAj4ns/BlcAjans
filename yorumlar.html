@@ -5,95 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Müşteri Yorumları | BLC Ajans Zonguldak Ereğli</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tarayıcı Sekme Logosu (Favicon) -->
-    <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
-    <link rel="shortcut icon" href="/sitelogo.ico" type="image/x-icon">
     <style>
-        body { background-color: #000000; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; position: relative; }
-        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('/blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.05; z-index: -1; pointer-events: none; }
+        body { background-color: #0b0f19; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; position: relative; }
+        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.035; z-index: -1; pointer-events: none; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
+<body class="min-h-screen flex flex-col justify-between">
     <div class="bg-watermark"></div>
 
-    <!-- HEADER / MENÜ -->
-    <header class="border-b border-amber-400/30 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/">
-                <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+            <a href="index.html">
+                <img src="blcajans.png" alt="Logo" class="h-14 w-auto object-contain">
             </a>
             <div class="flex items-center gap-6">
-                <span class="hidden lg:inline-block text-xs text-white/80 font-medium">📍 Zonguldak Ereğli / Türkiye</span>
+                <span class="hidden lg:inline-block text-xs text-slate-400">📍 Zonguldak Ereğli / Türkiye</span>
                 <nav class="hidden md:flex items-center gap-6 text-xs font-semibold">
-                    <a href="/" class="text-white hover:text-amber-400 transition-all">Ana Sayfa</a>
-                    <a href="/hakkimizda" class="text-white hover:text-amber-400 transition-all">Hakkımızda</a>
-                    <a href="/hizmetler" class="text-white hover:text-amber-400 transition-all">Hizmetler</a>
-                    <a href="/blog" class="text-white hover:text-amber-400 transition-all">Blog</a>
-                    <a href="/yorumlar" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Yorumlar</a>
-                    <a href="/iletisim" class="bg-amber-400 hover:bg-amber-300 text-black px-4 py-2 rounded-xl transition-all font-bold shadow-md shadow-amber-400/20">İletişim</a>
+                    <a href="index.html" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="hakkimizda.html" class="text-slate-300 hover:text-amber-400 transition-all">Hakkımızda</a>
+                    <a href="hizmetler.html" class="text-slate-300 hover:text-amber-400 transition-all">Hizmetler</a>
+                    <a href="blog.html" class="text-slate-300 hover:text-amber-400 transition-all">Blog</a>
+                    <a href="yorumlar.html" class="text-amber-400 hover:text-amber-300 transition-all">Yorumlar</a>
+                    <a href="iletisim.html" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2 rounded-xl transition-all font-bold">İletişim</a>
                 </nav>
             </div>
-            <a href="/" class="md:hidden text-xs text-amber-400 font-bold">← Ana Sayfa</a>
+            <a href="index.html" class="md:hidden text-xs text-amber-400 font-bold">← Ana Sayfa</a>
         </div>
     </header>
 
-    <!-- İÇERİK ALANI -->
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-12">
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-16">
         <div class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Mutlu Müşteriler & <span class="text-amber-400">Yorumlar</span></h1>
-            <p class="text-white/80 text-sm font-light">Zonguldak Ereğli ve çevresinde projelerimizi hayata geçirdiğimiz kişilerin gerçek deneyimleri.</p>
+            <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Müşteri Yorumları</h1>
+            <p class="text-slate-400 text-sm">Zonguldak Ereğli ve çevresinde gerçekleştirdiğimiz projelere ait değerlendirmeler.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-black/80 border border-amber-400/40 hover:border-amber-400 rounded-3xl p-8 shadow-xl backdrop-blur-md transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="flex text-amber-400 text-base mb-3">★★★★★</div>
-                    <p class="text-white/90 text-sm italic leading-relaxed font-light mb-6">"Zonguldak Ereğli'deki düğün dış çekimimiz için BLC Ajans ile çalıştık. Çekim esnasındaki profesyonel yönlendirmeleri ve ortaya çıkan sinematik klip bizi büyüledi."</p>
-                </div>
-                <div class="border-t border-amber-400/20 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white text-sm">Zeynep & Emre K.</span>
-                    <span class="text-amber-400">Düğün Çekimi Müşterisi</span>
-                </div>
+        <!-- Yorumlar kaldırıldığı için boş durum veya Google Yorumları yönlendirme alanı eklendi -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-12 text-center max-w-2xl mx-auto shadow-2xl space-y-6">
+            <span class="text-5xl">💬</span>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-white">Henüz Eklenmiş Yorum Bulunmuyor</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Ajansımıza ait gerçek müşteri deneyimlerini ve Google değerlendirmelerini yakında bu alanda paylaşacağız. Siz de hizmetlerimiz hakkındaki görüşlerinizi bizimle paylaşabilirsiniz.
+                </p>
             </div>
-
-            <div class="bg-black/80 border border-amber-400/40 hover:border-amber-400 rounded-3xl p-8 shadow-xl backdrop-blur-md transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="flex text-amber-400 text-base mb-3">★★★★★</div>
-                    <p class="text-white/90 text-sm italic leading-relaxed font-light mb-6">"E-ticaret mağazamızın ürün fotoğrafları için destek aldık. Ürünlerin ışık kalitesi muazzam çıktı. Satışlarımızdaki artış doğrudan bu profesyonel dokunuş sayesinde oldu."</p>
-                </div>
-                <div class="border-t border-amber-400/20 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white text-sm">Caner Demir</span>
-                    <span class="text-amber-400">Kurumsal Mağaza Sahibi</span>
-                </div>
-            </div>
-
-            <div class="bg-black/80 border border-amber-400/40 hover:border-amber-400 rounded-3xl p-8 shadow-xl backdrop-blur-md transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="flex text-amber-400 text-base mb-3">★★★★★</div>
-                    <p class="text-white/90 text-sm italic leading-relaxed font-light mb-6">"Kurumsal tanıtım filmimiz için BLC Ajans ekibiyle çalıştık. Sürecin başından sonuna kadar çok ilgiliydiler ve tam istediğimiz kurumsal havayı yakaladılar."</p>
-                </div>
-                <div class="border-t border-amber-400/20 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white text-sm">Selin Aydın</span>
-                    <span class="text-amber-400">Kurumsal Proje Yöneticisi</span>
-                </div>
-            </div>
-
-            <div class="bg-black/80 border border-amber-400/40 hover:border-amber-400 rounded-3xl p-8 shadow-xl backdrop-blur-md transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="flex text-amber-400 text-base mb-3">★★★★★</div>
-                    <p class="text-white/90 text-sm italic leading-relaxed font-light mb-6">"Nişan dış mekan çekimleri için tercih ettik. Ekip o kadar güler yüzlü ve profesyoneldi ki çekimlerin nasıl bittiğini anlamadık. Fotoğraflar muazzam!"</p>
-                </div>
-                <div class="border-t border-amber-400/20 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white text-sm">Gizem & Burak S.</span>
-                    <span class="text-amber-400">Konsept Çekim Müşterisi</span>
-                </div>
+            <div class="pt-2">
+                <a href="iletisim.html" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-3 rounded-xl transition-all font-bold text-xs">
+                    İletişime Geçin
+                </a>
             </div>
         </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="py-6 text-center text-white/70 text-xs border-t border-amber-400/30">
-        &copy; 2026 <span class="text-amber-400 font-semibold">BLC Ajans</span> • Zonguldak Ereğli, Tüm hakları saklıdır.
+    <footer class="py-6 text-center text-slate-600 text-xs border-t border-slate-800/80">
+        &copy; 2026 BLC Ajans • Zonguldak Ereğli, Tüm hakları saklıdır.
     </footer>
 </body>
 </html>
