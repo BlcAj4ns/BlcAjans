@@ -6,11 +6,11 @@
     <title>BLC Ajans | Zonguldak Ereğli Profesyonel Kurumsal Medya & Prodüksiyon</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tarayıcı Sekme Logosu (Favicon) -->
-    <link rel="icon" type="image/x-icon" href="sitelogo.ico">
-    <link rel="shortcut icon" href="sitelogo.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
+    <link rel="shortcut icon" href="/sitelogo.ico" type="image/x-icon">
     <style>
         body { background-color: #000000; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; position: relative; }
-        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.05; z-index: -1; pointer-events: none; }
+        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('/blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.05; z-index: -1; pointer-events: none; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
@@ -28,7 +28,7 @@
         transform: translate(-50%, -50%);
         object-fit: cover;
         filter: brightness(40%);">
-        <source src="blcajansvid.mp4" type="video/mp4">
+        <source src="/blcajansvid.mp4" type="video/mp4">
     </video>
 
     <div class="bg-watermark"></div>
@@ -38,7 +38,7 @@
         
         <!-- Logo -->
         <div class="mb-10 flex flex-col items-center group">
-            <img src="blcajans.png" alt="BLC Ajans Logo" class="h-40 sm:h-52 md:h-60 w-auto object-contain drop-shadow-[0_15px_40px_rgba(245,158,11,0.5)] transition-transform duration-500 hover:scale-105">
+            <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-40 sm:h-52 md:h-60 w-auto object-contain drop-shadow-[0_15px_40px_rgba(245,158,11,0.5)] transition-transform duration-500 hover:scale-105">
         </div>
 
         <h1 class="text-3xl sm:text-5xl font-black mb-4 text-white tracking-tight">Sinematik Vizyon, <span class="text-amber-400">Profesyonel Dokunuş</span></h1>
@@ -49,25 +49,25 @@
         <!-- Yönlendirici Detaylı Kartlar -->
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-2 mb-12">
             
-            <a href="hizmetler.html" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
+            <a href="/hizmetler" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
                 <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">🎬</span>
                 <h3 class="text-lg font-bold text-amber-400 group-hover:text-black mb-1 transition-colors">Hizmetlerimiz</h3>
                 <p class="text-xs text-white group-hover:text-black transition-colors">Prodüksiyon ve çekim türlerimiz</p>
             </a>
 
-            <a href="blog.html" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
+            <a href="/blog" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
                 <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">✍️</span>
                 <h3 class="text-lg font-bold text-amber-400 group-hover:text-black mb-1 transition-colors">Blog Yazıları</h3>
                 <p class="text-xs text-white group-hover:text-black transition-colors">Sektörel ipuçları ve detaylar</p>
             </a>
 
-            <a href="yorumlar.html" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
+            <a href="/yorumlar" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
                 <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">⭐</span>
                 <h3 class="text-lg font-bold text-amber-400 group-hover:text-black mb-1 transition-colors">Yorumlar</h3>
                 <p class="text-xs text-white group-hover:text-black transition-colors">Mutlu müşterilerimizin görüşleri</p>
             </a>
 
-            <a href="iletisim.html" class="bg-amber-400 hover:bg-amber-300 border border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl shadow-amber-400/20 group flex flex-col items-center text-center">
+            <a href="/iletisim" class="bg-amber-400 hover:bg-amber-300 border border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl shadow-amber-400/20 group flex flex-col items-center text-center">
                 <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">📞</span>
                 <h3 class="text-lg font-bold text-black mb-1">İletişim</h3>
                 <p class="text-xs text-black/80 font-medium">WhatsApp ile hemen teklif al</p>
