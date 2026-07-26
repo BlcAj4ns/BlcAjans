@@ -2,78 +2,126 @@
 <html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SİTE BAŞLIĞI VE GOOGLE ARAMA AÇIKLAMASI -->
     <title>İletişim | BLC Ajans Zonguldak Ereğli</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tarayıcı Sekme Logosu (Favicon) -->
+    <meta name="description" content="Zonguldak Ereğli ve çevresindeki düğün çekimleri, dış mekan randevuları ve kurumsal teklifleriniz için BLC Ajans ile iletişime geçin.">
+    
+    <!-- TARAYICI SEKME LOGOSU & FAVICON -->
     <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
-    <link rel="shortcut icon" href="/sitelogo.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/sitelogo.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/blcajans.png">
+    <link rel="apple-touch-icon" href="/blcajans.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #000000; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; position: relative; }
-        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('/blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.05; z-index: -1; pointer-events: none; }
+        body { 
+            background: #090d16;
+            color: #f1f5f9; 
+            font-family: system-ui, -apple-system, sans-serif; 
+            position: relative; 
+            overflow-x: hidden; 
+        }
+        
+        .bg-watermark { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: min(90vw, 850px); 
+            height: min(90vw, 850px); 
+            background-image: url('/blcajans.png'); 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: contain; 
+            opacity: 0.03; 
+            z-index: -1; 
+            pointer-events: none; 
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
     <div class="bg-watermark"></div>
 
     <!-- HEADER / MENÜ -->
-    <header class="border-b border-amber-400/30 bg-black/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/">
-                <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
+            
+            <!-- LOGO ALANI -->
+            <a href="/" class="group flex items-center py-1">
+                <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
             </a>
-            <div class="flex items-center gap-6">
-                <span class="hidden lg:inline-block text-xs text-white/80 font-medium">📍 Zonguldak Ereğli / Türkiye</span>
-                <nav class="hidden md:flex items-center gap-6 text-xs font-semibold">
-                    <a href="/" class="text-white hover:text-amber-400 transition-all">Ana Sayfa</a>
-                    <a href="/hakkimizda" class="text-white hover:text-amber-400 transition-all">Hakkımızda</a>
-                    <a href="/hizmetler" class="text-white hover:text-amber-400 transition-all">Hizmetler</a>
-                    <a href="/blog" class="text-white hover:text-amber-400 transition-all">Blog</a>
-                    <a href="/yorumlar" class="text-white hover:text-amber-400 transition-all">Yorumlar</a>
-                    <a href="/iletisim" class="bg-amber-400 hover:bg-amber-300 text-black px-4 py-2 rounded-xl transition-all font-bold shadow-md shadow-amber-400/20">İletişim</a>
+
+            <!-- Masaüstü Navigasyon -->
+            <div class="hidden lg:flex items-center gap-6">
+                <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    📍 Zonguldak Ereğli / Türkiye
+                </span>
+                <nav class="flex items-center gap-6 text-xs font-bold tracking-wider uppercase">
+                    <a href="/" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="/blog" class="text-slate-300 hover:text-amber-400 transition-all">Blog</a>
+                    <a href="/yorumlar" class="text-slate-300 hover:text-amber-400 transition-all">Yorumlar</a>
+                    <a href="/iletisim" class="bg-amber-500 text-black px-5 py-2.5 rounded-lg font-black shadow-lg shadow-amber-500/20">İletişim</a>
                 </nav>
             </div>
-            <a href="/" class="md:hidden text-xs text-amber-400 font-bold">← Ana Sayfa</a>
+
+            <!-- Mobil Menü Butonu / Geri Dönüş -->
+            <div class="flex items-center gap-3 lg:hidden">
+                <a href="/" class="text-xs text-amber-400 font-bold bg-amber-500/10 px-3 py-2 rounded-xl border border-amber-500/20">← Ana Sayfa</a>
+                <button onclick="toggleMobileMenu()" class="p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
+                    <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobil Menü -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
+            <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-bold">Ana Sayfa</a>
+            <a href="/blog" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Blog</a>
+            <a href="/yorumlar" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Yorumlar</a>
+            <a href="/iletisim" class="block text-center bg-amber-400 text-black font-bold py-2.5 rounded-xl text-xs shadow-md">İletişim</a>
         </div>
     </header>
 
     <!-- İÇERİK ALANI -->
-    <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-12">
-        <div class="bg-black/80 border border-amber-400/40 hover:border-amber-400 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-md transition-all duration-300">
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-12 sm:py-16">
+        <div class="bg-slate-900/80 border border-slate-800 hover:border-amber-400/50 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl transition-all duration-300">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-black mb-4 text-white">İletişime <span class="text-amber-400">Geçin</span></h2>
-                    <p class="text-white/80 text-sm leading-relaxed font-light mb-6">
+                    <h1 class="text-2xl sm:text-3xl font-black mb-4 text-white">İletişime <span class="text-amber-400">Geçin</span></h1>
+                    <p class="text-slate-300 text-sm leading-relaxed font-normal mb-6">
                         Zonguldak Ereğli ve çevresindeki düğün çekimleri, dış mekan randevuları ve kurumsal teklifleriniz için formu doldurabilirsiniz. Formu gönderdiğinizde doğrudan WhatsApp hattımıza bağlanacaksınız.
                     </p>
-                    <div class="space-y-3 text-sm text-white/90">
+                    <div class="space-y-3 text-sm text-slate-200">
                         <div class="flex items-center gap-2">📍 <span>Zonguldak Ereğli / Türkiye</span></div>
                         <div class="flex items-center gap-2">📞 <a href="tel:+905393437499" class="hover:text-amber-400 transition-colors">+90 (539) 343 74 99</a></div>
                         <div class="flex items-center gap-2">✉️ <a href="mailto:iletişim@blcajans.com" class="hover:text-amber-400 transition-colors">iletişim@blcajans.com</a></div>
                     </div>
                 </div>
 
-                <div class="bg-black/60 border border-amber-400/30 rounded-2xl p-6">
+                <div class="bg-slate-950/60 border border-slate-800 rounded-2xl p-6 shadow-inner">
                     <form id="whatsappForm" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold text-amber-400 mb-1">Adınız Soyadınız</label>
-                            <input type="text" id="adSoyad" required class="w-full bg-black/90 border border-amber-400/30 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors">
+                            <label class="block text-xs font-bold text-amber-400 mb-1">Adınız Soyadınız</label>
+                            <input type="text" id="adSoyad" required class="w-full bg-slate-900 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-amber-400 mb-1">Telefon Numaranız</label>
-                            <input type="text" id="telefon" required class="w-full bg-black/90 border border-amber-400/30 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors">
+                            <label class="block text-xs font-bold text-amber-400 mb-1">Telefon Numaranız</label>
+                            <input type="text" id="telefon" required class="w-full bg-slate-900 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-amber-400 mb-1">Hizmet Türü (Düğün, Dış Çekim, Kurumsal vb.)</label>
-                            <input type="text" id="hizmetTuru" required class="w-full bg-black/90 border border-amber-400/30 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors">
+                            <label class="block text-xs font-bold text-amber-400 mb-1">Hizmet Türü (Düğün, Dış Çekim, Kurumsal vb.)</label>
+                            <input type="text" id="hizmetTuru" required class="w-full bg-slate-900 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-amber-400 mb-1">Çekim Nerede Olacak? (Yer / Mekan)</label>
-                            <input type="text" id="cekimYeri" required class="w-full bg-black/90 border border-amber-400/30 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors" placeholder="Örn: Ereğli Sahil / Stüdyo / Belirtilen Salon">
+                            <label class="block text-xs font-bold text-amber-400 mb-1">Çekim Nerede Olacak? (Yer / Mekan)</label>
+                            <input type="text" id="cekimYeri" required class="w-full bg-slate-900 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors" placeholder="Örn: Ereğli Sahil / Stüdyo / Belirtilen Salon">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-amber-400 mb-1">Mesajınız / Detaylar</label>
-                            <textarea id="mesajDetay" rows="2" required class="w-full bg-black/90 border border-amber-400/30 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors"></textarea>
+                            <label class="block text-xs font-bold text-amber-400 mb-1">Mesajınız / Detaylar</label>
+                            <textarea id="mesajDetay" rows="2" required class="w-full bg-slate-900 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-none transition-colors"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-amber-400 hover:bg-amber-300 text-black font-bold py-3 rounded-xl transition-all shadow-lg shadow-amber-400/20 active:scale-95">
                             WhatsApp ile Gönder 🚀
@@ -85,11 +133,24 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="py-6 text-center text-white/70 text-xs border-t border-amber-400/30">
-        &copy; 2026 <span class="text-amber-400 font-semibold">BLC Ajans</span> • Zonguldak Ereğli, Tüm hakları saklıdır.
+    <footer class="py-10 text-center text-slate-400 text-xs border-t border-slate-800/80 bg-slate-950 space-y-3">
+        <div class="flex justify-center items-center gap-2">
+            <img src="/blcajans.png" alt="BLC Logo Footer" class="h-10 w-auto filter drop-shadow">
+        </div>
+        <p class="font-semibold text-slate-300">
+            &copy; 2026 <span class="text-amber-400 font-bold">BLC Ajans</span> • Zonguldak Ereğli Medya & Fotoğrafçılık Stüdyosu
+        </p>
+        <p class="text-slate-400 text-[11px]">
+            Kurucu: <strong class="text-slate-200">Tolunay Balcı</strong> | Tüm hakları saklıdır.
+        </p>
     </footer>
 
+    <!-- JAVASCRIPT KONTROLLERİ -->
     <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
