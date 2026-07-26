@@ -2,107 +2,419 @@
 <html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLC Ajans | Zonguldak Ereğli Profesyonel Kurumsal Medya & Prodüksiyon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BLC Ajans | Zonguldak Ereğli Fotoğrafçılık & Prodüksiyon Stüdyosu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tarayıcı Sekme Logosu (Favicon) -->
     <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
     <link rel="shortcut icon" href="/sitelogo.ico" type="image/x-icon">
     <style>
-        body { background-color: #000000; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; position: relative; }
-        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(85vw, 800px); height: min(85vw, 800px); background-image: url('/blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.05; z-index: -1; pointer-events: none; }
+        body { 
+            background: #090d16;
+            color: #f1f5f9; 
+            font-family: system-ui, -apple-system, sans-serif; 
+            position: relative; 
+            overflow-x: hidden; 
+        }
+        
+        .bg-watermark { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: min(90vw, 850px); 
+            height: min(90vw, 850px); 
+            background-image: url('/blcajans.png'); 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: contain; 
+            opacity: 0.03; 
+            z-index: -1; 
+            pointer-events: none; 
+        }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .tab-btn.active { 
+            border-color: #f59e0b; 
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(15, 23, 42, 0.9) 100%);
+            color: #fbbf24;
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.25);
+            transform: translateY(-2px);
+        }
+        .sub-tab-btn.active { 
+            background-color: #f59e0b; 
+            color: #000000; 
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
-
-    <!-- ARKA PLAN VİDEOSU -->
-    <video autoplay loop muted playsinline style="
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -2;
-        transform: translate(-50%, -50%);
-        object-fit: cover;
-        filter: brightness(40%);">
-        <source src="/blcajansvid.mp4" type="video/mp4">
-    </video>
-
     <div class="bg-watermark"></div>
 
-    <!-- ANA ORTA KARŞILAMA ALANI -->
-    <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 text-center max-w-6xl mx-auto w-full">
-        
-        <!-- Logo -->
-        <div class="mb-10 flex flex-col items-center group">
-            <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-40 sm:h-52 md:h-60 w-auto object-contain drop-shadow-[0_15px_40px_rgba(245,158,11,0.5)] transition-transform duration-500 hover:scale-105">
-        </div>
-
-        <h1 class="text-3xl sm:text-5xl font-black mb-4 text-white tracking-tight">Sinematik Vizyon, <span class="text-amber-400">Profesyonel Dokunuş</span></h1>
-        <p class="text-white text-sm sm:text-base max-w-2xl mb-10 leading-relaxed font-light">
-            Zonguldak Ereğli merkezli düğün hikayeleri, dış mekan çekimleri, kurumsal e-ticaret projeleri ve modern medya çözümleriyle en değerli anlarınızı ölümsüzleştiriyoruz.
-        </p>
-
-        <!-- Yönlendirici Detaylı Kartlar -->
-        <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-2 mb-12">
+    <!-- HEADER / NET VE BÜYÜTÜLMÜŞ LOGO -->
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
             
-            <a href="/hizmetler" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
-                <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">🎬</span>
-                <h3 class="text-lg font-bold text-amber-400 group-hover:text-black mb-1 transition-colors">Hizmetlerimiz</h3>
-                <p class="text-xs text-white group-hover:text-black transition-colors">Prodüksiyon ve çekim türlerimiz</p>
+            <!-- LOGO ALANI -->
+            <a href="/" class="group flex items-center py-1">
+                <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
             </a>
 
-            <a href="/blog" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
-                <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">✍️</span>
-                <h3 class="text-lg font-bold text-amber-400 group-hover:text-black mb-1 transition-colors">Blog Yazıları</h3>
-                <p class="text-xs text-white group-hover:text-black transition-colors">Sektörel ipuçları ve detaylar</p>
-            </a>
+            <!-- Masaüstü Navigasyon -->
+            <div class="hidden lg:flex items-center gap-6">
+                <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    📍 Zonguldak Ereğli / Türkiye
+                </span>
+                <nav class="flex items-center gap-6 text-xs font-bold tracking-wider uppercase">
+                    <a href="/" class="text-amber-400 border-b-2 border-amber-400 pb-0.5">Ana Sayfa</a>
+                    <a href="/hakkimizda" class="text-slate-300 hover:text-amber-400 transition-all">Hakkımızda</a>
+                    <a href="/hizmetler" class="text-slate-300 hover:text-amber-400 transition-all">Hizmetler</a>
+                    <a href="/blog" class="text-slate-300 hover:text-amber-400 transition-all">Blog</a>
+                    <a href="/yorumlar" class="text-slate-300 hover:text-amber-400 transition-all">Yorumlar</a>
+                    <a href="/iletisim" class="bg-amber-500 hover:bg-amber-400 text-black px-5 py-2.5 rounded-lg transition-all font-black shadow-lg shadow-amber-500/20 active:scale-95">İletişim</a>
+                </nav>
+            </div>
 
-            <a href="/yorumlar" class="bg-black/70 hover:bg-amber-400 border border-amber-400/40 hover:border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl group flex flex-col items-center text-center backdrop-blur-md">
-                <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">⭐</span>
-                <h3 class="text-lg font-bold text-amber-400 group-hover:text-black mb-1 transition-colors">Yorumlar</h3>
-                <p class="text-xs text-white group-hover:text-black transition-colors">Mutlu müşterilerimizin görüşleri</p>
-            </a>
-
-            <a href="/iletisim" class="bg-amber-400 hover:bg-amber-300 border border-amber-400 p-6 rounded-3xl transition-all duration-300 shadow-xl shadow-amber-400/20 group flex flex-col items-center text-center">
-                <span class="text-3xl mb-3 group-hover:scale-110 transition-transform">📞</span>
-                <h3 class="text-lg font-bold text-black mb-1">İletişim</h3>
-                <p class="text-xs text-black/80 font-medium">WhatsApp ile hemen teklif al</p>
-            </a>
-
+            <!-- Mobil Menü Butonu -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
+                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </div>
 
-        <!-- İLETİŞİM & SOSYAL MEDYA BİLGİLERİ ŞERİTİ -->
-        <div class="w-full bg-black/80 border border-amber-400/50 rounded-2xl p-6 flex flex-wrap items-center justify-around gap-6 text-xs sm:text-sm text-white backdrop-blur-md shadow-lg shadow-amber-400/5">
-            <div class="flex items-center gap-2">
-                <span class="text-amber-400 text-base">📍</span>
-                <span class="text-white font-medium">Zonguldak Ereğli / Türkiye</span>
+        <!-- Mobil Menü -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
+            <a href="/" class="block text-amber-400 font-bold text-xs">Ana Sayfa</a>
+            <a href="/hakkimizda" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Hakkımızda</a>
+            <a href="/hizmetler" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Hizmetler</a>
+            <a href="/blog" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Blog</a>
+            <a href="/yorumlar" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Yorumlar</a>
+            <a href="/iletisim" class="block text-center bg-amber-400 text-black font-bold py-2.5 rounded-xl text-xs shadow-md">İletişim</a>
+        </div>
+    </header>
+
+    <!-- BANNER (HERO SECTION) -->
+    <section class="relative py-14 sm:py-20 px-4 text-center border-b border-slate-800/60 bg-gradient-to-b from-slate-900/50 via-transparent to-transparent">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="inline-flex items-center gap-2 text-[11px] font-extrabold tracking-widest text-amber-400 uppercase bg-amber-400/10 px-3.5 py-1.5 rounded-full border border-amber-400/20 shadow-inner">
+                <span>📸</span> BLC AJANS & FOTOĞRAFÇILIK STÜDYOSU
             </div>
-            <div class="flex items-center gap-2">
-                <span class="text-amber-400 text-base">📞</span>
-                <a href="tel:905393437499" class="text-white hover:text-amber-400 transition-colors font-medium">+90 (539) 343 74 99</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <span class="text-amber-400 text-base">✉️</span>
-                <span class="text-white font-medium">iletişim@blcajans.com</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-                <a href="https://www.instagram.com/blcajansi/" target="_blank" class="text-white hover:text-amber-400 transition-colors font-semibold">@blcajansi</a>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                Görsel Sanatı <span class="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">Prestijle</span> Buluşturuyoruz
+            </h1>
+            
+            <!-- HERO AÇIKLAMA LOGO KUTUSU -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 bg-slate-900/70 p-4 sm:p-5 rounded-2xl border border-slate-800 max-w-2xl mx-auto backdrop-blur-md shadow-xl">
+                <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-12 sm:h-14 w-auto object-contain flex-shrink-0 drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+                <p class="text-slate-300 text-xs sm:text-sm font-light text-center sm:text-left leading-relaxed">
+                    Zonguldak Ereğli merkezli ajansımızla; düğün belgeselleri, kurumsal tanıtım filmleri, marka kimliği, web site çözümleri ve dijital mecralar için üst düzey prodüksiyonlar üretiyoruz.
+                </p>
             </div>
         </div>
+    </section>
 
+    <!-- CANLI İSTATİSTİK BANTI -->
+    <section class="border-y border-slate-800 bg-slate-900/40 py-6 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="p-2 md:border-r border-slate-800">
+                <div class="text-2xl sm:text-4xl font-black text-amber-400">450+</div>
+                <div class="text-[11px] sm:text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Mutlu Çift & Düğün</div>
+            </div>
+            <div class="p-2 md:border-r border-slate-800">
+                <div class="text-2xl sm:text-4xl font-black text-amber-400">120+</div>
+                <div class="text-[11px] sm:text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Kurumsal Tanıtım Filmi</div>
+            </div>
+            <div class="p-2">
+                <div class="text-2xl sm:text-4xl font-black text-amber-400">%100</div>
+                <div class="text-[11px] sm:text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Müşteri Memnuniyeti</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HİZMETLERİMİZ -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-12 sm:py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Hizmetlerimiz</h2>
+        </div>
+
+        <!-- Kutucuk Butonları -->
+        <div class="flex sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-8 sm:mb-10 overflow-x-auto no-scrollbar pb-2 sm:pb-0">
+            <button onclick="switchTab('dugun')" id="btn-dugun" class="tab-btn active flex-shrink-0 min-w-[140px] sm:min-w-0 border border-slate-800 bg-slate-900/80 hover:border-amber-400/50 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all cursor-pointer backdrop-blur-md">
+                <span class="text-3xl">💍</span>
+                <span class="text-xs font-bold tracking-wide text-center">Düğün Fotoğrafçılığı</span>
+            </button>
+            <button onclick="switchTab('tanitim')" id="btn-tanitim" class="tab-btn flex-shrink-0 min-w-[140px] sm:min-w-0 border border-slate-800 bg-slate-900/80 hover:border-amber-400/50 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all cursor-pointer backdrop-blur-md">
+                <span class="text-3xl">🎬</span>
+                <span class="text-xs font-bold tracking-wide text-center">Tanıtım Filmleri</span>
+            </button>
+            <button onclick="switchTab('kurumsal')" id="btn-kurumsal" class="tab-btn flex-shrink-0 min-w-[140px] sm:min-w-0 border border-slate-800 bg-slate-900/80 hover:border-amber-400/50 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all cursor-pointer backdrop-blur-md">
+                <span class="text-3xl">🎨</span>
+                <span class="text-xs font-bold tracking-wide text-center">Kurumsal Kimlik</span>
+            </button>
+            <button onclick="switchTab('website')" id="btn-website" class="tab-btn flex-shrink-0 min-w-[140px] sm:min-w-0 border border-slate-800 bg-slate-900/80 hover:border-amber-400/50 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all cursor-pointer backdrop-blur-md">
+                <span class="text-3xl">🌐</span>
+                <span class="text-xs font-bold tracking-wide text-center">Web Site Çözümleri</span>
+            </button>
+            <button onclick="switchTab('sosyal')" id="btn-sosyal" class="tab-btn flex-shrink-0 min-w-[140px] sm:min-w-0 border border-slate-800 bg-slate-900/80 hover:border-amber-400/50 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all cursor-pointer backdrop-blur-md">
+                <span class="text-3xl">📱</span>
+                <span class="text-xs font-bold tracking-wide text-center">Sosyal Medya</span>
+            </button>
+            <button onclick="switchTab('tabela')" id="btn-tabela" class="tab-btn flex-shrink-0 min-w-[140px] sm:min-w-0 border border-slate-800 bg-slate-900/80 hover:border-amber-400/50 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 transition-all cursor-pointer backdrop-blur-md">
+                <span class="text-3xl">🏢</span>
+                <span class="text-xs font-bold tracking-wide text-center">Tabela Dizayn</span>
+            </button>
+        </div>
+
+        <!-- SEKMELERİN İÇERİK ALANLARI -->
+        <div id="tab-contents" class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+            
+            <img src="/blcajans.png" alt="BLC Logo" class="absolute -bottom-10 -right-10 w-48 h-48 opacity-[0.04] pointer-events-none">
+
+            <!-- 1. DÜĞÜN FOTOĞRAFÇILIĞI -->
+            <div id="content-dugun" class="tab-content fade-in space-y-6 sm:space-y-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-5 gap-4">
+                    <div>
+                        <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20">Özel Anlar & Anılar</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">Düğün Prodüksiyonu</h3>
+                    </div>
+                    
+                    <div class="flex gap-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 self-start sm:self-auto w-full sm:w-auto">
+                        <button onclick="switchSubTab('discekim')" id="subbtn-discekim" class="sub-tab-btn active flex-1 sm:flex-none px-5 py-2 rounded-xl text-xs font-bold transition-all">Dış Çekim</button>
+                        <button onclick="switchSubTab('hikaye')" id="subbtn-hikaye" class="sub-tab-btn flex-1 sm:flex-none px-5 py-2 rounded-xl text-xs font-bold transition-all">Düğün Hikayesi (Klip)</button>
+                    </div>
+                </div>
+
+                <div id="subcontent-discekim" class="sub-tab-content fade-in">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">📷</span>
+                            <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 1</span>
+                        </div>
+                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">📸</span>
+                            <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 2</span>
+                        </div>
+                        <div class="group relative aspect-[4/5] bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">✨</span>
+                            <span class="text-xs text-amber-400 font-bold">Dış Çekim Fotoğrafı 3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="subcontent-hikaye" class="sub-tab-content hidden fade-in">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎥</span>
+                            <span class="text-xs text-amber-400 font-bold">Sinematik Düğün Hikayesi</span>
+                        </div>
+                        <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                            <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🛸</span>
+                            <span class="text-xs text-amber-400 font-bold">Drone Çekimleri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. TANITIM FİLMLERİ -->
+            <div id="content-tanitim" class="tab-content hidden fade-in space-y-6">
+                <div class="border-b border-slate-800 pb-4 flex justify-between items-center">
+                    <div>
+                        <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20">Profesyonel Prodüksiyon</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">Kurumsal Tanıtım Filmleri</h3>
+                    </div>
+                </div>
+
+                <div id="tanitimGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🏢</span>
+                        <span class="text-xs text-amber-400 font-bold">Fabrika & Mekan Tanıtımı</span>
+                    </div>
+                    <div class="group relative aspect-video bg-slate-950/60 rounded-2xl border border-slate-800 overflow-hidden flex flex-col items-center justify-center text-center p-4 hover:border-amber-400/50 transition-all shadow-lg">
+                        <span class="text-4xl mb-2 group-hover:scale-110 transition-transform">🎬</span>
+                        <span class="text-xs text-amber-400 font-bold">Reklam Filmi Prodüksiyonu</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. KURUMSAL KİMLİK -->
+            <div id="content-kurumsal" class="tab-content hidden fade-in space-y-6">
+                <div class="border-b border-slate-800 pb-4">
+                    <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20">Görsel Marka Dizaynı</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">Kurumsal Kimlik Tasarımı</h3>
+                </div>
+                
+                <div class="bg-slate-950/50 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 text-slate-300 leading-relaxed shadow-inner">
+                    <p class="text-sm sm:text-base font-normal">
+                        Kurumsal kimlik, markanızın değerlerini, vizyonunu ve profesyonel duruşunu yansıtan tüm görsel ve iletişim unsurlarını kapsar. Bu bölümde; logo kullanımı, kurumsal renkler, tipografi, antetli evraklar, kartvizit tasarımları, e-posta imzaları ve diğer kurumsal materyallere ilişkin standartlar yer almaktadır.
+                    </p>
+                    <p class="text-sm sm:text-base font-normal text-slate-400">
+                        Belirlenen kurumsal kimlik kurallarına uygun hareket edilmesi, marka bütünlüğünün korunmasını, tüm iletişim kanallarında tutarlı bir görünüm oluşturulmasını ve kurumsal algının güçlendirilmesini sağlar. Hazırlanan tüm basılı ve dijital materyallerin bu standartlara uygun olarak kullanılması önem arz etmektedir.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4. WEB SİTE KURULUM VE ÇÖZÜMLERİ -->
+            <div id="content-website" class="tab-content hidden fade-in space-y-8">
+                <div class="border-b border-slate-800 pb-4">
+                    <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20">Dijital Dönüşüm & Yazılım</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">Web Site Kurulum & Yazılım Çözümleri</h3>
+                </div>
+
+                <!-- Öne Çıkan Özellik Kartları -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/40 transition-all">
+                        <span class="text-2xl mb-2">🚀</span>
+                        <div>
+                            <div class="text-amber-400 text-xs font-black uppercase tracking-wider">01. Kurumsal Siteler</div>
+                            <p class="text-slate-400 text-[11px] mt-1 leading-snug">Marka güvenilirliği sağlayan profesyonel platformlar.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/40 transition-all">
+                        <span class="text-2xl mb-2">🛍️</span>
+                        <div>
+                            <div class="text-amber-400 text-xs font-black uppercase tracking-wider">02. E-Ticaret</div>
+                            <p class="text-slate-400 text-[11px] mt-1 leading-snug">Güvenli ödeme ve kolay yönetimli online satış mağazaları.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/40 transition-all">
+                        <span class="text-2xl mb-2">💻</span>
+                        <div>
+                            <div class="text-amber-400 text-xs font-black uppercase tracking-wider">03. Özel Yazılımlar</div>
+                            <p class="text-slate-400 text-[11px] mt-1 leading-snug">İhtiyaçlarınıza tam özel kodlanan modüller & paneller.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/40 transition-all">
+                        <span class="text-2xl mb-2">🛠️</span>
+                        <div>
+                            <div class="text-amber-400 text-xs font-black uppercase tracking-wider">04. Bakım & SEO</div>
+                            <p class="text-slate-400 text-[11px] mt-1 leading-snug">Kesintisiz teknik destek, arama motoru optimizasyonu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detaylı Metin Bloğu -->
+                <div class="bg-slate-950/50 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-5 text-slate-300 leading-relaxed shadow-inner">
+                    <p class="text-sm sm:text-base font-normal">
+                        Günümüz dijital dünyasında güçlü bir web sitesi, markanızın güvenilirliğini artıran ve müşterilerinizle etkili iletişim kurmanızı sağlayan en önemli araçlardan biridir. İhtiyaçlarınıza ve hedef kitlenize uygun, modern tasarım anlayışıyla hazırlanan web siteleri; hızlı, güvenli ve mobil uyumlu yapılarıyla kullanıcı deneyimini en üst seviyeye taşır.
+                    </p>
+                    <p class="text-sm sm:text-base font-normal text-slate-400">
+                        Web site kurulumu sürecinde alan adı (domain) tescili, hosting hizmeti, kullanıcı dostu arayüz tasarımı, içerik yönetim sistemi entegrasyonu, SEO altyapısı ve güvenlik optimizasyonları eksiksiz şekilde planlanır. Böylece işletmeniz dijital ortamda profesyonel bir kimlik kazanırken, arama motorlarında daha görünür hale gelir.
+                    </p>
+                    <p class="text-sm sm:text-base font-normal text-slate-400">
+                        İhtiyaç duyulan tüm web çözümleri kapsamında kurumsal web siteleri, e-ticaret platformları, kişisel web projeleri ve özel yazılım tabanlı uygulamalar geliştirilir. Ayrıca bakım, güncelleme, performans optimizasyonu, yedekleme ve teknik destek hizmetleriyle web sitenizin kesintisiz ve güvenli bir şekilde çalışması sağlanır.
+                    </p>
+                    <div class="p-4 bg-amber-400/10 border border-amber-400/20 rounded-xl text-amber-300 font-medium text-xs sm:text-sm">
+                        ✨ Her projede hedefimiz; estetik tasarımı, güçlü altyapıyı ve yüksek performansı bir araya getirerek işletmenizin dijital dönüşümüne değer katmak ve sürdürülebilir bir çevrimiçi başarı elde etmenize yardımcı olmaktır.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. SOSYAL MEDYA YÖNETİMİ -->
+            <div id="content-sosyal" class="tab-content hidden fade-in space-y-6">
+                <div class="border-b border-slate-800 pb-4">
+                    <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20">Dijital Pazarlama & Reels</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">Sosyal Medya Yönetimi</h3>
+                </div>
+
+                <div class="bg-slate-950/50 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-5 text-slate-300 leading-relaxed shadow-inner">
+                    <p class="text-sm sm:text-base font-normal">
+                        Markanızın dijital dünyada daha güçlü bir görünürlük kazanması için profesyonel sosyal medya yönetimi hizmeti sunuyoruz. Hedef kitlenize uygun içerikler üreterek etkileşiminizi artırıyor, düzenli paylaşımlar ve stratejik planlamalarla sosyal medya hesaplarınızı aktif ve etkili bir şekilde yönetiyoruz.
+                    </p>
+                    <p class="text-sm sm:text-base font-normal text-slate-400">
+                        İhtiyaçlarınıza uygun olarak hazırladığımız <strong class="text-amber-400">4 Reels</strong>, <strong class="text-amber-400">8 Reels</strong> ve <strong class="text-amber-400">12 Reels</strong> paketlerimizle farklı bütçe ve içerik ihtiyaçlarına yönelik esnek çözümler sunuyoruz. Tüm paketlerimiz, markanızın dijital varlığını güçlendirmeye ve sürdürülebilir bir sosyal medya stratejisi oluşturmaya yönelik profesyonel hizmet anlayışıyla hazırlanmaktadır.
+                    </p>
+                </div>
+
+                <!-- Reels Paket Kartları -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+                    <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/50 transition-all text-center shadow-lg">
+                        <div>
+                            <span class="text-3xl">🎬</span>
+                            <h4 class="text-lg font-black text-amber-400 mt-2">4 Reels Paketi</h4>
+                            <p class="text-xs text-slate-400 mt-2">Sosyal medyaya başlangıç yapmak ve düzenli görünürlük kazanmak isteyen markalar için ideal paket.</p>
+                        </div>
+                    </div>
+                    <div class="bg-amber-400/10 p-6 rounded-2xl border border-amber-400/30 flex flex-col justify-between hover:border-amber-400 transition-all text-center relative shadow-xl">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-black text-[10px] font-black uppercase px-3 py-0.5 rounded-full">En Çok Tercih Edilen</span>
+                        <div>
+                            <span class="text-3xl">🔥</span>
+                            <h4 class="text-lg font-black text-amber-300 mt-2">8 Reels Paketi</h4>
+                            <p class="text-xs text-slate-300 mt-2">Daha aktif etkileşim ve dengeli bir içerik akışı ile dijital varlığını büyütmek isteyenler için.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between hover:border-amber-400/50 transition-all text-center shadow-lg">
+                        <div>
+                            <span class="text-3xl">🚀</span>
+                            <h4 class="text-lg font-black text-amber-400 mt-2">12 Reels Paketi</h4>
+                            <p class="text-xs text-slate-400 mt-2">Maksimum erişim, yüksek etkileşim ve tam kapsamlı sosyal medya içeriği hedefleyen markalar için.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. PROFESYONEL TABELA DİZAYN -->
+            <div id="content-tabela" class="tab-content hidden fade-in space-y-6">
+                <div class="border-b border-slate-800 pb-4">
+                    <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20">Mekan Mimarisi & Dış Cephe</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">Profesyonel Tabela & Mağaza Cephe Dizaynı</h3>
+                </div>
+
+                <div class="bg-slate-950/50 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-5 text-slate-300 leading-relaxed shadow-inner">
+                    <p class="text-sm sm:text-base font-normal">
+                        Tabela, bir işletmenin müşterileriyle kurduğu ilk görsel iletişim aracıdır. Profesyonel bir tabela tasarımı, markanızın kurumsal kimliğini yansıtırken güvenilirlik ve prestij kazandırır. Doğru renk, yazı tipi, malzeme ve aydınlatma kullanımı sayesinde işletmeniz daha dikkat çekici hale gelir ve potansiyel müşteriler tarafından kolayca fark edilir.
+                    </p>
+                    <p class="text-sm sm:text-base font-normal text-slate-400">
+                        İyi tasarlanmış bir tabela yalnızca yönlendirme amacı taşımaz; aynı zamanda marka bilinirliğini artıran, akılda kalıcılığı destekleyen ve işletmenizin profesyonel imajını güçlendiren önemli bir reklam unsurudur. İşletmenizin konumu ve hedef kitlesine uygun olarak hazırlanan özgün tabela tasarımlarıyla markanızı en etkili şekilde yansıtıyor, estetik ve işlevselliği bir araya getiriyoruz.
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <!-- Alt Bilgi -->
-    <footer class="py-6 text-center text-white/70 text-xs border-t border-amber-400/30">
-        &copy; 2026 <span class="text-amber-400 font-semibold">BLC Ajans</span> • Zonguldak Ereğli, Tüm hakları saklıdır.
+    <!-- FOOTER -->
+    <footer class="py-10 text-center text-slate-400 text-xs border-t border-slate-800/80 bg-slate-950 space-y-4">
+        <div class="flex justify-center items-center gap-2">
+            <img src="/blcajans.png" alt="BLC Logo Footer" class="h-10 w-auto filter drop-shadow">
+        </div>
+        <p class="font-semibold">
+            &copy; 2026 <span class="text-amber-400 font-bold">BLC Ajans</span> • Zonguldak Ereğli Medya & Fotoğrafçılık Stüdyosu
+        </p>
+        <p class="text-[11px] text-slate-500">
+            Tüm hakları saklıdır.
+        </p>
     </footer>
 
+    <!-- JAVASCRIPT KONTROLLERİ -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            document.getElementById('btn-' + tabName).classList.add('active');
+        }
+
+        function switchSubTab(subTabName) {
+            document.querySelectorAll('.sub-tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById('subcontent-' + subTabName).classList.remove('hidden');
+            document.getElementById('subbtn-' + subTabName).classList.add('active');
+        }
+    </script>
 </body>
 </html>
