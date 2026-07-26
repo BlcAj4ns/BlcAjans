@@ -6,7 +6,7 @@
     
     <!-- SİTE BAŞLIĞI VE GOOGLE ARAMA AÇIKLAMASI -->
     <title>Hakkımızda | BLC Ajans Zonguldak Ereğli</title>
-    <meta name="description" content="Zonguldak Ereğli merkezli BLC Ajans hakkında bilgi alın. Kurucumuz Tolunay Balcı ve profesyonel ekibimizle fotoğrafçılık, reklamcılık, organizasyon ve inşaat projelerimiz.">
+    <meta name="description" content="Zonguldak Ereğli merkezli BLC Ajans hakkında bilgi alın. Kurucumuz Tolunay Balcı ve profesyonel ekibimizle fotoğrafçılık, reklamcılık, organizasyon ve projelerimiz.">
     
     <!-- TARAYICI SEKME LOGOSU & FAVICON -->
     <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
@@ -40,8 +40,11 @@
             pointer-events: none; 
         }
 
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
@@ -64,40 +67,38 @@
                 </span>
                 <nav class="flex items-center gap-6 text-xs font-bold tracking-wider uppercase">
                     <a href="/" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="/TolunayBalcı" class="text-slate-300 hover:text-amber-400 transition-all">Tolunay Balcı</a>
                     <a href="/hakkimizda" class="text-amber-400 border-b-2 border-amber-400 pb-0.5">Hakkımızda</a>
                     <a href="/rehber" class="text-slate-300 hover:text-amber-400 transition-all">Rehber</a>
-                    <a href="/yorumlar" class="text-slate-300 hover:text-amber-400 transition-all">Yorumlar</a>
                     <a href="/iletisim" class="bg-amber-500 hover:bg-amber-400 text-black px-5 py-2.5 rounded-lg transition-all font-black shadow-lg shadow-amber-500/20 active:scale-95">İletişim</a>
                 </nav>
             </div>
 
-            <!-- Mobil Menü Butonu / Geri Dönüş -->
-            <div class="flex items-center gap-3 lg:hidden">
-                <a href="/" class="text-xs text-amber-400 font-bold bg-amber-500/10 px-3 py-2 rounded-xl border border-amber-500/20">← Ana Sayfa</a>
-                <button onclick="toggleMobileMenu()" class="p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
-                    <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
+            <!-- Mobil Menü Butonu -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
+                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </div>
 
-        <!-- Mobil Menü -->
+        <!-- Mobil Menü Açılır Alanı -->
         <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
-            <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-bold">Ana Sayfa</a>
+            <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Ana Sayfa</a>
+            <a href="/TolunayBalcı" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Tolunay Balcı</a>
             <a href="/hakkimizda" class="block text-amber-400 font-bold text-xs">Hakkımızda</a>
             <a href="/rehber" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Rehber</a>
-            <a href="/yorumlar" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Yorumlar</a>
             <a href="/iletisim" class="block text-center bg-amber-400 text-black font-bold py-2.5 rounded-xl text-xs shadow-md">İletişim</a>
         </div>
     </header>
 
     <!-- İÇERİK ALANI -->
     <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-12 sm:py-16">
-        <div class="bg-slate-900/80 border border-slate-800 hover:border-amber-400/50 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl transition-all duration-300 space-y-10 relative overflow-hidden">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden fade-in space-y-10">
             
-            <img src="/blcajans.png" alt="BLC Logo" class="absolute -bottom-10 -right-10 w-48 h-48 opacity-[0.04] pointer-events-none">
+            <!-- Arka Plan Filigran Logosu -->
+            <img src="/blcajans.png" alt="Arka Plan Logo" class="absolute -bottom-10 -right-10 w-48 h-48 opacity-[0.04] pointer-events-none object-contain">
 
             <!-- BİZ KİMİZ? -->
-            <div class="space-y-4">
+            <div class="space-y-4 relative z-10">
                 <h2 class="text-2xl sm:text-3xl font-black text-amber-400 tracking-wide uppercase">BİZ KİMİZ?</h2>
                 <p class="text-slate-200 text-base leading-relaxed font-normal">
                     Blc Ajans, yaratıcı fikirleri, güçlü görselleri ve etkili pazarlama stratejileriyle markaları bir adım öne taşıyan dinamik bir reklam ve fotoğrafçılık ajansıdır. Kurucumuz Tolunay Balcı, inşaat mühendisliği alanındaki profesyonelliğini, yıllardır süregelen fotoğrafçılık ve tasarım tutkusuyla birleştirerek sektörde fark yaratan bir vizyon oluşturdu.
@@ -114,7 +115,7 @@
             </div>
 
             <!-- VİZYONUMUZ -->
-            <div class="space-y-4 pt-6 border-t border-slate-800">
+            <div class="space-y-4 pt-6 border-t border-slate-800 relative z-10">
                 <h2 class="text-2xl sm:text-3xl font-black text-amber-400 tracking-wide uppercase">Vizyonumuz</h2>
                 <p class="text-slate-200 text-base leading-relaxed font-normal">
                     Blc Ajans olarak, fotoğrafçılık, reklamcılık ve organizasyon alanlarında sektöre yön veren, yenilikçi ve ilham verici projeler üreten öncü bir marka olmayı hedefliyoruz. Kreatif bakış açımız, güçlü ekibimiz ve teknolojiye uyumlu çalışmalarımızla müşterilerimize en iyi hizmeti sunarak fark yaratmak istiyoruz.
@@ -128,7 +129,7 @@
             </div>
 
             <!-- MİSYONUMUZ -->
-            <div class="space-y-4 pt-6 border-t border-slate-800">
+            <div class="space-y-4 pt-6 border-t border-slate-800 relative z-10">
                 <h2 class="text-2xl sm:text-3xl font-black text-amber-400 tracking-wide uppercase">Misyonumuz</h2>
                 <p class="text-slate-200 text-base leading-relaxed font-normal">
                     Blc Ajans olarak, markaların görsel dünyasını güçlendiren yaratıcı çözümler üretmeyi, estetik ve stratejiyi bir araya getirerek fark yaratan projelere imza atmayı amaçlıyoruz. Fotoğrafçılık, reklamcılık ve organizasyon alanlarında sunduğumuz profesyonel hizmetlerle, bireysel ve kurumsal müşterilerimize en etkili ve özgün çözümleri sunuyoruz.
@@ -139,21 +140,13 @@
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Yaratıcılığı, profesyonelliği ve müşteri memnuniyetini ön planda tutarak, markaların hikayelerini en etkili şekilde anlatmalarına yardımcı olmayı ve her alanda kalıcı izler bırakmayı hedefliyoruz.
                 </p>
-            </div>
-
-            <!-- İSTATİSTİK KUTULARI -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800">
-                <div class="text-center p-5 bg-slate-950/60 rounded-2xl border border-slate-800 shadow-inner">
-                    <div class="text-2xl sm:text-3xl font-black text-amber-400 mb-1">100%</div>
-                    <div class="text-xs text-slate-300 font-bold uppercase tracking-wider">Müşteri Memnuniyeti</div>
-                </div>
-                <div class="text-center p-5 bg-slate-950/60 rounded-2xl border border-slate-800 shadow-inner">
-                    <div class="text-2xl sm:text-3xl font-black text-amber-400 mb-1">4K/8K</div>
-                    <div class="text-xs text-slate-300 font-bold uppercase tracking-wider">Sinematik Çözünürlük</div>
-                </div>
-                <div class="text-center p-5 bg-slate-950/60 rounded-2xl border border-slate-800 shadow-inner">
-                    <div class="text-2xl sm:text-3xl font-black text-amber-400 mb-1">Ereğli / Merkez</div>
-                    <div class="text-xs text-slate-300 font-bold uppercase tracking-wider">Stüdyo Konumu</div>
+                
+                <!-- BEN KİMİM? BUTONU -->
+                <div class="pt-4">
+                    <a href="/TolunayBalcı" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-amber-500/20 active:scale-95 group">
+                        <span>Ben Kimim?</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
                 </div>
             </div>
 
