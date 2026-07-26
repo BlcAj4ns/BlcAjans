@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SİTE BAŞLIĞI VE GOOGLE ARAMA AÇIKLAMASI -->
+    <title>Rehber | BLC Ajans - Zonguldak Ereğli</title>
+    <meta name="description" content="BLC Ajans rehber sayfası; Zonguldak Ereğli fotoğrafçılık, düğün çekimleri, sosyal medya ve web tasarım ipuçları.">
+    
+    <!-- FAVICON ETİKETLERİ -->
+    <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/sitelogo.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/blcajans.png">
+    <link rel="apple-touch-icon" href="/blcajans.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            background: #090d16;
+            color: #f1f5f9; 
+            font-family: system-ui, -apple-system, sans-serif; 
+            position: relative; 
+            overflow-x: hidden; 
+        }
+        
+        .bg-watermark { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: min(90vw, 850px); 
+            height: min(90vw, 850px); 
+            background-image: url('/blcajans.png'); 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: contain; 
+            opacity: 0.03; 
+            z-index: -1; 
+            pointer-events: none; 
+        }
+        
+        .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
+    <div class="bg-watermark"></div>
+
+    <!-- HEADER -->
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
+            
+            <a href="/" class="group flex items-center py-1">
+                <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
+            </a>
+
+            <!-- Masaüstü Navigasyon -->
+            <div class="hidden lg:flex items-center gap-6">
+                <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    📍 Zonguldak Ereğli / Türkiye
+                </span>
+                <nav class="flex items-center gap-6 text-xs font-bold tracking-wider uppercase">
+                    <a href="/" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
+                    <a href="/hakkimizda" class="text-slate-300 hover:text-amber-400 transition-all">Hakkımızda</a>
+                    <a href="/rehber" class="text-amber-400 border-b-2 border-amber-400 pb-0.5">Rehber</a>
+                    <a href="/yorumlar" class="text-slate-300 hover:text-amber-400 transition-all">Yorumlar</a>
+                    <a href="/iletisim" class="bg-amber-500 hover:bg-amber-400 text-black px-5 py-2.5 rounded-lg transition-all font-black shadow-lg shadow-amber-500/20 active:scale-95">İletişim</a>
+                </nav>
+            </div>
+
+            <!-- Mobil Menü Butonu -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
+                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobil Menü -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
+            <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Ana Sayfa</a>
+            <a href="/hakkimizda" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Hakkımızda</a>
+            <a href="/rehber" class="block text-amber-400 font-bold text-xs">Rehber</a>
+            <a href="/yorumlar" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Yorumlar</a>
+            <a href="/iletisim" class="block text-center bg-amber-400 text-black font-bold py-2.5 rounded-xl text-xs shadow-md">İletişim</a>
+        </div>
+    </header>
+
+    <!-- REHBER İÇERİK ALANI -->
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-12 sm:py-16">
+        <div class="text-center mb-12 space-y-3">
+            <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-md border border-amber-400/20">Bilgi Bankası</span>
+            <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">BLC Ajans Rehber</h1>
+            <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                Fotoğraf çekimleri, kurumsal prodüksiyon süreçleri ve dijital pazarlama dünyası hakkında bilmeniz gerekenler.
+            </p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Rehber Kartı 1 -->
+            <article class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl hover:border-amber-400/40 transition-all">
+                <div class="flex items-center gap-3 text-amber-400 text-xs font-bold mb-3">
+                    <span>💍 Düğün Fotoğrafçılığı</span>
+                    <span>•</span>
+                    <span class="text-slate-400 font-normal">Zonguldak Ereğli</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-black text-white mb-3">Zonguldak Ereğli'de Dış Çekim İçin En İyi Mekanlar</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                    Unutulmaz bir düğün albümü için doğru lokasyon seçimi kritik önem taşır. Ereğli'nin eşsiz sahilleri, doğa manzaraları ve tarihi dokuya sahip noktaları dış çekimleriniz için kusursuz arka planlar sunar.
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80 text-xs text-slate-400">
+                    <span>Okuma Süresi: 3 dk</span>
+                    <span class="text-amber-400 font-bold hover:underline cursor-pointer">Devamını Oku &rarr;</span>
+                </div>
+            </article>
+
+            <!-- Rehber Kartı 2 -->
+            <article class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl hover:border-amber-400/40 transition-all">
+                <div class="flex items-center gap-3 text-amber-400 text-xs font-bold mb-3">
+                    <span>🎬 Prodüksiyon</span>
+                    <span>•</span>
+                    <span class="text-slate-400 font-normal">Kurumsal</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-black text-white mb-3">Kurumsal Tanıtım Filmi Çektirirken Nelere Dikkat Edilmeli?</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                    İşletmenizi ve fabrikanızı en iyi şekilde yansıtan bir tanıtım filmi, kurumsal imajınızı doğrudan yukarı taşır. Senaryo aşamasından ekipman kalitesine kadar dikkat edilmesi gereken temel unsurlar.
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80 text-xs text-slate-400">
+                    <span>Okuma Süresi: 4 dk</span>
+                    <span class="text-amber-400 font-bold hover:underline cursor-pointer">Devamını Oku &rarr;</span>
+                </div>
+            </article>
+
+            <!-- Rehber Kartı 3 -->
+            <article class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl hover:border-amber-400/40 transition-all">
+                <div class="flex items-center gap-3 text-amber-400 text-xs font-bold mb-3">
+                    <span>📱 Sosyal Medya</span>
+                    <span>•</span>
+                    <span class="text-slate-400 font-normal">Dijital Pazarlama</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-black text-white mb-3">Sosyal Medyada Reels Videoları ile Etkileşim Nasıl Artırılır?</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                    Günümüz dijital dünyasında kısa videolar (Reels) markaların büyümesinde en büyük etkiye sahip. 4'lü, 8'li veya 12'li düzenli paket stratejileriyle sayfanızı nasıl öne çıkarabileceğinizi inceleyin.
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80 text-xs text-slate-400">
+                    <span>Okuma Süresi: 3 dk</span>
+                    <span class="text-amber-400 font-bold hover:underline cursor-pointer">Devamını Oku &rarr;</span>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 text-center text-slate-400 text-xs border-t border-slate-800/80 bg-slate-950 space-y-3">
+        <div class="flex justify-center items-center gap-2">
+            <img src="/blcajans.png" alt="BLC Logo Footer" class="h-10 w-auto filter drop-shadow">
+        </div>
+        <p class="font-semibold text-slate-300">
+            &copy; 2026 <span class="text-amber-400 font-bold">BLC Ajans</span> • Zonguldak Ereğli Medya & Fotoğrafçılık Stüdyosu
+        </p>
+        <p class="text-slate-400 text-[11px]">
+            Kurucu: <strong class="text-slate-200">Tolunay Balcı</strong> | Tüm hakları saklıdır.
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
