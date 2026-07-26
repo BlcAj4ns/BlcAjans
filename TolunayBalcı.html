@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- SİTE BAŞLIĞI VE GOOGLE ARAMA AÇIKLAMASI (META DESCRIPTION) -->
-    <title>Tolunay Balcı | BLC Ajans Kurucusu & Medya Direktörü</title>
-    <meta name="description" content="BLC Ajans kurucusu Tolunay Balcı'nın profesyonel portföyü, medya çalışmaları, düğün fotoğrafçılığı ve prodüksiyon projeleri.">
+    <!-- SİTE BAŞLIĞI VE GOOGLE ARAMA AÇIKLAMASI -->
+    <title>Tolunay Balcı | Kurucu & Medya Direktörü - BLC Ajans</title>
+    <meta name="description" content="Zonguldak Ereğli BLC Ajans kurucusu Tolunay Balcı hakkında bilgi alın. Fotoğrafçılık, sinematik prodüksiyon, video kurgu ve dijital medya çözümleri.">
     
-    <!-- GOOGLE ARAMA SONUÇLARI & FAVICON ETİKETLERİ -->
+    <!-- TARAYICI SEKME LOGOSU & FAVICON -->
     <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/sitelogo.ico">
     <link rel="icon" type="image/png" sizes="192x192" href="/blcajans.png">
@@ -40,29 +40,38 @@
             pointer-events: none; 
         }
 
-        .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .fade-in { 
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
+
+    <!-- ARKA PLAN FİLİGRAN EFEKTİ -->
     <div class="bg-watermark"></div>
 
-    <!-- HEADER -->
+    <!-- HEADER / MENÜ -->
     <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
             
+            <!-- LOGO ALANI -->
             <a href="/" class="group flex items-center py-1">
                 <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
             </a>
 
+            <!-- Masaüstü Navigasyon -->
             <div class="hidden lg:flex items-center gap-6">
                 <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
                     <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                     📍 Zonguldak Ereğli / Türkiye
                 </span>
+
                 <nav class="flex items-center gap-6 text-xs font-bold tracking-wider uppercase">
                     <a href="/" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
                     <a href="/TolunayBalcı" class="text-amber-400 border-b-2 border-amber-400 pb-0.5">Tolunay Balcı</a>
@@ -72,11 +81,15 @@
                 </nav>
             </div>
 
+            <!-- Mobil Menü Butonu -->
             <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
-                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
             </button>
         </div>
 
+        <!-- Mobil Menü Açılır Alanı -->
         <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
             <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Ana Sayfa</a>
             <a href="/TolunayBalcı" class="block text-amber-400 font-bold text-xs">Tolunay Balcı</a>
@@ -86,23 +99,26 @@
         </div>
     </header>
 
-    <!-- İÇERİK -->
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-12 sm:py-16">
-        <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden fade-in">
+    <!-- İÇERİK ALANI -->
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-12 sm:py-16">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden fade-in space-y-8">
             
-            <!-- Kartın alt kısmını kaplayan dev arka plan logosu -->
-            <img src="/blcajans.png" alt="Arka Plan Logo" class="absolute -bottom-16 -right-16 w-96 h-96 opacity-[0.06] pointer-events-none object-contain">
+            <!-- Arka Plan Filigran Logosu -->
+            <img src="/blcajans.png" alt="Arka Plan Logo" class="absolute -bottom-10 -right-10 w-48 h-48 opacity-[0.04] pointer-events-none object-contain">
 
-            <div class="flex flex-col md:flex-row items-center gap-8 border-b border-slate-800 pb-10 relative z-10">
-                <!-- Şık Tasarım Avatar Alanı (Kırık Resim Sorunu Olmaz) -->
-                <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-2 border-amber-500/40 overflow-hidden flex-shrink-0 flex flex-col items-center justify-center shadow-xl relative group">
-                    <div class="absolute inset-0 bg-amber-500/5 group-hover:bg-amber-500/10 transition-colors"></div>
-                    <span class="text-4xl sm:text-5xl font-black text-amber-400 tracking-wider drop-shadow-md">TB</span>
-                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">BLC Ajans</span>
+            <!-- ÜST PROFİL BÖLÜMÜ (FOTOĞRAF VE BİLGİLER) -->
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                
+                <!-- GERÇEK FOTOĞRAF ALANI -->
+                <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-[0_0_30px_rgba(245,158,11,0.2)] bg-slate-950 flex-shrink-0 relative group">
+                    <img src="/Tolunay.png" alt="Tolunay Balcı - BLC Ajans Kurucusu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
 
-                <div class="text-center md:text-left space-y-3">
-                    <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-md border border-amber-400/25 shadow-inner">Kurucu & Medya Direktörü</span>
+                <!-- PROFİL METİN ALANI -->
+                <div class="space-y-3 text-center md:text-left flex-grow">
+                    <span class="inline-block text-[11px] font-black uppercase tracking-widest bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full border border-amber-500/20">
+                        Kurucu & Medya Direktörü
+                    </span>
                     <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Tolunay Balcı</h1>
                     <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
                         Zonguldak Ereğli merkezli BLC Ajans'ın kurucusu olarak; profesyonel düğün fotoğrafçılığı, sinematik prodüksiyon, ileri düzey video kurgu ve dijital medya çözümleri alanlarında yaratıcı projelere liderlik ediyorum.
@@ -110,37 +126,35 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 relative z-10">
-                <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800 space-y-3 shadow-lg backdrop-blur-sm">
-                    <div class="text-amber-400 font-bold text-sm flex items-center gap-2">
-                        <span>🎯</span> Vizyon & Misyon
-                    </div>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Her markanın ve her çiftin hikayesinin benzersiz olduğuna inanıyoruz. En son nesil ekipmanlar ve estetik bakış açımızla, Zonguldak ve çevresinde görsel standartları yukarı taşıyan projelere imza atıyoruz.
-                    </p>
-                </div>
+            <hr class="border-slate-800">
 
-                <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800 space-y-3 shadow-lg backdrop-blur-sm">
-                    <div class="text-amber-400 font-bold text-sm flex items-center gap-2">
-                        <span>🚀</span> Uzmanlık Alanları
+            <!-- UZMANLIK ALANLARI KUTUSU (TEK BAŞINA GENİŞ ALAN) -->
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-4 shadow-inner relative z-10">
+                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2 uppercase tracking-wider">
+                    <span>🚀</span> Uzmanlık Alanları
+                </h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800/60 px-4 py-3 rounded-xl">
+                        <span class="text-amber-400 text-base">✨</span>
+                        <span class="font-medium">Profesyonel Photoshop & Rötuş</span>
                     </div>
-                    <ul class="text-slate-300 text-xs sm:text-sm space-y-2.5">
-                        <li class="flex items-center gap-2.5">
-                            <span class="text-base">✨</span> <strong>Profesyonel Photoshop & Rötuş</strong>
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="text-base">🎬</span> <strong>Sinematik Video Kurgu & Profesyonel Edit</strong>
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="text-base">💍</span> <strong>Düğün & Dış Çekim Prodüksiyonu</strong>
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="text-base">🏢</span> <strong>Kurumsal Tanıtım & Reklam Filmleri</strong>
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="text-base">📱</span> <strong>Sosyal Medya Yönetimi & Reels Yapımı</strong>
-                        </li>
-                    </ul>
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800/60 px-4 py-3 rounded-xl">
+                        <span class="text-amber-400 text-base">🎬</span>
+                        <span class="font-medium">Sinematik Video Kurgu & Profesyonel Edit</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800/60 px-4 py-3 rounded-xl">
+                        <span class="text-amber-400 text-base">💍</span>
+                        <span class="font-medium">Düğün & Dış Çekim Prodüksiyonu</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800/60 px-4 py-3 rounded-xl">
+                        <span class="text-amber-400 text-base">🏢</span>
+                        <span class="font-medium">Kurumsal Tanıtım & Reklam Filmleri</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-900/60 border border-slate-800/60 px-4 py-3 rounded-xl sm:col-span-2">
+                        <span class="text-amber-400 text-base">📱</span>
+                        <span class="font-medium">Sosyal Medya Yönetimi & Reels Yapımı</span>
+                    </div>
                 </div>
             </div>
 
@@ -163,7 +177,8 @@
     <!-- JAVASCRIPT KONTROLLERİ -->
     <script>
         function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
         }
     </script>
 </body>
