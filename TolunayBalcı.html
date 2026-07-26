@@ -3,54 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- ARAMA MOTORLARINDA ÇIKMAMASI İÇİN ENGELLEYİCİ ETİKET -->
     <meta name="robots" content="noindex, nofollow">
-    
     <title>Özel Kurucu Alanı | BLC Ajans - Tolunay Balcı</title>
     <meta name="description" content="BLC Ajans kurucu özel alanı.">
-    
     <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/sitelogo.ico">
     <link rel="icon" type="image/png" sizes="192x192" href="/blcajans.png">
     <link rel="apple-touch-icon" href="/blcajans.png">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { 
-            background: #090d16;
-            color: #f1f5f9; 
-            font-family: system-ui, -apple-system, sans-serif; 
-            position: relative; 
-            overflow-x: hidden; 
-        }
-        .bg-watermark { 
-            position: fixed; 
-            top: 50%; left: 50%; 
-            transform: translate(-50%, -50%); 
-            width: min(90vw, 850px); height: min(90vw, 850px); 
-            background-image: url('/blcajans.png'); 
-            background-repeat: no-repeat; background-position: center; background-size: contain; 
-            opacity: 0.03; z-index: -1; pointer-events: none; 
-        }
+        body { background: #090d16; color: #f1f5f9; font-family: system-ui, -apple-system, sans-serif; position: relative; overflow-x: hidden; }
+        .bg-watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(90vw, 850px); height: min(90vw, 850px); background-image: url('/blcajans.png'); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.03; z-index: -1; pointer-events: none; }
         .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
 
     <div class="bg-watermark"></div>
 
-    <!-- HEADER -->
     <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
             <a href="/" class="group flex items-center py-1">
                 <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
             </a>
-
             <div class="hidden lg:flex items-center gap-6">
                 <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
                     <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
@@ -63,12 +39,10 @@
                     <a href="/iletisim" class="bg-amber-500 hover:bg-amber-400 text-black px-5 py-2.5 rounded-lg transition-all font-black shadow-lg shadow-amber-500/20 active:scale-95">İletişim</a>
                 </nav>
             </div>
-
             <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
                 <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
-
         <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
             <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Ana Sayfa</a>
             <a href="/hakkimizda" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Hakkımızda</a>
@@ -77,128 +51,117 @@
         </div>
     </header>
 
-    <!-- İÇERİK ALANI -->
     <main class="flex-grow flex items-center justify-center px-4 py-16">
         
-        <!-- 1. KISITLI ERİŞİM GÖRÜNÜMÜ -->
+        <!-- Kilit Ekranı -->
         <div id="lockedView" class="max-w-md w-full bg-slate-900/80 border border-slate-800 rounded-3xl p-8 sm:p-10 backdrop-blur-xl shadow-2xl text-center space-y-6 fade-in relative overflow-hidden">
             <div class="absolute -top-20 -right-20 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="w-16 h-16 bg-amber-500/10 border border-amber-500/20 rounded-2xl flex items-center justify-center text-amber-400 text-3xl mx-auto shadow-inner">
-                🔒
-            </div>
-
+            <div class="w-16 h-16 bg-amber-500/10 border border-amber-500/20 rounded-2xl flex items-center justify-center text-amber-400 text-3xl mx-auto shadow-inner">🔒</div>
             <div class="space-y-2">
                 <span class="text-[10px] text-amber-400 font-extrabold uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-md border border-amber-400/20">Kısıtlı Bölge</span>
                 <h1 class="text-2xl font-black text-white">Bu Alana Giriş Yapılamaz</h1>
-                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    Burada görüntülenecek herhangi bir içerik bulunmuyor veya bu alana erişim izniniz yok.
-                </p>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Burada görüntülenecek herhangi bir içerik bulunmuyor veya bu alana erişim izniniz yok.</p>
             </div>
-
             <div class="pt-2 space-y-4">
-                <a href="/" class="w-full inline-block bg-amber-500 hover:bg-amber-400 text-black text-xs sm:text-sm font-extrabold py-3.5 px-6 rounded-2xl transition-all shadow-lg shadow-amber-500/20 active:scale-95">
-                    Ana Sayfaya Git
-                </a>
-                
-                <div>
-                    <button onclick="openLoginModal()" class="text-[11px] text-slate-500 hover:text-amber-400 transition-colors underline underline-offset-4">
-                        Admin Girişi
-                    </button>
-                </div>
+                <a href="/" class="w-full inline-block bg-amber-500 hover:bg-amber-400 text-black text-xs sm:text-sm font-extrabold py-3.5 px-6 rounded-2xl transition-all shadow-lg shadow-amber-500/20 active:scale-95">Ana Sayfaya Git</a>
+                <div><button onclick="openLoginModal()" class="text-[11px] text-slate-500 hover:text-amber-400 transition-colors underline underline-offset-4">Admin Girişi</button></div>
             </div>
         </div>
 
-        <!-- 2. ADMIN MEDYA YÖNETİM PANELİ (7 KUTU) -->
+        <!-- Admin Paneli -->
         <div id="adminView" class="hidden max-w-6xl w-full space-y-12 fade-in">
-            <!-- Üst Bilgi Barı -->
             <div class="flex flex-col sm:flex-row justify-between items-center bg-slate-900/90 border border-amber-500/30 p-6 rounded-2xl backdrop-blur-xl shadow-2xl gap-4">
                 <div>
                     <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Kurucu Paneli</span>
-                    <h2 class="text-xl font-black text-white">Özel Medya Yönetimi (Tüm Alanlar)</h2>
+                    <h2 class="text-xl font-black text-white">Medya Yönetimi (Ekle / Kaldır)</h2>
                 </div>
                 <div class="flex items-center gap-3">
-                    <button onclick="logoutAdmin()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold px-4 py-2.5 rounded-xl transition-all">
-                        Çıkış Yap
-                    </button>
-                    <a href="/" class="bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-amber-500/20">
-                        Ana Sayfaya Git
-                    </a>
+                    <button onclick="logoutAdmin()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold px-4 py-2.5 rounded-xl transition-all">Çıkış Yap</button>
+                    <a href="/" class="bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-amber-500/20">Ana Sayfaya Git</a>
                 </div>
             </div>
 
-            <!-- KATEGORİ 1: Düğün Prodüksiyonu (Fotoğraflar) -->
+            <!-- Kategori 1 -->
             <div class="space-y-4 bg-slate-950/40 p-6 rounded-3xl border border-slate-800/80">
-                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2">
-                    <span>📸</span> Düğün Prodüksiyonu (Fotoğraflar)
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Slot 1 -->
+                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2"><span>📸</span> Düğün Prodüksiyonu (Fotoğraflar)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="category-1-slots">
+                    <!-- Slotlar dinamik üretilecek veya aşağıda oluşturulacak -->
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
                         <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-1">
                             <span class="text-slate-500 text-xs font-medium text-center px-2">Dış Çekim Fotoğrafı 1</span>
                         </div>
-                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 1)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                        <div class="flex gap-2">
+                            <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 1)" class="w-full text-xs text-slate-400 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                            <button onclick="removeMedia(1)" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all" title="Kaldır">🗑️</button>
+                        </div>
                     </div>
-                    <!-- Slot 2 -->
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
                         <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-2">
                             <span class="text-slate-500 text-xs font-medium text-center px-2">Dış Çekim Fotoğrafı 2</span>
                         </div>
-                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 2)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                        <div class="flex gap-2">
+                            <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 2)" class="w-full text-xs text-slate-400 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                            <button onclick="removeMedia(2)" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all" title="Kaldır">🗑️</button>
+                        </div>
                     </div>
-                    <!-- Slot 3 -->
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
                         <div class="w-full aspect-[4/5] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-3">
                             <span class="text-slate-500 text-xs font-medium text-center px-2">Dış Çekim Fotoğrafı 3</span>
                         </div>
-                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 3)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                        <div class="flex gap-2">
+                            <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 3)" class="w-full text-xs text-slate-400 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                            <button onclick="removeMedia(3)" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all" title="Kaldır">🗑️</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- KATEGORİ 2: Özel Anlar & Anılar (Videolar) -->
+            <!-- Kategori 2 -->
             <div class="space-y-4 bg-slate-950/40 p-6 rounded-3xl border border-slate-800/80">
-                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2">
-                    <span>🎬</span> Özel Anlar & Anılar (Videolar / Klip)
-                </h3>
+                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2"><span>🎬</span> Özel Anlar & Anılar (Videolar)</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Slot 4 -->
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
                         <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-4">
                             <span class="text-slate-500 text-xs font-medium text-center px-2">Sinematik Düğün Hikayesi</span>
                         </div>
-                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 4)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                        <div class="flex gap-2">
+                            <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 4)" class="w-full text-xs text-slate-400 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                            <button onclick="removeMedia(4)" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all" title="Kaldır">🗑️</button>
+                        </div>
                     </div>
-                    <!-- Slot 5 -->
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
                         <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-5">
                             <span class="text-slate-500 text-xs font-medium text-center px-2">Drone Çekimleri</span>
                         </div>
-                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 5)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                        <div class="flex gap-2">
+                            <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 5)" class="w-full text-xs text-slate-400 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                            <button onclick="removeMedia(5)" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all" title="Kaldır">🗑️</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- KATEGORİ 3: Profesyonel Prodüksiyon (Kurumsal Filmler) -->
+            <!-- Kategori 3 -->
             <div class="space-y-4 bg-slate-950/40 p-6 rounded-3xl border border-slate-800/80">
-                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2">
-                    <span>🏢</span> Kurumsal Tanıtım Filmleri
-                </h3>
+                <h3 class="text-lg font-black text-amber-400 flex items-center gap-2"><span>🏢</span> Kurumsal Tanıtım Filmleri</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Slot 6 -->
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
                         <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-6">
                             <span class="text-slate-500 text-xs font-medium text-center px-2">Fabrika & Mekan Tanıtımı</span>
                         </div>
-                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 6)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                        <div class="flex gap-2">
+                            <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 6)" class="w-full text-xs text-slate-400 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                            <button onclick="removeMedia(6)" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all" title="Kaldır">🗑️</button>
+                        </div>
                     </div>
-                    <!-- Slot 7 -->
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 shadow-xl">
                         <div class="w-full aspect-video bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 relative group" id="slot-7">
                             <span class="text-slate-500 text-xs font-medium text-center px-2">Reklam Filmi Prodüksiyonu</span>
                         </div>
-                        <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 7)" class="text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                        <div class="flex gap-2">
+                            <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event, 7)" class="w-full text-xs text-slate-400 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-black hover:file:bg-amber-400 cursor-pointer">
+                            <button onclick="removeMedia(7)" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all" title="Kaldır">🗑️</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -206,7 +169,7 @@
         </div>
     </main>
 
-    <!-- ŞİFRE GİRİŞ MODALI -->
+    <!-- Giriş Modalı -->
     <div id="loginModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-sm w-full p-6 space-y-5 shadow-2xl fade-in relative">
             <div class="text-center space-y-1">
@@ -214,12 +177,10 @@
                 <h3 class="text-lg font-black text-white">Yönetici Girişi</h3>
                 <p class="text-slate-400 text-xs">Lütfen erişim şifresini girin.</p>
             </div>
-
             <div class="space-y-3">
                 <input type="password" id="adminPasswordInput" placeholder="Şifre" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 transition-colors">
                 <div id="loginError" class="text-red-400 text-xs hidden">Hatalı şifre!</div>
             </div>
-
             <div class="flex gap-2">
                 <button onclick="closeLoginModal()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold py-3 rounded-xl transition-all">İptal</button>
                 <button onclick="verifyAdminPassword()" class="flex-1 bg-amber-500 hover:bg-amber-400 text-black text-xs font-black py-3 rounded-xl transition-all shadow-lg shadow-amber-500/20">Giriş Yap</button>
@@ -227,89 +188,65 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="py-10 text-center text-slate-400 text-xs border-t border-slate-800/80 bg-slate-950 space-y-3">
-        <div class="flex justify-center items-center gap-2">
-            <img src="/blcajans.png" alt="BLC Logo Footer" class="h-10 w-auto filter drop-shadow">
-        </div>
-        <p class="font-semibold text-slate-300">
-            &copy; 2026 <span class="text-amber-400 font-bold">BLC Ajans</span> • Tüm hakları saklıdır.
-        </p>
-        <p class="text-slate-400 text-[11px]">
-            Kurucu: <strong class="text-slate-200">Tolunay Balcı</strong>
-        </p>
+        <div class="flex justify-center items-center gap-2"><img src="/blcajans.png" alt="BLC Logo Footer" class="h-10 w-auto filter drop-shadow"></div>
+        <p class="font-semibold text-slate-300">&copy; 2026 <span class="text-amber-400 font-bold">BLC Ajans</span> • Tüm hakları saklıdır.</p>
+        <p class="text-slate-400 text-[11px]">Kurucu: <strong class="text-slate-200">Tolunay Balcı</strong></p>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC (7 Slot Desteği) -->
     <script>
         const correctPassword = "00110011ty";
 
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        }
-
-        function openLoginModal() {
-            document.getElementById('loginModal').classList.remove('hidden');
-            document.getElementById('adminPasswordInput').value = '';
-            document.getElementById('loginError').classList.add('hidden');
-        }
-
-        function closeLoginModal() {
-            document.getElementById('loginModal').classList.add('hidden');
-        }
-
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
+        function openLoginModal() { document.getElementById('loginModal').classList.remove('hidden'); document.getElementById('adminPasswordInput').value = ''; document.getElementById('loginError').classList.add('hidden'); }
+        function closeLoginModal() { document.getElementById('loginModal').classList.add('hidden'); }
         function verifyAdminPassword() {
-            const inputVal = document.getElementById('adminPasswordInput').value;
-            if (inputVal === correctPassword) {
+            if (document.getElementById('adminPasswordInput').value === correctPassword) {
                 localStorage.setItem('blc_admin_logged', 'true');
                 closeLoginModal();
                 showAdminPanel();
-            } else {
-                document.getElementById('loginError').classList.remove('hidden');
-            }
+            } else { document.getElementById('loginError').classList.remove('hidden'); }
         }
-
-        function showAdminPanel() {
-            document.getElementById('lockedView').classList.add('hidden');
-            document.getElementById('adminView').classList.remove('hidden');
-        }
-
-        function logoutAdmin() {
-            localStorage.removeItem('blc_admin_logged');
-            document.getElementById('adminView').classList.add('hidden');
-            document.getElementById('lockedView').classList.remove('hidden');
-        }
+        function showAdminPanel() { document.getElementById('lockedView').classList.add('hidden'); document.getElementById('adminView').classList.remove('hidden'); }
+        function logoutAdmin() { localStorage.removeItem('blc_admin_logged'); document.getElementById('adminView').classList.add('hidden'); document.getElementById('lockedView').classList.remove('hidden'); }
 
         window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('blc_admin_logged') === 'true') {
-                showAdminPanel();
-            }
+            if (localStorage.getItem('blc_admin_logged') === 'true') showAdminPanel();
             loadSavedMedia();
         });
 
         function handleFileUpload(event, slotId) {
             const file = event.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 const mediaData = e.target.result;
                 const isVideo = file.type.startsWith('video');
-                
                 localStorage.setItem(`blc_media_${slotId}`, JSON.stringify({ data: mediaData, type: isVideo ? 'video' : 'image' }));
                 renderMedia(slotId, mediaData, isVideo ? 'video' : 'image');
             };
             reader.readAsDataURL(file);
         }
 
+        function removeMedia(slotId) {
+            localStorage.removeItem(`blc_media_${slotId}`);
+            const slotContainer = document.getElementById(`slot-${slotId}`);
+            if (slotContainer) {
+                const defaultTexts = {
+                    1: "Dış Çekim Fotoğrafı 1", 2: "Dış Çekim Fotoğrafı 2", 3: "Dış Çekim Fotoğrafı 3",
+                    4: "Sinematik Düğün Hikayesi", 5: "Drone Çekimleri", 6: "Fabrika & Mekan Tanıtımı", 7: "Reklam Filmi Prodüksiyonu"
+                };
+                slotContainer.innerHTML = `<span class="text-slate-500 text-xs font-medium text-center px-2">${defaultTexts[slotId]}</span>`;
+            }
+        }
+
         function renderMedia(slotId, data, type) {
             const slotContainer = document.getElementById(`slot-${slotId}`);
             if (!slotContainer) return;
-
             if (type === 'video') {
                 slotContainer.innerHTML = `<video src="${data}" controls autoplay loop muted class="w-full h-full object-cover rounded-xl"></video>`;
             } else {
-                slotContainer.innerHTML = `<img src="${data}" alt="Özel Medya ${slotId}" class="w-full h-full object-cover rounded-xl">`;
+                slotContainer.innerHTML = `<img src="${data}" alt="Medya ${slotId}" class="w-full h-full object-cover rounded-xl">`;
             }
         }
 
