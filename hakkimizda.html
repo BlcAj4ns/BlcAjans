@@ -40,14 +40,20 @@
             pointer-events: none; 
         }
 
-        .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .fade-in { 
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
+
+    <!-- ARKA PLAN FİLİGRAN EFEKTİ -->
     <div class="bg-watermark"></div>
 
     <!-- HEADER / MENÜ -->
@@ -65,6 +71,7 @@
                     <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                     📍 Zonguldak Ereğli / Türkiye
                 </span>
+
                 <nav class="flex items-center gap-6 text-xs font-bold tracking-wider uppercase">
                     <a href="/" class="text-slate-300 hover:text-amber-400 transition-all">Ana Sayfa</a>
                     <a href="/TolunayBalcı" class="text-slate-300 hover:text-amber-400 transition-all">Tolunay Balcı</a>
@@ -76,7 +83,9 @@
 
             <!-- Mobil Menü Butonu -->
             <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
-                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
             </button>
         </div>
 
@@ -100,15 +109,19 @@
             <!-- BİZ KİMİZ? -->
             <div class="space-y-4 relative z-10">
                 <h2 class="text-2xl sm:text-3xl font-black text-amber-400 tracking-wide uppercase">BİZ KİMİZ?</h2>
+                
                 <p class="text-slate-200 text-base leading-relaxed font-normal">
                     Blc Ajans, yaratıcı fikirleri, güçlü görselleri ve etkili pazarlama stratejileriyle markaları bir adım öne taşıyan dinamik bir reklam ve fotoğrafçılık ajansıdır. Kurucumuz Tolunay Balcı, inşaat mühendisliği alanındaki profesyonelliğini, yıllardır süregelen fotoğrafçılık ve tasarım tutkusuyla birleştirerek sektörde fark yaratan bir vizyon oluşturdu.
                 </p>
+                
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Fotoğrafçılık kariyerine düğün hikayesi konseptini Ereğli’ye kazandırarak adını duyuran Balcı, kısa sürede profesyonel bir ekip oluşturarak fotoğrafçılığı sanata dönüştürdü. Zamanla reklamcılık alanında da kendini geliştirerek tasarım odaklı projeler üreten bir ajans yapısını hayata geçirdi.
                 </p>
+                
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Blc Ajans olarak sadece fotoğrafçılık ve reklamcılık hizmetleri sunmakla kalmıyor, aynı zamanda organizasyon alanında da yenilikçi çözümler üretiyoruz. Ticari geçmişimizde Ereğli’nin ilk makarnacısı olan Parme House markasını kurarak yeme-içme sektörüne adım attık ve Blc Motors ile araç alım satımı yaparak farklı sektörlerde de tecrübeler edindik.
                 </p>
+                
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Bugün, Blc Ajans çatısı altında güçlü ekibimizle markaların ihtiyaç duyduğu görsel ve dijital çözümleri sunuyor, aynı zamanda inşaat mühendisliği alanında çeşitli projelerde yer alarak uzmanlığımızı farklı alanlara taşıyoruz. Yenilikçi bakış açımız, kaliteli hizmet anlayışımız ve yaratıcı ekibimizle her projede fark yaratmaya devam ediyoruz.
                 </p>
@@ -117,12 +130,15 @@
             <!-- VİZYONUMUZ -->
             <div class="space-y-4 pt-6 border-t border-slate-800 relative z-10">
                 <h2 class="text-2xl sm:text-3xl font-black text-amber-400 tracking-wide uppercase">Vizyonumuz</h2>
+                
                 <p class="text-slate-200 text-base leading-relaxed font-normal">
                     Blc Ajans olarak, fotoğrafçılık, reklamcılık ve organizasyon alanlarında sektöre yön veren, yenilikçi ve ilham verici projeler üreten öncü bir marka olmayı hedefliyoruz. Kreatif bakış açımız, güçlü ekibimiz ve teknolojiye uyumlu çalışmalarımızla müşterilerimize en iyi hizmeti sunarak fark yaratmak istiyoruz.
                 </p>
+                
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Gelecekte, sadece ulusal değil, uluslararası alanda da tanınan bir ajans haline gelerek, markaların küresel ölçekte büyümelerine katkı sağlamayı amaçlıyoruz. Aynı zamanda, inşaat mühendisliği alanındaki tecrübemizle güvenilir ve sağlam projelere imza atarak sektörde kalıcı bir iz bırakmayı hedefliyoruz.
                 </p>
+                
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Yenilikçi, sürdürülebilir ve estetik odaklı yaklaşımımızla, hem sanatsal hem de ticari anlamda değer yaratan projeler üretmeye ve iş ortaklarımızla birlikte büyümeye devam edeceğiz.
                 </p>
@@ -131,12 +147,15 @@
             <!-- MİSYONUMUZ -->
             <div class="space-y-4 pt-6 border-t border-slate-800 relative z-10">
                 <h2 class="text-2xl sm:text-3xl font-black text-amber-400 tracking-wide uppercase">Misyonumuz</h2>
+                
                 <p class="text-slate-200 text-base leading-relaxed font-normal">
                     Blc Ajans olarak, markaların görsel dünyasını güçlendiren yaratıcı çözümler üretmeyi, estetik ve stratejiyi bir araya getirerek fark yaratan projelere imza atmayı amaçlıyoruz. Fotoğrafçılık, reklamcılık ve organizasyon alanlarında sunduğumuz profesyonel hizmetlerle, bireysel ve kurumsal müşterilerimize en etkili ve özgün çözümleri sunuyoruz.
                 </p>
+                
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Misyonumuz, müşteri odaklı yaklaşımımızla her projeye yenilikçi bir bakış açısı katmak, markaların hedef kitleleriyle güçlü bağlar kurmasını sağlamak ve her işimizde kaliteyi en üst seviyede tutarak sektörde öncü bir konumda yer almaktır. Aynı zamanda inşaat mühendisliği alanındaki uzmanlığımızla sağlam ve güvenilir projelere katkıda bulunarak, farklı sektörlerde de değer yaratmaya devam ediyoruz.
                 </p>
+                
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                     Yaratıcılığı, profesyonelliği ve müşteri memnuniyetini ön planda tutarak, markaların hikayelerini en etkili şekilde anlatmalarına yardımcı olmayı ve her alanda kalıcı izler bırakmayı hedefliyoruz.
                 </p>
@@ -145,7 +164,9 @@
                 <div class="pt-4">
                     <a href="/TolunayBalcı" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-amber-500/20 active:scale-95 group">
                         <span>Ben Kimim?</span>
-                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -169,7 +190,8 @@
     <!-- JAVASCRIPT KONTROLLERİ -->
     <script>
         function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
         }
     </script>
 </body>
