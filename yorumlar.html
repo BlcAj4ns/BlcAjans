@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- SİTE BAŞLIĞI VE GOOGLE ARAMA AÇIKLAMASI -->
     <title>Müşteri Yorumları | BLC Ajans Zonguldak Ereğli</title>
     <meta name="description" content="Zonguldak Ereğli ve çevresindeki projelerimiz için Google'da yapılan gerçek müşteri deneyimleri ve yorumlar.">
     
-    <!-- TARAYICI SEKME LOGOSU & FAVICON -->
     <link rel="icon" type="image/x-icon" href="/sitelogo.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/sitelogo.ico">
     <link rel="icon" type="image/png" sizes="192x192" href="/blcajans.png">
@@ -39,6 +37,13 @@
             z-index: -1; 
             pointer-events: none; 
         }
+
+        .line-clamp-4 {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
@@ -47,13 +52,10 @@
     <!-- HEADER / MENÜ -->
     <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
-            
-            <!-- LOGO ALANI -->
             <a href="/" class="group flex items-center py-1">
                 <img src="/blcajans.png" alt="BLC Ajans Logo" class="h-[75px] sm:h-[90px] w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300">
             </a>
 
-            <!-- Masaüstü Navigasyon -->
             <div class="hidden lg:flex items-center gap-6">
                 <span class="flex items-center gap-2 text-xs text-amber-200/90 font-medium bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20 shadow-inner">
                     <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
@@ -68,7 +70,6 @@
                 </nav>
             </div>
 
-            <!-- Mobil Menü Butonu / Geri Dönüş -->
             <div class="flex items-center gap-3 lg:hidden">
                 <a href="/" class="text-xs text-amber-400 font-bold bg-amber-500/10 px-3 py-2 rounded-xl border border-amber-500/20">← Ana Sayfa</a>
                 <button onclick="toggleMobileMenu()" class="p-1.5 text-amber-400 focus:outline-none" aria-label="Menü">
@@ -77,7 +78,6 @@
             </div>
         </div>
 
-        <!-- Mobil Menü -->
         <div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 space-y-3 shadow-2xl">
             <a href="/" class="block text-slate-300 hover:text-amber-400 text-xs font-bold">Ana Sayfa</a>
             <a href="/hakkimizda" class="block text-slate-300 hover:text-amber-400 text-xs font-medium">Hakkımızda</a>
@@ -88,201 +88,165 @@
     </header>
 
     <!-- İÇERİK ALANI -->
-    <main class="flex-grow w-full max-w-6xl mx-auto px-4 py-16">
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-16">
         <div class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Mutlu Müşteriler & Google Yorumları</h1>
+            <h1 class="text-3xl sm:text-4xl font-black mb-2 text-white">Mutlu Müşteriler & <span class="text-amber-400">Google Yorumları</span></h1>
             <p class="text-slate-400 text-sm">Zonguldak Ereğli ve çevresindeki projelerimiz için Google'da yapılan gerçek müşteri deneyimleri.</p>
         </div>
 
-        <!-- YORUMLAR GRID YAPISI -->
+        <!-- GOOGLE ÖZET BİLGİSİ -->
+        <div class="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 sm:p-8 mb-12 shadow-2xl backdrop-blur-md max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
+                    <!-- Google Logo SVG -->
+                    <svg viewBox="0 0 24 24" class="w-8 h-8"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.8 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-lg sm:text-xl leading-tight">BALCI TOLUNAY MEDİA BLC REKLAM AJANSI</h2>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="text-2xl font-black text-white">5.0</span>
+                        <div class="flex text-amber-400 text-lg">
+                            ★★★★★
+                        </div>
+                        <span class="text-slate-400 text-sm font-medium ml-1">70 Yorum</span>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://www.google.com/maps/search/?api=1&query=Balc%C4%B1+Tolunay+Media+BLC+Reklam+Ajansı+Zonguldak+Ereğli&hl=tr" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl transition-all font-bold text-sm shadow-lg shadow-blue-900/50 w-full sm:w-auto">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
+                Yorum Yaz / İncele
+            </a>
+        </div>
+
+        <!-- YORUM KARTLARI GRİD ALANI -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Ezgi Güner -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <!-- Yorum Kartı 1 -->
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 shadow-xl hover:border-slate-700 transition-colors flex flex-col justify-between">
                 <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">bir ay önce</span>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-600 font-bold text-white flex items-center justify-center text-sm shadow-inner">EG</div>
+                            <div>
+                                <h3 class="text-slate-200 font-bold text-sm">Ezgi Güner</h3>
+                                <div class="flex items-center gap-1 mt-0.5">
+                                    <div class="text-amber-400 text-xs">★★★★★</div>
+                                    <span class="text-[10px] text-slate-500 ml-1">2 yıl önce</span>
+                                </div>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.8 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
                     </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Düğün dış çekimimiz için Tolunay balcı media ile çalıştık ve sonuçtan çok memnun kaldık. Süreç boyunca bizimle çok ilgilendi, kendimizi rahat hissetmemizi..."</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Ezgi Güner</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
+                    <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">"Düğün dış çekimimiz için Tolunay balcı media ile çalıştık ve sonuçtan çok memnun kaldık. Süreç boyunca bizimle çok ilgilendi, kendimizi rahat hissetmemizi sağladı..."</p>
                 </div>
             </div>
 
-            <!-- Fatma Altun -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <!-- Yorum Kartı 2 -->
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 shadow-xl hover:border-slate-700 transition-colors flex flex-col justify-between">
                 <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">bir ay önce</span>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="https://ui-avatars.com/api/?name=Fatma+Altun&background=047857&color=fff" alt="FA" class="w-10 h-10 rounded-full shadow-inner">
+                            <div>
+                                <h3 class="text-slate-200 font-bold text-sm">Fatma Altun</h3>
+                                <div class="flex items-center gap-1 mt-0.5">
+                                    <div class="text-amber-400 text-xs">★★★★★</div>
+                                    <span class="text-[10px] text-slate-500 ml-1">2 yıl önce</span>
+                                </div>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.8 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
                     </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"O kadar içime sindi ki yaptıkları çekim poz vermeyi bilmeyen nişanlım bile fotojenik pozlar verdi. Ben poz vermeyi bilmiyorum diyenin bile hiç endişe etmeden tercih edebileceği bir media ekibi. Siz sadece kıyafetinize odaklanıyosunuz gerisi onlarda🌸🌸🙏"</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Fatma Altun</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
+                    <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">"O kadar içime sindi ki yaptıkları çekim poz vermeyi bilmeyen nişanlım bile fotojenik pozlar verdi. Ben poz vermeyi bilmiyorum diyenin bile hiç endişe etmeden tercih edebileceği bir media ekibi. Siz sadece kıyafetinize odaklanıyosunuz gerisi onlarda🌸🌸🙏"</p>
                 </div>
             </div>
 
-            <!-- Beyza Nur BOZKURT -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <!-- Yorum Kartı 3 -->
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 shadow-xl hover:border-slate-700 transition-colors flex flex-col justify-between">
                 <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">6 ay önce</span>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="https://ui-avatars.com/api/?name=Hasancan+Dilaver&background=ec4899&color=fff" alt="HD" class="w-10 h-10 rounded-full shadow-inner">
+                            <div>
+                                <h3 class="text-slate-200 font-bold text-sm">Hasancan Dilaver</h3>
+                                <div class="flex items-center gap-1 mt-0.5">
+                                    <div class="text-amber-400 text-xs">★★★★★</div>
+                                    <span class="text-[10px] text-slate-500 ml-1">2 yıl önce</span>
+                                </div>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.8 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
                     </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"En güzel günümüzü nasıl daha da güzel bir güne çevirebiliriz diye düşünüyorsunuz en doğru adrestesiniz.. Siz sadece durun, onlar sizin fotoğrafta mükemmel görünmenizi zaten sağlar.. Nişan çekimlerimizde harikalar yarattığınız için teşekkür ederiz :)"</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Beyza Nur BOZKURT</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
+                    <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">"Tolunay bey ile düğün çekimimiz için anlaşmıştık. Gerek işinin profesyonelliği gerekse güler yüzü sayesinde harika bir çekim gerçekleştirdik. Çok güzel kareler çıkarttı ortaya. İyi ki ❤️"</p>
                 </div>
             </div>
 
-            <!-- Hasancan Dilaver -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <!-- Yorum Kartı 4 -->
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 shadow-xl hover:border-slate-700 transition-colors flex flex-col justify-between">
                 <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">10 ay önce</span>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="https://ui-avatars.com/api/?name=Irem+Altiay&background=475569&color=fff" alt="İA" class="w-10 h-10 rounded-full shadow-inner">
+                            <div>
+                                <h3 class="text-slate-200 font-bold text-sm">İrem Altıay</h3>
+                                <div class="flex items-center gap-1 mt-0.5">
+                                    <div class="text-amber-400 text-xs">★★★★★</div>
+                                    <span class="text-[10px] text-slate-500 ml-1">2 yıl önce</span>
+                                </div>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.8 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
                     </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Tolunay bey ile düğün çekimimiz için anlaşmıştık. Gerek işinin profesyonelliği gerekse güler yüzü sayesinde harika bir çekim gerçekleştirdik. Çok güzel kareler çıkarttı ortaya. İyi ki ❤️"</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Hasancan Dilaver</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
+                    <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">"Dış çekim için tolunay balcı medyayı tercih ettik ve iyi ki diyorum. O kadar ince işçilikle hassas ve içimize sinen bir çekim günü yaşattı ki tolunay bey yüzünden oluşan bir aksilikte bile telafi için..."</p>
                 </div>
             </div>
 
-            <!-- İrem Altıay -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <!-- Yorum Kartı 5 -->
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 shadow-xl hover:border-slate-700 transition-colors flex flex-col justify-between">
                 <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">bir yıl önce</span>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="https://ui-avatars.com/api/?name=Beyza+Nur+BOZKURT&background=64748b&color=fff" alt="BB" class="w-10 h-10 rounded-full shadow-inner">
+                            <div>
+                                <h3 class="text-slate-200 font-bold text-sm">Beyza Nur BOZKURT</h3>
+                                <div class="flex items-center gap-1 mt-0.5">
+                                    <div class="text-amber-400 text-xs">★★★★★</div>
+                                    <span class="text-[10px] text-slate-500 ml-1">4 yıl önce</span>
+                                </div>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.8 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
                     </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Dış çekim için tolunay balcı medyayı tercih ettik ve iyi ki diyorum. O kadar ince işçilikle hassas ve içimize sinen bir çekim günü yaşattı ki tolunay bey..."</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">İrem Altıay</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
+                    <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">"En güzel günümüzü nasıl daha da güzel bir güne çevirebiliriz diye düşünüyorsunuz en doğru adrestesiniz.. Nişan çekimlerimizde harikalar yarattığınız için teşekkür ederiz :)"</p>
                 </div>
             </div>
 
-            <!-- Gamze ÇEVİK -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <!-- Yorum Kartı 6 -->
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 shadow-xl hover:border-slate-700 transition-colors flex flex-col justify-between">
                 <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">4 ay önce</span>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <img src="https://ui-avatars.com/api/?name=Ugurcan+Karlıca&background=65a30d&color=fff" alt="UK" class="w-10 h-10 rounded-full shadow-inner">
+                            <div>
+                                <h3 class="text-slate-200 font-bold text-sm">Uğurcan Karlıca</h3>
+                                <div class="flex items-center gap-1 mt-0.5">
+                                    <div class="text-amber-400 text-xs">★★★★★</div>
+                                    <span class="text-[10px] text-slate-500 ml-1">4 yıl önce</span>
+                                </div>
+                            </div>
+                        </div>
+                        <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.8 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
                     </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Özel anlarımızın geleceğe mirasını özenle ve imtinayla yapıldığı tek adresi. Teşekkürler tolunay balcı media ekibi 🙏"</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Gamze ÇEVİK</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
-                </div>
-            </div>
-
-            <!-- buğra yeşilusta -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">8 ay önce</span>
-                    </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Batı Karadeniz'in en iyi en profesyonel fotoğrafçısı şiddetle tavsiye ederim kalitesi mükemmel ötesi herseyi çok güzel çok özenerek yapıyorlar ben çok memnun kaldım herkese tavsiye ederim"</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">buğra yeşilusta</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
-                </div>
-            </div>
-
-            <!-- Beytullah Eski -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">bir ay önce</span>
-                    </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Her fotoğraf karesi çok başarılıydı ilgi muhteşemdi, çok farklı içerikler çıkarttık teşekkür ederiz..."</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Beytullah Eski</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
-                </div>
-            </div>
-
-            <!-- Nazlıcan Güdül -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">10 ay önce</span>
-                    </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Nişan, kına, düğün, dış çekim... Her anımızda yanımızda olan Tolunay Bey ve Ekibine çok teşekkür ederiz. Kendisi çok sevdiğimiz arkadaşımız olmakla birlikte..."</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Nazlıcan Güdül</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
-                </div>
-            </div>
-
-            <!-- Umutcan Akdeniz -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">9 ay önce</span>
-                    </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"En özel anlarımızı göstermiş olduğu önem ve özveri ile daha da anlamlı kılan Tolunay Bey'e teşekkür ederiz. Kendisi ile çalışmak çok keyifliydi eline ve emeğine sağlık."</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Umutcan Akdeniz</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
-                </div>
-            </div>
-
-            <!-- Sefa Camcı -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">bir yıl önce düzenlendi</span>
-                    </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Düğün çekimlerimiz için Tolunay Bey ile anlaşmıştık. Kendisinin güler yüzü sayesinde en baştan bizim stresimiz zaten hiç oluşmadı. Profesyonelliği ve kalitesi tartışılmaz, kesinlikle tavsiye ediyoruz. 😊"</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Sefa Camcı</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
-                </div>
-            </div>
-
-            <!-- Eda GENÇER KUZU -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="text-amber-400 text-sm">★★★★★</span>
-                        <span class="text-[10px] text-slate-500">bir yıl önce</span>
-                    </div>
-                    <p class="text-slate-300 text-xs italic leading-relaxed mb-6">"Kına ve nikâhımızda kendilerini çok eskiden beri tanıdığım arkadaşım Tolunay ve ekibi ile çalıştık. Kınamda kadın fotoğrafçı ekibi; Ecem ve ekibi tüm heyecanıma..."</p>
-                </div>
-                <div class="border-t border-slate-800 pt-4 flex items-center justify-between text-xs">
-                    <span class="font-bold text-white">Eda GENÇER KUZU</span>
-                    <span class="text-amber-400/80">Google Yorumu</span>
+                    <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">"İşinin ehli apar topar lakin günün elbet sinirli sinirminizi bile göze alan bi medya. Gönül rahatlığı ile iletişime geçebilirsiniz."</p>
                 </div>
             </div>
 
         </div>
 
-        <!-- Google Yönlendirme Butonu -->
         <div class="mt-12 text-center">
-            <a href="https://www.google.com/search?q=balc%C4%B1+tolunay+media+blc+reklam+ajans%C4%B1+ve+d%C3%BC%C4%9F%C3%BCn+foto%C4%9Fraf%C3%A7%C4%B1s%C4%B1+ere%C4%9Fli+yorumlar%C4%B1" target="_blank" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-3 rounded-xl transition-all font-bold text-xs shadow-lg">
-                ⭐ Google'daki Tüm Yorumları İncele
+            <a href="https://www.google.com/maps/search/?api=1&query=Balcı+Tolunay+Media+BLC+Reklam+Ajansı+Zonguldak+Ereğli&hl=tr" target="_blank" class="inline-block bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-6 py-3 rounded-xl transition-all font-bold text-sm shadow-lg">
+                Google'daki Tüm 70 Yorumu İncele
             </a>
         </div>
     </main>
